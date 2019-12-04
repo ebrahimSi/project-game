@@ -32,6 +32,17 @@ public class WeaponScript : MonoBehaviour
         {
             AssignWeapon();
         }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (WeaponVisible == true)
+            {
+                WeaponVisible = false;
+                anim.SetBool("Ready", false);
+            }
+        }
+
+
         if (currentWeapon > 0 && currentWeapon < 4)
         {
             if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -116,37 +127,7 @@ public class WeaponScript : MonoBehaviour
             }
         }
 
-        //temp
-
-    if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            SaveScript.weaponID = 0;
-            AssignWeapon();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SaveScript.weaponID = 1;
-            AssignWeapon();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SaveScript.weaponID = 2;
-            AssignWeapon();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SaveScript.weaponID = 3;
-            AssignWeapon();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SaveScript.weaponID = 4;
-            AssignWeapon();
-        }
+       
     }
 
     void AssignWeapon()

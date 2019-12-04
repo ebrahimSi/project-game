@@ -8,15 +8,10 @@ public class SaveScript : MonoBehaviour
 
     public static int weaponID = 0;
     public static bool weaponChange = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static bool HaveKnife = true;
+    public static bool HaveBat = false;
+    public static bool HaveAxe = false;
+    public static bool HaveGun = false;
+
 }
