@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class CharController_Motor : MonoBehaviour {
 
-	public float speed = 10.0f;
+	private float speed = 10.0f;
+
+    public float WalkSpeed = 7.0f;
+    public float RunSpeed = 12.0f;
+
 	public float sensitivity = 30.0f;
 	public float WaterHeight = 15.5f;
 	CharacterController character;
-	public GameObject cam;
-	float moveFB, moveLR;
+	private GameObject cam;
+
+    public GameObject cam1;
+    public GameObject camNight;
+
+
+    public bool NighVision = false;
+
+    float moveFB, moveLR;
 	float rotX, rotY;
 	public bool webGLRightClickRotation = true;
 	float gravity = -9.8f;
@@ -21,6 +32,10 @@ public class CharController_Motor : MonoBehaviour {
 		if (Application.isEditor) {
 			webGLRightClickRotation = false;
 			sensitivity = sensitivity * 1.5f;
+            Cursor.visible = false;
+            speed = WalkSpeed;
+            cam = cam1;
+            camNight.gameObject.SetActive(false);
 		}
 	}
 
@@ -36,6 +51,33 @@ public class CharController_Motor : MonoBehaviour {
 
 
 	void Update(){
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = RunSpeed;
+        }
+        else
+        {
+            speed = WalkSpeed;
+        }
+
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            if(NighVision == false)
+            {
+                camNight.gameObject.SetActive(true);
+                cam = camNight;
+                NighVision = true;
+            }
+
+           else 
+            {
+                cam = cam1;
+                camNight.gameObject.SetActive(false);
+                NighVision = false;
+            }
+        }
+
 		moveFB = Input.GetAxis ("Horizontal") * speed;
 		moveLR = Input.GetAxis ("Vertical") * speed;
 

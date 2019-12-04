@@ -13,6 +13,11 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] int CurrentTarget = 1 ;
 
     private Transform TargetPosition;
+
+    [SerializeField] int waitTime = 0;
+
+    private Animator anim;
+
     private bool Contact = false;
 
 
@@ -23,7 +28,7 @@ public class EnemyMove : MonoBehaviour
         
         TargetPosition = Target1;
         MoveToTarget();
-
+        anim = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,7 +47,9 @@ public class EnemyMove : MonoBehaviour
                     CurrentTarget = 1;
                 }
 
-                MoveToTarget();
+                StartCoroutine(Waiting());
+
+                
             }
         }
     }
@@ -69,7 +76,16 @@ public class EnemyMove : MonoBehaviour
         }
 
         GetComponent<NavMeshAgent>().destination = TargetPosition.position;
-        Contact = false;
+       // Contact = false;
 
+    }
+
+    IEnumerator Waiting()
+    {
+        anim.SetInteger("State", 1);
+        yield return new WaitForSeconds(waitTime);
+        anim.SetInteger("State", 0);
+        Contact = false;
+        MoveToTarget();
     }
 }
