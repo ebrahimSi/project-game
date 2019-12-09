@@ -127,7 +127,7 @@ public class WeaponScript : MonoBehaviour
             }
         }
 
-       
+      
     }
 
     void AssignWeapon()

@@ -26,7 +26,9 @@ public class InventoryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         InventoryMenu.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class InventoryScript : MonoBehaviour
         SaveScript.weaponChange = true;
     }
 
+  
      IEnumerator InventoryOpen()
     {
         InventoryMenu.gameObject.SetActive(true);
@@ -89,67 +92,110 @@ public class InventoryScript : MonoBehaviour
         
 
     }
+   
+
+
+
+
     void InventoryCheck()
+
     {
-        if(SaveScript.HaveKnife == true)
+
+        if (SaveScript.HaveKnife == true)
+
         {
+
             KnifeBlank.gameObject.SetActive(false);
+
             KnifeImage.gameObject.SetActive(true);
-            
+
             KnifeButton.gameObject.SetActive(true);
+
         }
 
         if (SaveScript.HaveKnife == false)
-        {
-            BatBlank.gameObject.SetActive(true);
-            BatImage.gameObject.SetActive(false);
 
-            BatButton.gameObject.SetActive(false);
+        {
+
+            KnifeBlank.gameObject.SetActive(true);
+
+            KnifeImage.gameObject.SetActive(false);
+
+            KnifeButton.gameObject.SetActive(false);
+
         }
 
         if (SaveScript.HaveBat == true)
-        {
-            AxeBlank.gameObject.SetActive(false);
-            AxeImage.gameObject.SetActive(true);
 
-            AxeButton.gameObject.SetActive(true);
+        {
+
+            BatBlank.gameObject.SetActive(false);
+
+            BatImage.gameObject.SetActive(true);
+
+            BatButton.gameObject.SetActive(true);
+
         }
 
         if (SaveScript.HaveBat == false)
+
         {
-            GunBlank.gameObject.SetActive(true);
-            GunImage.gameObject.SetActive(false);
-            GunButton.gameObject.SetActive(false);
+
+            BatBlank.gameObject.SetActive(true);
+
+            BatImage.gameObject.SetActive(false);
+
+            BatButton.gameObject.SetActive(false);
+
         }
 
         if (SaveScript.HaveAxe == true)
+
         {
+
             AxeBlank.gameObject.SetActive(false);
+
             AxeImage.gameObject.SetActive(true);
 
             AxeButton.gameObject.SetActive(true);
+
         }
 
         if (SaveScript.HaveAxe == false)
+
         {
-            GunBlank.gameObject.SetActive(true);
-            GunImage.gameObject.SetActive(false);
-            GunButton.gameObject.SetActive(false);
+
+            AxeBlank.gameObject.SetActive(true);
+
+            AxeImage.gameObject.SetActive(false);
+
+            AxeButton.gameObject.SetActive(false);
+
         }
 
         if (SaveScript.HaveGun == true)
-        {
-            AxeBlank.gameObject.SetActive(false);
-            AxeImage.gameObject.SetActive(true);
 
-            AxeButton.gameObject.SetActive(true);
+        {
+
+            GunBlank.gameObject.SetActive(false);
+
+            GunImage.gameObject.SetActive(true);
+
+            GunButton.gameObject.SetActive(true);
+
         }
 
         if (SaveScript.HaveGun == false)
+
         {
+
             GunBlank.gameObject.SetActive(true);
+
             GunImage.gameObject.SetActive(false);
+
             GunButton.gameObject.SetActive(false);
+
         }
+
     }
 }

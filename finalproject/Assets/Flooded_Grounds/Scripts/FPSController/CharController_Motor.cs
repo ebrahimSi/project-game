@@ -18,7 +18,7 @@ public class CharController_Motor : MonoBehaviour {
     public GameObject camNight;
 
 
-    public bool NighVision = false;
+   // public bool NighVision = false;
 
     float moveFB, moveLR;
 	float rotX, rotY;
@@ -61,20 +61,27 @@ public class CharController_Motor : MonoBehaviour {
             speed = WalkSpeed;
         }
 
-        if(Input.GetKeyDown(KeyCode.N))
+        if(SaveScript.NighVision == false)
         {
-            if(NighVision == false)
+            cam = cam1;
+            camNight.gameObject.SetActive(false);
+            SaveScript.NighVision = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            if(SaveScript.NighVision == false)
             {
                 camNight.gameObject.SetActive(true);
                 cam = camNight;
-                NighVision = true;
+                SaveScript.NighVision = true;
             }
 
            else 
             {
                 cam = cam1;
                 camNight.gameObject.SetActive(false);
-                NighVision = false;
+                SaveScript.NighVision = false;
             }
         }
 
