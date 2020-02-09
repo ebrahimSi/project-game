@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CharController_Motor : MonoBehaviour {
 
@@ -16,7 +17,8 @@ public class CharController_Motor : MonoBehaviour {
 
     public GameObject cam1;
     public GameObject camNight;
-
+    private NavMeshAgent nav;
+    private bool AIActive = true;
 
    // public bool NighVision = false;
 
@@ -24,6 +26,16 @@ public class CharController_Motor : MonoBehaviour {
 	float rotX, rotY;
 	public bool webGLRightClickRotation = true;
 	float gravity = -9.8f;
+    public float Stamina = 10f;
+    public float MaxStamina = 10f;
+    public int DecayRate = 1;
+    public float RefillRate = 0.25f;
+
+
+    public GameObject LightBreathing;
+    public GameObject HeavyBreathing;
+    private bool LightBreath = false;
+    private bool HeavyBreath = false;
 
 
 	void Start(){
@@ -36,6 +48,10 @@ public class CharController_Motor : MonoBehaviour {
             speed = WalkSpeed;
             cam = cam1;
             camNight.gameObject.SetActive(false);
+            LightBreathing.gameObject.SetActive(false);
+            HeavyBreathing.gameObject.SetActive(false);
+            nav = GetComponent<NavMeshAgent>();
+            AIActive = true;
 		}
 	}
 
@@ -52,16 +68,93 @@ public class CharController_Motor : MonoBehaviour {
 
 	void Update(){
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(LightBreath == false)
+        {
+            if(Stamina < 3)
+            {
+                LightBreathing.gameObject.SetActive(true);
+                HeavyBreathing.gameObject.SetActive(false);
+                LightBreath = true;
+            }
+        }
+
+
+        if (LightBreath == true)
+        {
+            if (Stamina > 3)
+            {
+                LightBreathing.gameObject.SetActive(false);
+                HeavyBreathing.gameObject.SetActive(false);
+                LightBreath = false;
+            }
+        }
+
+
+        if (HeavyBreath == false)
+        {
+            if (Stamina == 0)
+            {
+                LightBreathing.gameObject.SetActive(false);
+                HeavyBreathing.gameObject.SetActive(true);
+                HeavyBreath = true;
+            }
+        }
+
+
+        if (HeavyBreath == true)
+        {
+            if (Stamina > 0)
+            {
+                LightBreathing.gameObject.SetActive(false);
+                HeavyBreathing.gameObject.SetActive(false);
+                HeavyBreath = false;
+            }
+        }
+
+
+
+        if(Stamina > 0)
+        {
+
+       
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = RunSpeed;
+                Stamina = Stamina - DecayRate * Time.deltaTime;
+                if(Stamina < 0)
+                {
+                    Stamina = 0;
+                }
         }
         else
         {
             speed = WalkSpeed;
+                Stamina = Stamina + RefillRate * Time.deltaTime;
+                if(Stamina > MaxStamina)
+                {
+                    Stamina = MaxStamina;
+                }
+            }
         }
 
-        if(SaveScript.NighVision == false)
+
+        if(Stamina == 0)
+        {
+            speed = WalkSpeed;
+            StartCoroutine(StaminaRefill());
+        }
+
+
+        if(AIActive == true)
+        {
+            nav.enabled = true;
+        }
+        else
+        {
+            nav.enabled = false;
+        }
+
+        if (SaveScript.NighVision == false)
         {
             cam = cam1;
             camNight.gameObject.SetActive(false);
@@ -120,6 +213,32 @@ public class CharController_Motor : MonoBehaviour {
 	}
 
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Water"))
+        {
+            AIActive = false;
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Water"))
+        {
+            AIActive = true;
+        }
+    }
+
+
+    IEnumerator StaminaRefill()
+    {
+        yield return new WaitForSeconds(MaxStamina);
+        if(Stamina == 0)
+        {
+            Stamina = MaxStamina;
+        }
+    }
 
 
 }

@@ -7,7 +7,7 @@ public class BatteryPower : MonoBehaviour
 {
 
     [SerializeField] Image BatteryUI;
-    [SerializeField] float DrainTime = 30.0f;
+    [SerializeField] float DrainTime = 240.0f;
     // Start is called before the first frame update
     void Start()
     {
