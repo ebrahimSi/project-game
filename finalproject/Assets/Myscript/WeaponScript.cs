@@ -181,8 +181,10 @@ public class WeaponScript : MonoBehaviour
     }
      IEnumerator WeaponWait()
     {
+        yield return new WaitForSeconds(0.2f);
+        anim.SetInteger("WeaponStrike", 0);
         yield return new WaitForSeconds(WaitTime);
         Attack = true;
-        anim.SetInteger("WeaponStrike", 0);
+       
     }
 }

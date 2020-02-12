@@ -16,12 +16,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //temp
-        if(Input.GetKeyDown(KeyCode.H))
-        {
-            SaveScript.PlayerHealth -= 10;
-            PHText.text = SaveScript.PlayerHealth + "%";
-        }
+       
 
         if(SaveScript.DisplayHealth == true)
         {

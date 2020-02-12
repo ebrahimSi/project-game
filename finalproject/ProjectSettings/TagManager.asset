@@ -8,6 +8,10 @@ TagManager:
   - PickUp
   - TriggerPlayer
   - Water
+  - PBat
+  - PKnife
+  - PAxe
+  - PGun
   layers:
   - Default
   - TransparentFX

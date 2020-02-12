@@ -36,9 +36,14 @@ public class CharController_Motor : MonoBehaviour {
     public GameObject HeavyBreathing;
     private bool LightBreath = false;
     private bool HeavyBreath = false;
+    public GameObject LowHealthSound;
+
+    public GameObject PlayerDeath;
 
 
-	void Start(){
+
+
+    void Start(){
 		//LockCursor ();
 		character = GetComponent<CharacterController> ();
 		if (Application.isEditor) {
@@ -52,8 +57,11 @@ public class CharController_Motor : MonoBehaviour {
             HeavyBreathing.gameObject.SetActive(false);
             nav = GetComponent<NavMeshAgent>();
             AIActive = true;
-		}
-	}
+            LowHealthSound.gameObject.SetActive(false);
+            PlayerDeath.gameObject.SetActive(false);
+
+        }
+    }
 
 
 	void CheckForWaterHeight(){
@@ -145,7 +153,33 @@ public class CharController_Motor : MonoBehaviour {
         }
 
 
-        if(AIActive == true)
+
+
+
+
+        if(SaveScript.PlayerHealth < 5)
+        {
+            LowHealthSound.gameObject.SetActive(true);
+
+        }
+
+        if (SaveScript.PlayerHealth > 4)
+        {
+            LowHealthSound.gameObject.SetActive(false);
+
+        }
+
+        if(SaveScript.PlayerHealth <= 0)
+        {
+            PlayerDeath.gameObject.SetActive(true);
+
+        }
+
+
+
+
+
+        if (AIActive == true)
         {
             nav.enabled = true;
         }
