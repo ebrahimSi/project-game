@@ -22,4 +22,14 @@ public class SaveScript : MonoBehaviour
     public static bool HaveAxe = true;
     public static bool HaveGun = true;
 
+    public static bool SaveZone = false;
+
+    public static int Enemy1 = 1;
+    public static int Enemy2 = 1;
+    public static int Enemy3 = 1;
+    public static int Enemy4 = 1;
+    public static int Enemy5 = 1;
+    public static int Enemy6 = 1;
+    public static int SaveLocation = 0;
+
 }

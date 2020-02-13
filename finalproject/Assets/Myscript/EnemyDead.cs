@@ -10,7 +10,7 @@ public class EnemyDead : MonoBehaviour
     void Start()
     {
         ChaseMusic.gameObject.SetActive(false);
-        /*  if (EnemyNumber == 1)
+       if (EnemyNumber == 1)
           {
               SaveScript.Enemy1 = 0;
           }
@@ -35,6 +35,5 @@ public class EnemyDead : MonoBehaviour
               SaveScript.Enemy6 = 0;
           }
       }
-      */
+     
     }
-}

@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField] float ChaseSpeed = 10.5f;
     private float NewChaseSpeed = 0.0f;
     [SerializeField] GameObject Patrol;
-    [SerializeField] float AttackDistance = 3f;
+    [SerializeField] float AttackDistance = 4.0f;
     [SerializeField] GameObject ChaseMusic;
     [SerializeField] float MaxDistance = 20f;
     [SerializeField] bool IHaveAxe = false;
