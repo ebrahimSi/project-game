@@ -20,6 +20,7 @@ public class EnemyAttack : MonoBehaviour
     private Animator anim;
     private NavMeshAgent nav;
     private bool MusicOn = false;
+     private bool move = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,18 +62,23 @@ public class EnemyAttack : MonoBehaviour
             }
             Patrol.gameObject.SetActive(false);
             nav.speed = NewChaseSpeed;
+            if(move==true){
             nav.SetDestination(Player.position);
+                }
             if (DistanceToPlayer < AttackDistance)
             {
                 if (IHaveBat == true)
                 {
+                    move=false;
                     anim.SetBool("BatAttacks", true);
                     anim.SetBool("Damaging", true);
                     NewChaseSpeed = 6.5f;
                     nav.angularSpeed = 650000000;
+                    
                 }
                 if (IHaveAxe == true)
                 {
+                    move=false;
                     anim.SetBool("AxeAttacks", true);
                     anim.SetBool("Damaging", true);
                     NewChaseSpeed = 6.5f;
@@ -80,6 +86,7 @@ public class EnemyAttack : MonoBehaviour
                 }
                 if (IHaveKnife == true)
                 {
+                    move=false;
                     anim.SetBool("KnifeAttacks", true);
                     anim.SetBool("Damaging", true);
                     NewChaseSpeed = 6.5f;
@@ -87,6 +94,7 @@ public class EnemyAttack : MonoBehaviour
                 }
                 if (IHaveGun == true)
                 {
+                    move=false;
                     anim.SetBool("GunAttacks", true);
                     anim.SetBool("Damaging", true);
                   //  SimpleShoot.CanShoot = true;
@@ -99,11 +107,13 @@ public class EnemyAttack : MonoBehaviour
                 anim.SetBool("Damaging", false);
                 if (IHaveBat == true)
                 {
+                  
                     anim.SetBool("Alert", true);
                     anim.SetBool("BatAttacks", false);
                     anim.SetBool("Damaging", false);
                    NewChaseSpeed = ChaseSpeed * SaveScript.Difficulty;
                     nav.angularSpeed = 25000;
+                     move=true;
                 }
                 if (IHaveAxe == true)
                 {
@@ -112,6 +122,7 @@ public class EnemyAttack : MonoBehaviour
                     anim.SetBool("Damaging", false);
                    NewChaseSpeed = ChaseSpeed * SaveScript.Difficulty;
                     nav.angularSpeed = 25000;
+                     move=true;
                 }
                 if (IHaveKnife == true)
                 {
@@ -120,6 +131,7 @@ public class EnemyAttack : MonoBehaviour
                     anim.SetBool("Damaging", false);
                     NewChaseSpeed = ChaseSpeed * SaveScript.Difficulty;
                     nav.angularSpeed = 25000;
+                     move=true;
                 }
                 if (IHaveGun == true)
                 {
@@ -129,6 +141,7 @@ public class EnemyAttack : MonoBehaviour
                    // SimpleShoot.CanShoot = false;
                     NewChaseSpeed = ChaseSpeed * SaveScript.Difficulty;
                     nav.angularSpeed = 25000;
+                     move=true;
                 }
             }
         }
