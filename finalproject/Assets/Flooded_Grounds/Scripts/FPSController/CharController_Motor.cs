@@ -16,7 +16,7 @@ public class CharController_Motor : MonoBehaviour {
 	private GameObject cam;
 
     public GameObject cam1;
-    public GameObject camNight;
+   // public GameObject camNight;
     private NavMeshAgent nav;
     private bool AIActive = true;
 
@@ -52,7 +52,7 @@ public class CharController_Motor : MonoBehaviour {
             Cursor.visible = false;
             speed = WalkSpeed;
             cam = cam1;
-            camNight.gameObject.SetActive(false);
+        //    camNight.gameObject.SetActive(false);
             LightBreathing.gameObject.SetActive(false);
             HeavyBreathing.gameObject.SetActive(false);
             nav = GetComponent<NavMeshAgent>();
@@ -191,7 +191,7 @@ public class CharController_Motor : MonoBehaviour {
         if (SaveScript.NighVision == false)
         {
             cam = cam1;
-            camNight.gameObject.SetActive(false);
+         //   camNight.gameObject.SetActive(false);
             SaveScript.NighVision = false;
         }
 
@@ -199,15 +199,15 @@ public class CharController_Motor : MonoBehaviour {
         {
             if(SaveScript.NighVision == false)
             {
-                camNight.gameObject.SetActive(true);
-                cam = camNight;
+             //   camNight.gameObject.SetActive(true);
+              //  cam = camNight;
                 SaveScript.NighVision = true;
             }
 
            else 
             {
                 cam = cam1;
-                camNight.gameObject.SetActive(false);
+            //    camNight.gameObject.SetActive(false);
                 SaveScript.NighVision = false;
             }
         }

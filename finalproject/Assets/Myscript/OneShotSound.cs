@@ -5,6 +5,7 @@ using UnityEngine;
 public class OneShotSound : MonoBehaviour
 {
     [SerializeField] GameObject SoundSource;
+    [SerializeField] bool SoundLoop = false;
 
     // Start is called before the first frame update
    void OnTriggerEnter (Collider other)
@@ -13,7 +14,12 @@ public class OneShotSound : MonoBehaviour
     if(other.gameObject.CompareTag("Player"))
     {
         SoundSource.gameObject.SetActive(true);
-        Destroy(gameObject,7);
+
+            if (SoundLoop == false)
+            {
+                Destroy(gameObject, 7);
+            }
+          
     }
    }
 }

@@ -28,7 +28,7 @@ MonoBehaviour:
   fog:
     m_Enabled: 1
     m_Settings:
-      excludeSkybox: 0
+      excludeSkybox: 1
   antialiasing:
     m_Enabled: 1
     m_Settings:
@@ -56,19 +56,19 @@ MonoBehaviour:
       reflection:
         blendType: 0
         reflectionQuality: 0
-        maxDistance: 100
-        iterationCount: 256
+        maxDistance: 25
+        iterationCount: 121
         stepSize: 3
         widthModifier: 0.5
         reflectionBlur: 1
         reflectBackfaces: 0
       intensity:
-        reflectionMultiplier: 1
+        reflectionMultiplier: 0.32
         fadeDistance: 100
         fresnelFade: 1
         fresnelFadePower: 1
       screenEdgeMask:
-        intensity: 0.03
+        intensity: 0.075
   depthOfField:
     m_Enabled: 0
     m_Settings:
@@ -101,11 +101,11 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 1.4
+        intensity: 0.4
         threshold: 0.7
-        softKnee: 0.8
-        radius: 5.6
-        antiFlicker: 0
+        softKnee: 0.867
+        radius: 6.22
+        antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
