@@ -30,10 +30,10 @@ public class EnemyDead : MonoBehaviour
           {
               SaveScript.Enemy5 = 0;
           }
-          if (EnemyNumber == 6)
-          {
+         // if (EnemyNumber == 6)
+        //  {
               SaveScript.Enemy6 = 0;
-          }
+        //  }
       }
      
     }
