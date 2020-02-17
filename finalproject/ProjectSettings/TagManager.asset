@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - EnemyTarget
+  - PBat
+  - TriggerPlayer
+  - PAxe
+  - PKnife
+  - PickUp
+  - Water
+  - HostageTrigger
   layers:
   - Default
   - TransparentFX

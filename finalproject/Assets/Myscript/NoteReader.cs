@@ -23,6 +23,10 @@ public class NoteReader : MonoBehaviour
             Note.gameObject.SetActive(true);
             Cursor.visible = true;
 
+          
+        }
+        if (SaveScript.ReadNoteWall == true)
+        {
             NoteWall.gameObject.SetActive(true);
             Cursor.visible = true;
         }
@@ -31,8 +35,8 @@ public class NoteReader : MonoBehaviour
     {
         SaveScript.ReadNote = false;
         Note.gameObject.SetActive(false);
-
-        Note.gameObject.SetActive(false);
+        SaveScript.ReadNoteWall = false;
+        NoteWall.gameObject.SetActive(false);
         Cursor.visible = true;
     }
 }

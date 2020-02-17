@@ -14,21 +14,21 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] Transform Target6;
     [SerializeField] int waitTime = 0;
  
-    [SerializeField] int EnemyNumber;
+    [SerializeField]  public int EnemyNumber;
     [SerializeField] string TargetName;
-    [SerializeField] string TargetDescriptor;
+    [SerializeField] public string TargetDescriptor;
 
 
-    private int CurrentTarget = 1;
+    public int CurrentTarget = 1;
     private Transform TargetPosition;
-    private int LastTarget = 1;
+    public int LastTarget = 1;
     private Animator anim;
   private bool Contact = false;
 
 
 
     // Start is called before the first frame update
-    void Start()
+   void Start()
     {
         
         TargetPosition = Target1;

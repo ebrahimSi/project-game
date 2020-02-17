@@ -2,30 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
-public class CharController_Motor : MonoBehaviour {
+public class CharController_Motor : MonoBehaviour
+{
 
-	private float speed = 10.0f;
+    private float speed = 10.0f;
 
     public float WalkSpeed = 7.0f;
     public float RunSpeed = 12.0f;
 
-	public float sensitivity = 30.0f;
-	public float WaterHeight = 15.5f;
-	CharacterController character;
-	private GameObject cam;
+    public float sensitivity = 30.0f;
+    public float WaterHeight = 15.5f;
+    CharacterController character;
+    private GameObject cam;
 
     public GameObject cam1;
-   // public GameObject camNight;
+    // public GameObject camNight;
     private NavMeshAgent nav;
     private bool AIActive = true;
 
-   // public bool NighVision = false;
+    // public bool NighVision = false;
 
     float moveFB, moveLR;
-	float rotX, rotY;
-	public bool webGLRightClickRotation = true;
-	float gravity = -9.8f;
+    float rotX, rotY;
+    public bool webGLRightClickRotation = true;
+    float gravity = -9.8f;
     public float Stamina = 10f;
     public float MaxStamina = 10f;
     public int DecayRate = 1;
@@ -43,16 +45,18 @@ public class CharController_Motor : MonoBehaviour {
 
 
 
-    void Start(){
-		//LockCursor ();
-		character = GetComponent<CharacterController> ();
-		if (Application.isEditor) {
-			webGLRightClickRotation = false;
-			sensitivity = sensitivity * 1.5f;
+    void Start()
+    {
+        //LockCursor ();
+        character = GetComponent<CharacterController>();
+        if (Application.isEditor)
+        {
+            webGLRightClickRotation = false;
+            sensitivity = sensitivity * 1.5f;
             Cursor.visible = false;
             speed = WalkSpeed;
             cam = cam1;
-        //    camNight.gameObject.SetActive(false);
+            //    camNight.gameObject.SetActive(false);
             LightBreathing.gameObject.SetActive(false);
             HeavyBreathing.gameObject.SetActive(false);
             nav = GetComponent<NavMeshAgent>();
@@ -64,21 +68,26 @@ public class CharController_Motor : MonoBehaviour {
     }
 
 
-	void CheckForWaterHeight(){
-		if (transform.position.y < WaterHeight) {
-			gravity = 0f;			
-		} else {
-			gravity = -9.8f;
-		}
-	}
-
-
-
-	void Update(){
-
-        if(LightBreath == false)
+    void CheckForWaterHeight()
+    {
+        if (transform.position.y < WaterHeight)
         {
-            if(Stamina < 3)
+            gravity = 0f;
+        }
+        else
+        {
+            gravity = -9.8f;
+        }
+    }
+
+
+
+    void Update()
+    {
+
+        if (LightBreath == false)
+        {
+            if (Stamina < 3)
             {
                 LightBreathing.gameObject.SetActive(true);
                 HeavyBreathing.gameObject.SetActive(false);
@@ -121,24 +130,24 @@ public class CharController_Motor : MonoBehaviour {
 
 
 
-        if(Stamina > 0)
+        if (Stamina > 0)
         {
 
-       
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = RunSpeed;
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = RunSpeed;
                 Stamina = Stamina - DecayRate * Time.deltaTime;
-                if(Stamina < 0)
+                if (Stamina < 0)
                 {
                     Stamina = 0;
                 }
-        }
-        else
-        {
-            speed = WalkSpeed;
+            }
+            else
+            {
+                speed = WalkSpeed;
                 Stamina = Stamina + RefillRate * Time.deltaTime;
-                if(Stamina > MaxStamina)
+                if (Stamina > MaxStamina)
                 {
                     Stamina = MaxStamina;
                 }
@@ -146,7 +155,7 @@ public class CharController_Motor : MonoBehaviour {
         }
 
 
-        if(Stamina == 0)
+        if (Stamina == 0)
         {
             speed = WalkSpeed;
             StartCoroutine(StaminaRefill());
@@ -157,7 +166,7 @@ public class CharController_Motor : MonoBehaviour {
 
 
 
-        if(SaveScript.PlayerHealth < 5)
+        if (SaveScript.PlayerHealth < 5)
         {
             LowHealthSound.gameObject.SetActive(true);
 
@@ -169,10 +178,11 @@ public class CharController_Motor : MonoBehaviour {
 
         }
 
-        if(SaveScript.PlayerHealth <= 0)
+        if (SaveScript.PlayerHealth <= 0)
         {
             PlayerDeath.gameObject.SetActive(true);
-
+            StartCoroutine(WaitForMain());
+            SceneManager.LoadScene(0);
         }
 
 
@@ -191,60 +201,65 @@ public class CharController_Motor : MonoBehaviour {
         if (SaveScript.NighVision == false)
         {
             cam = cam1;
-         //   camNight.gameObject.SetActive(false);
+            //   camNight.gameObject.SetActive(false);
             SaveScript.NighVision = false;
         }
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            if(SaveScript.NighVision == false)
+            if (SaveScript.NighVision == false)
             {
-             //   camNight.gameObject.SetActive(true);
-              //  cam = camNight;
+                //   camNight.gameObject.SetActive(true);
+                //  cam = camNight;
                 SaveScript.NighVision = true;
             }
 
-           else 
+            else
             {
                 cam = cam1;
-            //    camNight.gameObject.SetActive(false);
+                //    camNight.gameObject.SetActive(false);
                 SaveScript.NighVision = false;
             }
         }
 
-		moveFB = Input.GetAxis ("Horizontal") * speed;
-		moveLR = Input.GetAxis ("Vertical") * speed;
+        moveFB = Input.GetAxis("Horizontal") * speed;
+        moveLR = Input.GetAxis("Vertical") * speed;
 
-		rotX = Input.GetAxis ("Mouse X") * sensitivity;
-		rotY = Input.GetAxis ("Mouse Y") * sensitivity;
+        rotX = Input.GetAxis("Mouse X") * sensitivity;
+        rotY = Input.GetAxis("Mouse Y") * sensitivity;
 
-		//rotX = Input.GetKey (KeyCode.Joystick1Button4);
-		//rotY = Input.GetKey (KeyCode.Joystick1Button5);
+        //rotX = Input.GetKey (KeyCode.Joystick1Button4);
+        //rotY = Input.GetKey (KeyCode.Joystick1Button5);
 
-		CheckForWaterHeight ();
-
-
-		Vector3 movement = new Vector3 (moveFB, gravity, moveLR);
+        CheckForWaterHeight();
 
 
-
-		if (webGLRightClickRotation) {
-			if (Input.GetKey (KeyCode.Mouse0)) {
-				CameraRotation (cam, rotX, rotY);
-			}
-		} else if (!webGLRightClickRotation) {
-			CameraRotation (cam, rotX, rotY);
-		}
-
-		movement = transform.rotation * movement;
-		character.Move (movement * Time.deltaTime);
-	}
+        Vector3 movement = new Vector3(moveFB, gravity, moveLR);
 
 
-	void CameraRotation(GameObject cam, float rotX, float rotY){		
-		transform.Rotate (0, rotX * Time.deltaTime, 0);
-		cam.transform.Rotate (-rotY * Time.deltaTime, 0, 0);
-	}
+
+        if (webGLRightClickRotation)
+        {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                CameraRotation(cam, rotX, rotY);
+            }
+        }
+        else if (!webGLRightClickRotation)
+        {
+            CameraRotation(cam, rotX, rotY);
+        }
+
+        movement = transform.rotation * movement;
+        character.Move(movement * Time.deltaTime);
+    }
+
+
+    void CameraRotation(GameObject cam, float rotX, float rotY)
+    {
+        transform.Rotate(0, rotX * Time.deltaTime, 0);
+        cam.transform.Rotate(-rotY * Time.deltaTime, 0, 0);
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -268,11 +283,14 @@ public class CharController_Motor : MonoBehaviour {
     IEnumerator StaminaRefill()
     {
         yield return new WaitForSeconds(MaxStamina);
-        if(Stamina == 0)
+        if (Stamina == 0)
         {
             Stamina = MaxStamina;
         }
     }
 
-
+    IEnumerator WaitForMain()
+    {
+        yield return new WaitForSeconds(15f);
+    }
 }

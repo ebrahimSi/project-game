@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] Transform Player;
+    [SerializeField] Transform Target1;
     [SerializeField] float ChaseSpeed = 10.5f;
     private float NewChaseSpeed = 0.0f;
     [SerializeField] GameObject Patrol;
@@ -44,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
         if (RunToPlayer == true)
         {
             DistanceToPlayer = Vector3.Distance(Player.position, transform.position);
-            if (DistanceToPlayer < MaxDistance)
+           if (DistanceToPlayer < MaxDistance)
             {
                 if (MusicOn == false)
                 {
@@ -52,15 +53,11 @@ public class EnemyAttack : MonoBehaviour
                     MusicOn = true;
                 }
             }
-            else if (DistanceToPlayer > MaxDistance)
-            {
-                if (MusicOn == true)
-                {
-                    ChaseMusic.gameObject.SetActive(false);
-                    MusicOn = false;
-                }
-            }
+          
+            if(RunToPlayer=false){
             Patrol.gameObject.SetActive(false);
+}
+
             nav.speed = NewChaseSpeed;
             if(move==true){
             nav.SetDestination(Player.position);
@@ -78,6 +75,7 @@ public class EnemyAttack : MonoBehaviour
                 }
                 if (IHaveAxe == true)
                 {
+                   
                     move=false;
                     anim.SetBool("AxeAttacks", true);
                     anim.SetBool("Damaging", true);
@@ -144,6 +142,26 @@ public class EnemyAttack : MonoBehaviour
                      move=true;
                 }
             }
+               if (DistanceToPlayer > MaxDistance)
+            {
+                if (MusicOn == true)
+                {
+                    ChaseMusic.gameObject.SetActive(false);
+                    MusicOn = false;
+                    
+                   nav.SetDestination(Target1.position);
+                    RunToPlayer=false;
+                    move=false;
+                    Patrol.gameObject.SetActive(true);  
+                   Patrol.GetComponent<EnemyMove>().LastTarget=1;
+                    Patrol.GetComponent<EnemyMove>().CurrentTarget=1;
+                Patrol.GetComponent<EnemyMove>().TargetDescriptor = Patrol.GetComponent<EnemyMove>().EnemyNumber + "TargetCube1";
+                    anim.SetBool("Alert", false);
+                   nav.speed =1.5f;
+                   
+                }
+            }
+             
         }
     }
 }

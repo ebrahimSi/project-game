@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
+    [SerializeField] int NoteNumber=0;
     [SerializeField] GameObject Pickup;
     [SerializeField] GameObject PickupMessage;
 
@@ -105,7 +106,12 @@ public class PickUpItem : MonoBehaviour
 
         if (PickupType == 7)
         {
+            if(NoteNumber==1){
             SaveScript.ReadNote = true;
+}else if(NoteNumber==2)
+{
+ SaveScript.ReadNoteWall = true;
+}
             
 
         }
