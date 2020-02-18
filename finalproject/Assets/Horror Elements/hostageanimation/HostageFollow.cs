@@ -40,6 +40,7 @@ public class HostageFollow : MonoBehaviour
                 move = true;
                 nav.speed = 3.5f;
                 anim.SetBool("IsWallking", true);
+                nav.SetDestination(Player.position);
             }
         }
 
