@@ -8,7 +8,7 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] GameObject Pickup;
     [SerializeField] GameObject PickupMessage;
 
-    [Tooltip("1 = apple, 2 = battery, 3 = knife, 4 = bat, 5 = axe, 6 = gun, 7 = Note")]
+    [Tooltip("1 = apple, 2 = battery, 3 = knife, 4 = bat, 5 = axe, 6 = gun, 7 = Note, 8 = key")]
     [SerializeField] int PickupType;
 
     private bool PickupActive = false;
@@ -112,9 +112,15 @@ public class PickUpItem : MonoBehaviour
 {
  SaveScript.ReadNoteWall = true;
 }
-            
+         
+           
 
         }
+if (PickupType == 8)
+        {
+            SaveScript.HaveKey = true;
+            Destroy(Pickup, 0.2f);
 
+        }
     }
 }
