@@ -35,5 +35,6 @@ public class SaveScript : MonoBehaviour
     public static int SaveLocation = 0;
     
     public static bool HaveKey=false;
-
+    public static bool Gass = false;
+     public static bool Hostage = false;
 }

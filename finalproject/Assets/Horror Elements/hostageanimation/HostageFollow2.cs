@@ -12,26 +12,41 @@ public class HostageFollow2 : MonoBehaviour
     //public GameObject TheNPC;
     //public float followSpeed;
     // public RaycastHit Shot;
+    private bool Stop = false;
     void Start() {
         anim = GetComponent<Animator>();
     }
     void Update()
     {
-        if (Vector3.Distance(ThePlayer.position, this.transform.position) < 20)
+        if (Stop == false)
         {
-            Vector3 direction = ThePlayer.position - this.transform.position;
-            direction.y = 0;
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-            //   anim.SetBool(IsWallking, true);
-            if (direction.magnitude > 5)
+            if (Vector3.Distance(ThePlayer.position, this.transform.position) < 20)
             {
-                this.transform.Translate(0, 0, 0.05f);
-                anim.SetBool("IsWallking", true);
+                Vector3 direction = ThePlayer.position - this.transform.position;
+                direction.y = 0;
+                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
+                //   anim.SetBool(IsWallking, true);
+                if (direction.magnitude > 5)
+                {
+                    this.transform.Translate(0, 0, 0.05f);
+                    anim.SetBool("IsWallking", true);
+                }
+                else { anim.SetBool("IsWallking", false); }
             }
             else { anim.SetBool("IsWallking", false); }
-        } 
-        else { anim.SetBool("IsWallking",false); }
 
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+      
+        if (other.gameObject.CompareTag("HostageTrigger"))
+        {
+            anim.SetBool("Stop", true);
+            Stop = true;
+            SaveScript.Hostage = true;
+        }
     }
 
 }

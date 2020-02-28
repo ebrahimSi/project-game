@@ -122,5 +122,11 @@ if (PickupType == 8)
             Destroy(Pickup, 0.2f);
 
         }
+if (PickupType == 9)
+        {
+            SaveScript.Gass = true;
+            Destroy(Pickup, 0.2f);
+
+        }
     }
 }
