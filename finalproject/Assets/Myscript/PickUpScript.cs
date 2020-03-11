@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickUpScript : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PickUpScript : MonoBehaviour
     [SerializeField] float Distance = 2.0f;
     [SerializeField] LayerMask ignoreLayers;
     [SerializeField] GameObject PickupMessage;
-
+  
     RaycastHit hit;
 
     private Transform Selected;
@@ -22,12 +23,14 @@ public class PickUpScript : MonoBehaviour
         if(Selection != null)
         {
             PickupMessage.gameObject.SetActive(false);
+           // PickupDiscription.gameObject.SetActive(false);
             Selection = null;
         }
 
         if (Selected == null)
         {
             PickupMessage.gameObject.SetActive(false);
+         //  PickupDiscription.gameObject.SetActive(false);
             SaveScript.CanPickUp = false;
         }
 
@@ -37,6 +40,7 @@ public class PickUpScript : MonoBehaviour
             if(hit.transform.tag == "PickUp")
             {
                 PickupMessage.gameObject.SetActive(true);
+                
                 SaveScript.CanPickUp = true;
             }
 
