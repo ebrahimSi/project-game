@@ -30,7 +30,7 @@ public class MessageDisplay : MonoBehaviour
         MessagePanel.gameObject.SetActive(false);
         Cursor.visible = false;
         Time.timeScale = 1;
-        Destroy(TriggerBox, 0.5f);
+        Destroy(TriggerBox, 0.0f);
     }
 
 }

@@ -1,0 +1,564 @@
+fileFormatVersion: 2
+guid: 1dc049a8b66e1ce439fccb067801d12e
+timeCreated: 1470659227
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Object002
+    100002: Object003
+    100004: Object004
+    100006: //RootNode
+    100008: qte_lock_02
+    100010: qte_lock_02_inside_01
+    100012: qte_lock_02_keyhole
+    100014: qte_lockpick_02
+    100016: qte_pin_01
+    100018: qte_pin_02
+    100020: qte_pin_03
+    100022: qte_pin_04
+    100024: qte_pin_low_01
+    100026: qte_pin_low_02
+    100028: qte_pin_low_03
+    100030: qte_pin_low_04
+    100032: qte_spring_01
+    100034: qte_spring_02
+    100036: qte_spring_03
+    100038: qte_spring_04
+    100040: qte_tension_wrench _02
+    400000: Object002
+    400002: Object003
+    400004: Object004
+    400006: //RootNode
+    400008: qte_lock_02
+    400010: qte_lock_02_inside_01
+    400012: qte_lock_02_keyhole
+    400014: qte_lockpick_02
+    400016: qte_pin_01
+    400018: qte_pin_02
+    400020: qte_pin_03
+    400022: qte_pin_04
+    400024: qte_pin_low_01
+    400026: qte_pin_low_02
+    400028: qte_pin_low_03
+    400030: qte_pin_low_04
+    400032: qte_spring_01
+    400034: qte_spring_02
+    400036: qte_spring_03
+    400038: qte_spring_04
+    400040: qte_tension_wrench _02
+    2300000: Object002
+    2300002: Object003
+    2300004: Object004
+    2300006: qte_lock_02
+    2300008: qte_lock_02_inside_01
+    2300010: qte_lock_02_keyhole
+    2300012: qte_lockpick_02
+    2300014: qte_pin_01
+    2300016: qte_pin_02
+    2300018: qte_pin_03
+    2300020: qte_pin_04
+    2300022: qte_pin_low_01
+    2300024: qte_pin_low_02
+    2300026: qte_pin_low_03
+    2300028: qte_pin_low_04
+    2300030: qte_spring_01
+    2300032: qte_spring_02
+    2300034: qte_spring_03
+    2300036: qte_spring_04
+    2300038: qte_tension_wrench _02
+    3300000: Object002
+    3300002: Object003
+    3300004: Object004
+    3300006: qte_lock_02
+    3300008: qte_lock_02_inside_01
+    3300010: qte_lock_02_keyhole
+    3300012: qte_lockpick_02
+    3300014: qte_pin_01
+    3300016: qte_pin_02
+    3300018: qte_pin_03
+    3300020: qte_pin_04
+    3300022: qte_pin_low_01
+    3300024: qte_pin_low_02
+    3300026: qte_pin_low_03
+    3300028: qte_pin_low_04
+    3300030: qte_spring_01
+    3300032: qte_spring_02
+    3300034: qte_spring_03
+    3300036: qte_spring_04
+    3300038: qte_tension_wrench _02
+    4300000: Object002
+    4300002: Object003
+    4300004: Object004
+    4300006: qte_lockpick_02
+    4300008: qte_pin_low_01
+    4300010: qte_spring_01
+    4300012: qte_lock_02
+    4300014: qte_pin_low_02
+    4300016: qte_spring_02
+    4300018: qte_spring_03
+    4300020: qte_spring_04
+    4300022: qte_pin_low_03
+    4300024: qte_pin_low_04
+    4300026: qte_lock_02_inside_01
+    4300028: qte_pin_01
+    4300030: qte_pin_02
+    4300032: qte_pin_03
+    4300034: qte_pin_04
+    4300036: qte_lock_02_keyhole
+    4300038: qte_tension_wrench _02
+    7400000: qte_lock_02_anim_01
+    7400002: qte_lock_02_anim_02
+    7400004: qte_lock_02_anim_03
+    7400006: qte_lock_02_anim_04
+    7400008: qte_lock_02_anim_idle
+    7400010: qte_lock_02_anim_05
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: qte_lock_02_anim_01
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: qte_lock_02
+        weight: 1
+      - path: qte_lock_02_inside_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole/qte_tension_wrench _02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_03
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_04
+        weight: 1
+      - path: qte_lockpick_02
+        weight: 1
+      - path: qte_pin_low_01
+        weight: 1
+      - path: qte_pin_low_02
+        weight: 1
+      - path: qte_pin_low_03
+        weight: 1
+      - path: qte_pin_low_04
+        weight: 1
+      - path: qte_spring_01
+        weight: 1
+      - path: qte_spring_02
+        weight: 1
+      - path: qte_spring_03
+        weight: 1
+      - path: qte_spring_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: qte_lock_02_anim_02
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: qte_lock_02
+        weight: 1
+      - path: qte_lock_02_inside_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole/qte_tension_wrench _02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_03
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_04
+        weight: 1
+      - path: qte_lockpick_02
+        weight: 1
+      - path: qte_pin_low_01
+        weight: 1
+      - path: qte_pin_low_02
+        weight: 1
+      - path: qte_pin_low_03
+        weight: 1
+      - path: qte_pin_low_04
+        weight: 1
+      - path: qte_spring_01
+        weight: 1
+      - path: qte_spring_02
+        weight: 1
+      - path: qte_spring_03
+        weight: 1
+      - path: qte_spring_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: qte_lock_02_anim_03
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: qte_lock_02
+        weight: 1
+      - path: qte_lock_02_inside_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole/qte_tension_wrench _02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_03
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_04
+        weight: 1
+      - path: qte_lockpick_02
+        weight: 1
+      - path: qte_pin_low_01
+        weight: 1
+      - path: qte_pin_low_02
+        weight: 1
+      - path: qte_pin_low_03
+        weight: 1
+      - path: qte_pin_low_04
+        weight: 1
+      - path: qte_spring_01
+        weight: 1
+      - path: qte_spring_02
+        weight: 1
+      - path: qte_spring_03
+        weight: 1
+      - path: qte_spring_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: qte_lock_02_anim_04
+      takeName: Take 001
+      firstFrame: 180
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: qte_lock_02
+        weight: 1
+      - path: qte_lock_02_inside_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole/qte_tension_wrench _02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_03
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_04
+        weight: 1
+      - path: qte_lockpick_02
+        weight: 1
+      - path: qte_pin_low_01
+        weight: 1
+      - path: qte_pin_low_02
+        weight: 1
+      - path: qte_pin_low_03
+        weight: 1
+      - path: qte_pin_low_04
+        weight: 1
+      - path: qte_spring_01
+        weight: 1
+      - path: qte_spring_02
+        weight: 1
+      - path: qte_spring_03
+        weight: 1
+      - path: qte_spring_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: qte_lock_02_anim_idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: qte_lock_02
+        weight: 1
+      - path: qte_lock_02_inside_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole/qte_tension_wrench _02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_03
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_04
+        weight: 1
+      - path: qte_lockpick_02
+        weight: 1
+      - path: qte_pin_low_01
+        weight: 1
+      - path: qte_pin_low_02
+        weight: 1
+      - path: qte_pin_low_03
+        weight: 1
+      - path: qte_pin_low_04
+        weight: 1
+      - path: qte_spring_01
+        weight: 1
+      - path: qte_spring_02
+        weight: 1
+      - path: qte_spring_03
+        weight: 1
+      - path: qte_spring_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: qte_lock_02_anim_05
+      takeName: Take 001
+      firstFrame: 250
+      lastFrame: 260
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: qte_lock_02
+        weight: 1
+      - path: qte_lock_02_inside_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_lock_02_keyhole/qte_tension_wrench _02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_01
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_02
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_03
+        weight: 1
+      - path: qte_lock_02_inside_01/qte_pin_04
+        weight: 1
+      - path: qte_lockpick_02
+        weight: 1
+      - path: qte_pin_low_01
+        weight: 1
+      - path: qte_pin_low_02
+        weight: 1
+      - path: qte_pin_low_03
+        weight: 1
+      - path: qte_pin_low_04
+        weight: 1
+      - path: qte_spring_01
+        weight: 1
+      - path: qte_spring_02
+        weight: 1
+      - path: qte_spring_03
+        weight: 1
+      - path: qte_spring_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

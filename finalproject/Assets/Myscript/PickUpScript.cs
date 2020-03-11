@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PickUpScript : MonoBehaviour
 {
 
-    [SerializeField] float Distance = 2.0f;
+    [SerializeField] float Distance = 1.0f;
     [SerializeField] LayerMask ignoreLayers;
     [SerializeField] GameObject PickupMessage;
   

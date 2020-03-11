@@ -58,16 +58,16 @@ public class EnemyHealth : MonoBehaviour
                 HitEnemy.Play(0);
             }
         }
-        if (other.gameObject.CompareTag("PGun"))
-        {
-            if (PlayerHitMe == false)
-            {
-                PlayerHitMe = true;
-                EnemysHealth -= GunDamage;
-                anim.SetTrigger("React");
-                HitEnemy.Play(0);
-            }
-        }
+        //if (other.gameObject.CompareTag("PGun"))
+        //{
+        //    if (PlayerHitMe == false)
+        //    {
+        //        PlayerHitMe = true;
+        //        EnemysHealth -= GunDamage;
+        //        anim.SetTrigger("React");
+        //        HitEnemy.Play(0);
+        //    }
+        //}
     }
     private void OnTriggerExit(Collider other)
     {
@@ -92,12 +92,12 @@ public class EnemyHealth : MonoBehaviour
                 PlayerHitMe = false;
             }
         }
-        if (other.gameObject.CompareTag("PGun"))
-        {
-            if (PlayerHitMe == true)
-            {
-                PlayerHitMe = false;
-            }
-        }
+        //if (other.gameObject.CompareTag("PGun"))
+        //{
+        //    if (PlayerHitMe == true)
+        //    {
+        //        PlayerHitMe = false;
+        //    }
+        //}
     }
 }

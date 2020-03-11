@@ -1,0 +1,81 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DoorTrigger : MonoBehaviour
+{
+    Animator dAnim;
+    AudioSource aSource;
+    AudioSource bSource;
+    public GameObject LockPrefab;
+    public GameObject Adoor;
+    public GameObject Adoorframe;
+    public GameObject mPlayer;
+    public GameObject statusPicture;
+    public Image uiTextureLockPin;
+    public Image uiTextureUnlocked;
+    public bool isCracked;
+    bool hasEntered;
+    bool dStatus;
+
+    void Start()
+    {
+        dAnim = transform.parent.GetComponent<Animator>();
+        aSource = Adoor.GetComponent<AudioSource>();
+        bSource = Adoorframe.GetComponent<AudioSource>();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        hasEntered = true;
+        if (!isCracked)
+            statusPicture.SetActive(true);
+
+        else
+        {
+            uiTextureUnlocked.gameObject.SetActive(true);
+        }
+    }
+
+
+
+
+
+    void OnTriggerExit(Collider other)
+    {
+        hasEntered = false;
+        statusPicture.SetActive(false);
+        uiTextureUnlocked.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        if (hasEntered)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (!isCracked)
+                {
+                    if (mPlayer.GetComponent<Inventar>()._lpCount > 0)
+                    {
+                        aSource.Play();
+                        LockPrefab.SetActive(true);
+                        mPlayer.SetActive(false);
+                        statusPicture.SetActive(false);
+                        uiTextureLockPin.gameObject.SetActive(true);
+
+                    }
+                }
+                else
+                {
+                    bSource.Play();
+                    dStatus = !dStatus;
+                    dAnim.SetBool("Status", dStatus);
+                    uiTextureUnlocked.gameObject.SetActive(true);
+                }
+            }
+        }
+    }
+}
