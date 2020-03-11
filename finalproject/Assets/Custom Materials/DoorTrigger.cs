@@ -28,14 +28,16 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
-        hasEntered = true;
-        if (!isCracked)
-            statusPicture.SetActive(true);
-
-        else
+        if (other.gameObject.CompareTag("Player"))
         {
-            uiTextureUnlocked.gameObject.SetActive(true);
+            hasEntered = true;
+            if (!isCracked)
+                statusPicture.SetActive(true);
+
+            else
+            {
+                uiTextureUnlocked.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -45,9 +47,12 @@ public class DoorTrigger : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        hasEntered = false;
-        statusPicture.SetActive(false);
-        uiTextureUnlocked.gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            hasEntered = false;
+            statusPicture.SetActive(false);
+            uiTextureUnlocked.gameObject.SetActive(false);
+        }
     }
 
     void Update()

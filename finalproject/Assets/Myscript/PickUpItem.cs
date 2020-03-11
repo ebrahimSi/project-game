@@ -9,6 +9,7 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] GameObject Pickup;
     [SerializeField] GameObject PickupMessage;
     [SerializeField] GameObject PickupDiscription;
+    [SerializeField] GameObject Pleyer;
     [SerializeField] Text MassageText;
     [SerializeField] public string ItemDiscription;
     [Tooltip("1 = apple, 2 = battery, 3 = knife, 4 = bat, 5 = axe, 6 = gun, 7 = Note, 8 = key")]
@@ -136,6 +137,16 @@ if (PickupType == 9)
             Destroy(Pickup, 0.2f);
 
         }
+if (PickupType == 10)
+        {
+          
+            Pleyer.GetComponent<Inventar>()._lpCount += 1;
+           Destroy(Pickup, 0.2f);
+
+        }
+ 
+           
+
  PickupDiscription.gameObject.SetActive(false);
             MassageText.text="";
     }

@@ -30,10 +30,15 @@ public class HostageFollow2 : MonoBehaviour
                 {
                     this.transform.Translate(0, 0, 0.05f);
                     anim.SetBool("IsWallking", true);
+                    SaveScript.Hostage = true;
                 }
-                else { anim.SetBool("IsWallking", false); }
+                else { anim.SetBool("IsWallking", false);
+                    SaveScript.Hostage = false;
+                }
             }
-            else { anim.SetBool("IsWallking", false); }
+            else { anim.SetBool("IsWallking", false);
+                SaveScript.Hostage = false;
+            }
 
         }
     }
