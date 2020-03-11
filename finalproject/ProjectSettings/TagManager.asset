@@ -13,6 +13,7 @@ TagManager:
   - PickUp
   - Water
   - HostageTrigger
+  - BallTrigger
   layers:
   - Default
   - TransparentFX

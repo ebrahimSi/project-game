@@ -61,12 +61,16 @@ public class TrigGreen : MonoBehaviour
 
     void OnTriggerEnter(Collider gPointer)
     {
-        hasEntered = true;
+
+            hasEntered = true;
+       
     }
 
     void OnTriggerExit(Collider gPointer)
     {
-        hasEntered = false;
+       
+            hasEntered = true;
+     
     }
 
     void Update()
@@ -87,6 +91,7 @@ public class TrigGreen : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            
             stopBall = true;
             if (hasEntered)
             {
@@ -114,6 +119,7 @@ public class TrigGreen : MonoBehaviour
                 cameraShake = true;
                 showTexture = true;
                 cAnim.SetInteger("State", animState = 0);
+              
             }
         }
 
