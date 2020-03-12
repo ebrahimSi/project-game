@@ -26,7 +26,7 @@ public class JohnTrig : MonoBehaviour
         TextBox.GetComponent<Text>().text = "johnathaaaaan !!";
         yield return new WaitForSeconds(1.5f);
         TextBox.GetComponent<Text>().text = "";
-         Destroy(TextBox);
+        Destroy(this);
 
 
     }

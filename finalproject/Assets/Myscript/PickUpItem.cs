@@ -14,6 +14,7 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] public string ItemDiscription;
     [Tooltip("1 = apple, 2 = battery, 3 = knife, 4 = bat, 5 = axe, 6 = gun, 7 = Note, 8 = key")]
     [SerializeField] int PickupType;
+     public  GameObject TextBox;
 
     private bool PickupActive = false;
 
@@ -51,6 +52,7 @@ public class PickUpItem : MonoBehaviour
                 }else if(Input.GetKeyDown(KeyCode.I)){
                      PickupDiscription.gameObject.SetActive(true);
                    MassageText.text=ItemDiscription;
+                     StartCoroutine(ScenePlayer());
 }
           }
         }
@@ -149,5 +151,43 @@ if (PickupType == 10)
 
  PickupDiscription.gameObject.SetActive(false);
             MassageText.text="";
+    }
+       IEnumerator ScenePlayer()
+    {
+        if(PickupType==1){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "apple";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "applllllle";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==2){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "Batteries";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "Batteriesssssssss";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==8){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "key";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "keyyyyy";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==9){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "gass";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "gasssssss";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }
+
+
     }
 }

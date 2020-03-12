@@ -27,6 +27,7 @@ public class TrigGreen : MonoBehaviour
     public float textureEndTime;
     public float shakeMlt;
     public float PointerSpeed;
+    public GameObject TextBox;
 
     float T;
     float T2;
@@ -69,7 +70,7 @@ public class TrigGreen : MonoBehaviour
     void OnTriggerExit(Collider gPointer)
     {
        
-            hasEntered = true;
+            hasEntered = false;
      
     }
 
@@ -103,14 +104,19 @@ public class TrigGreen : MonoBehaviour
                     blockPress = true;
                     if (animState == 4)
                     {
+                        StartCoroutine(ScenePlayer(4));
                         dSource.Play();
                         Invoke("Switcher", 2f);
                         DoorTrigger.isCracked = true;
-
+                       
 
 
 
                     }
+                    if (animState == 2) {
+                        StartCoroutine(ScenePlayer(2));
+                    }
+
                 }
             }
             else
@@ -119,7 +125,8 @@ public class TrigGreen : MonoBehaviour
                 cameraShake = true;
                 showTexture = true;
                 cAnim.SetInteger("State", animState = 0);
-              
+                StartCoroutine(ScenePlayer(5));
+
             }
         }
 
@@ -183,6 +190,37 @@ public class TrigGreen : MonoBehaviour
         transform.parent.gameObject.SetActive(false);
         mPlayer.SetActive(true);
         uiTextureLockPin.gameObject.SetActive(false);
+    }
+    IEnumerator ScenePlayer(int number)
+    {
+       
+        if (number == 2)
+        {
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "i am close to solve it ";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "";
+           
+        }
+        if (number == 4)
+        {
+           
+            TextBox.GetComponent<Text>().text = "that great";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "";
+
+        }
+        if (number == 5)
+        {
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "no";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "again...?";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "";
+
+        }
+
     }
 
 

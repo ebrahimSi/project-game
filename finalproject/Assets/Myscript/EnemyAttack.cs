@@ -42,9 +42,11 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DistanceToPlayer = Vector3.Distance(Player.position, transform.position);
+         
         if (RunToPlayer == true)
         {
-            DistanceToPlayer = Vector3.Distance(Player.position, transform.position);
+            
            if (DistanceToPlayer < MaxDistance)
             {
                 if (MusicOn == false)
@@ -142,7 +144,9 @@ public class EnemyAttack : MonoBehaviour
                      move=true;
                 }
             }
-               if (DistanceToPlayer > MaxDistance)
+              
+            }
+        if (DistanceToPlayer > MaxDistance)
             {
                 if (MusicOn == true)
                 {
@@ -156,12 +160,19 @@ public class EnemyAttack : MonoBehaviour
                    Patrol.GetComponent<EnemyMove>().LastTarget=1;
                     Patrol.GetComponent<EnemyMove>().CurrentTarget=1;
                 Patrol.GetComponent<EnemyMove>().TargetDescriptor = Patrol.GetComponent<EnemyMove>().EnemyNumber + "TargetCube1";
+                anim.SetBool("Alert", true);
+                    anim.SetBool("GunAttacks", false);
+                  anim.SetBool("Damaging", false);
+                 anim.SetBool("KnifeAttacks", false);
+                  anim.SetBool("Damaging", false);
+                anim.SetBool("AxeAttacks", false);
+                  anim.SetBool("Damaging", false);
+                anim.SetBool("BatAttacks", false);
+                    anim.SetBool("Damaging", false);
                     anim.SetBool("Alert", false);
                    nav.speed =1.5f;
                    
-                }
-            }
+                }}
              
         }
     }
-}

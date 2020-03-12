@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     private Animator anim;
     private bool PlayerHitMe = false;
     AudioSource HitEnemy;
+     [SerializeField] GameObject ChaseMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
         if (EnemysHealth <= 0)
         {
             anim.SetBool("Die", true);
+             ChaseMusic.gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)

@@ -11,6 +11,7 @@ public class BoatScript : MonoBehaviour
     [SerializeField] Text MassageText;
     private bool MenuReturn = false;
     [SerializeField] GameObject MainMenuLoad;
+    public GameObject TextBox;
     // Start is called before the first frame update
     void Start()
     {
@@ -86,12 +87,14 @@ public class BoatScript : MonoBehaviour
             MassageText.text = "I cant leave without john";
             Enter = false;
             ReturnToGame();
+            StartCoroutine(ScenePlayer(1));
         }
         else if (SaveScript.Gass == false)
         {
             MassageText.text = "I need to find gasoline to start the boat";
             Enter = false;
             ReturnToGame();
+            StartCoroutine(ScenePlayer(2));
         }
         else
         {
@@ -99,6 +102,31 @@ public class BoatScript : MonoBehaviour
             MassageText.text = " I cant leave without john";
             Enter = false;
             ReturnToGame();
+            StartCoroutine(ScenePlayer(1));
         }
+    }
+    IEnumerator ScenePlayer(int number)
+    {
+        if (number == 1)
+        {
+            yield return new WaitForSeconds(1.5f);
+
+            TextBox.GetComponent<Text>().text = "I cant leave without john !!";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "i neeed john !!";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "";
+        }else  if (number == 2)
+        {
+            yield return new WaitForSeconds(1.5f);
+
+            TextBox.GetComponent<Text>().text = "I need to find gasoline to start the boat !!";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "where the gasoline? !!";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "";
+        }
+
+
     }
 }
