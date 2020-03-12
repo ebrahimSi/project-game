@@ -9,6 +9,8 @@ public class NoteReader : MonoBehaviour
     [SerializeField] GameObject NoteWall;
     [SerializeField] GameObject TextBox;
     private int noteNumber;
+    public AudioSource JohnNote;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +55,14 @@ public class NoteReader : MonoBehaviour
         {
             yield return new WaitForSeconds(1.5f);
 
-            TextBox.GetComponent<Text>().text = "this is Note !!";
+            TextBox.GetComponent<Text>().text = "is this note left by johnathan!?";
+            JohnNote.Play();
             yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "noooote !!";
+            TextBox.GetComponent<Text>().text = "and..who the hell has the key ? ";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "who locked him up ? ";
+            yield return new WaitForSeconds(1.5f);
+            TextBox.GetComponent<Text>().text = "what the hell is going on here!? ";
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "";
         }

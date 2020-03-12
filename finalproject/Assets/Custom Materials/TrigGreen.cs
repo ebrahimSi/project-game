@@ -28,7 +28,8 @@ public class TrigGreen : MonoBehaviour
     public float shakeMlt;
     public float PointerSpeed;
     public GameObject TextBox;
-
+    public AudioSource SolveTwo;
+    public AudioSource PuzzleMistake;
     float T;
     float T2;
     float T3;
@@ -197,7 +198,8 @@ public class TrigGreen : MonoBehaviour
         if (number == 2)
         {
             yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "i am close to solve it ";
+            TextBox.GetComponent<Text>().text = " i've gotta focus  ";
+            SolveTwo.Play();
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "";
            
@@ -213,9 +215,9 @@ public class TrigGreen : MonoBehaviour
         if (number == 5)
         {
             yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "no";
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "again...?";
+            TextBox.GetComponent<Text>().text = "Damn! ";
+            PuzzleMistake.Play();
+           
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "";
 

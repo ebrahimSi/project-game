@@ -15,7 +15,8 @@ public class PickUpItem : MonoBehaviour
     [Tooltip("1 = apple, 2 = battery, 3 = knife, 4 = bat, 5 = axe, 6 = gun, 7 = Note, 8 = key")]
     [SerializeField] int PickupType;
      public  GameObject TextBox;
-
+    public AudioSource AppleLines;
+    public AudioSource GasLines;
     private bool PickupActive = false;
 
     private void OnTriggerEnter(Collider other)
@@ -157,9 +158,10 @@ if (PickupType == 10)
         if(PickupType==1){
         yield return new WaitForSeconds(1.5f);
       
-        TextBox.GetComponent<Text>().text = "apple";
-        yield return new WaitForSeconds(1.5f);
-        TextBox.GetComponent<Text>().text = "applllllle";
+        TextBox.GetComponent<Text>().text = "well.. an apple a day keeps the doctor away";
+            AppleLines.Play();
+        yield return new WaitForSeconds(3.5f);
+        TextBox.GetComponent<Text>().text = "that's something i guess..";
         yield return new WaitForSeconds(1.5f);
         TextBox.GetComponent<Text>().text = "";
         }else  if(PickupType==2){
@@ -181,10 +183,10 @@ if (PickupType == 10)
         }else  if(PickupType==9){
         yield return new WaitForSeconds(1.5f);
       
-        TextBox.GetComponent<Text>().text = "gass";
+        TextBox.GetComponent<Text>().text = "okay..this should work";
+            GasLines.Play();
         yield return new WaitForSeconds(1.5f);
-        TextBox.GetComponent<Text>().text = "gasssssss";
-        yield return new WaitForSeconds(1.5f);
+        
         TextBox.GetComponent<Text>().text = "";
         }
 
