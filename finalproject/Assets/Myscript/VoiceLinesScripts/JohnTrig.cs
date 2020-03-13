@@ -12,7 +12,10 @@ public class JohnTrig : MonoBehaviour
 
    void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(ScenePlayer());
+        if (other.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(ScenePlayer());
+        }
     }
 
    
@@ -20,6 +23,7 @@ public class JohnTrig : MonoBehaviour
 
     IEnumerator ScenePlayer()
     {
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(1.5f);
       
         TextBox.GetComponent<Text>().text = "johnathan !!";

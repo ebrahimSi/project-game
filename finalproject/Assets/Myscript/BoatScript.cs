@@ -12,6 +12,8 @@ public class BoatScript : MonoBehaviour
     private bool MenuReturn = false;
     [SerializeField] GameObject MainMenuLoad;
     public GameObject TextBox;
+    public AudioSource JhonFindSound;
+    public AudioSource gassolineSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -110,7 +112,7 @@ public class BoatScript : MonoBehaviour
         if (number == 1)
         {
             yield return new WaitForSeconds(1.5f);
-
+            JhonFindSound.Play();
             TextBox.GetComponent<Text>().text = "I cant leave without john !!";
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "i neeed john !!";
@@ -119,7 +121,7 @@ public class BoatScript : MonoBehaviour
         }else  if (number == 2)
         {
             yield return new WaitForSeconds(1.5f);
-
+            gassolineSound.Play();
             TextBox.GetComponent<Text>().text = "I need to find gasoline to start the boat !!";
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "where the gasoline? !!";

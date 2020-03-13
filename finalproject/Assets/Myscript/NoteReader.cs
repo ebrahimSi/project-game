@@ -10,7 +10,7 @@ public class NoteReader : MonoBehaviour
     [SerializeField] GameObject TextBox;
     private int noteNumber;
     public AudioSource JohnNote;
-
+    public AudioSource JohnNoteWall;
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +69,7 @@ public class NoteReader : MonoBehaviour
         else if (noteNumber == 2)
         {
             yield return new WaitForSeconds(1.5f);
-
+            JohnNoteWall.Play();
             TextBox.GetComponent<Text>().text = "this is noteWall !!";
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "NoteWall !!";
