@@ -12,6 +12,7 @@ public class FlashLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SaveScript.HaveFlashlightOn==true){
          if (SaveScript.FlashlightOn == false)
         {
             flashLight.gameObject.SetActive(false);
@@ -33,5 +34,5 @@ public class FlashLight : MonoBehaviour
         }
 
     }
-    }
+    }}
 }

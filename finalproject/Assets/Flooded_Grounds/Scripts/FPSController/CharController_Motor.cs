@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class CharController_Motor : MonoBehaviour
 {
 
-    private float speed = 10.0f;
+    public float speed = 10.0f;
 
     public float WalkSpeed = 7.0f;
     public float RunSpeed = 12.0f;

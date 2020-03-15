@@ -13,6 +13,7 @@ public class SaveScript : MonoBehaviour
     public static int Batteries = 0;
     public static bool BatteryClick = false;
     public static bool FlashlightOn = false;
+     public static bool HaveFlashlightOn = false;
     public static bool NighVision = false;
     public static float BatteryPower = 1f;
     public static int PlayerHealth = 30;

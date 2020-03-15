@@ -52,8 +52,10 @@ public class PickUpItem : MonoBehaviour
                     PickupCheck();
                 }else if(Input.GetKeyDown(KeyCode.I)){
                      PickupDiscription.gameObject.SetActive(true);
-                   MassageText.text=ItemDiscription;
-                     StartCoroutine(ScenePlayer());
+                //   MassageText.text=ItemDiscription;
+                  Cursor.visible = true;
+                    Time.timeScale = 0;
+                  
 }
           }
         }
@@ -147,7 +149,13 @@ if (PickupType == 10)
            Destroy(Pickup, 0.2f);
 
         }
- 
+ if (PickupType == 11)
+        {
+          
+           SaveScript.HaveFlashlightOn=true;
+           Destroy(Pickup, 0.2f);
+
+        }
            
 
  PickupDiscription.gameObject.SetActive(false);
@@ -172,7 +180,39 @@ if (PickupType == 10)
         TextBox.GetComponent<Text>().text = "Batteriesssssssss";
         yield return new WaitForSeconds(1.5f);
         TextBox.GetComponent<Text>().text = "";
-        }else  if(PickupType==8){
+        }else  if(PickupType==3){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "knife";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "kinffff";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==4){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "bat";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "battt";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==5){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "axe";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "axeeeeee";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==6){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "gun";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "gunnnnnnnnnn";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else if(PickupType==8){
         yield return new WaitForSeconds(1.5f);
       
         TextBox.GetComponent<Text>().text = "key";
@@ -188,8 +228,34 @@ if (PickupType == 10)
         yield return new WaitForSeconds(1.5f);
         
         TextBox.GetComponent<Text>().text = "";
+        }  if(PickupType==10){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "picklock";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "picklockkkk";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
+        }else  if(PickupType==11){
+        yield return new WaitForSeconds(1.5f);
+      
+        TextBox.GetComponent<Text>().text = "flashlight";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "flashlighttttt";
+        yield return new WaitForSeconds(1.5f);
+        TextBox.GetComponent<Text>().text = "";
         }
 
 
+    }
+     public void ReturnToGame()
+    {
+       
+         PickupDiscription.gameObject.SetActive(false);
+            Cursor.visible = false;
+            Time.timeScale = 1;
+          StartCoroutine(ScenePlayer());
+        
+       
     }
 }
