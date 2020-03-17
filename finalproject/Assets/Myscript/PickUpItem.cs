@@ -156,6 +156,13 @@ if (PickupType == 10)
            Destroy(Pickup, 0.2f);
 
         }
+ if (PickupType == 12)
+        {
+          
+           SaveScript.Bullets+=12;
+           Destroy(Pickup, 0.2f);
+
+        }
            
 
  PickupDiscription.gameObject.SetActive(false);

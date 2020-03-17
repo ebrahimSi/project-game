@@ -26,22 +26,22 @@ public class FootSound : MonoBehaviour
     {
         if (ccm.speed == ccm.RunSpeed)
         {
-            sound1.pitch = 2;
-            sound2.pitch = 2;
-            sound3.pitch = 2;
+            sound1.pitch = 2.5f;
+            sound2.pitch = 2.5f;
+            sound3.pitch = 2.5f;
         }
-        else { sound1.pitch = 1;
-            sound2.pitch = 1;
-            sound3.pitch = 1;
+        else { sound1.pitch = 1.5f;
+            sound2.pitch = 1.5f;
+            sound3.pitch = 1.5f;
         }
-        if (cc.isGrounded == true && cc.velocity.magnitude > 2f && sound1.isPlaying == false && Type==1) {
+        if (cc.isGrounded == true && cc.velocity.magnitude > 3f && sound1.isPlaying == false && Type == 1 && (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D))) {
             sound1.Play();
         }
-        if (cc.isGrounded == true && cc.velocity.magnitude > 2f && sound2.isPlaying == false && Type == 2)
+        if (cc.isGrounded == true && cc.velocity.magnitude > 3f && sound2.isPlaying == false && Type == 2 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             sound2.Play();
         }
-        if (cc.isGrounded == true && cc.velocity.magnitude > 2f && sound3.isPlaying == false && Type == 3)
+        if (cc.isGrounded == true && cc.velocity.magnitude > 3f && sound3.isPlaying == false && Type == 3 && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             sound3.Play();
         }

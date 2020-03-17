@@ -35,6 +35,7 @@ public class SaveScript : MonoBehaviour
     public static int Enemy6 = 1;
     public static int SaveLocation = 0;
     
+    public static int Bullets=0;
     public static bool HaveKey=false;
     public static bool Gass = false;
      public static bool Hostage = false;
