@@ -23,7 +23,7 @@ public class SimpleShoot1 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (SaveScript.Bullets>0)
+            if (SaveScript.Bullets > 0 && SaveScript.CanShot == true)
             {
                 GetComponent<Animator>().SetTrigger("Fire");
                 Shoot();

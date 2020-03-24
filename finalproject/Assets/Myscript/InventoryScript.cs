@@ -28,33 +28,47 @@ public class InventoryScript : MonoBehaviour
     {
 
         InventoryMenu.gameObject.SetActive(false);
-
+         ControlsMenu.ControlsOpen=false;
+        ControlsMenu.OptionsOpen=false;
+        InventoryActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         if(Input.GetKeyDown(KeyCode.Tab))
         {
+                  if(ControlsMenu.ControlsOpen==false&&ControlsMenu.OptionsOpen==false){ 
             if (InventoryActive == false)
             {
+                  
                 ExitInvetory = false;
                 StartCoroutine(InventoryOpen());
-
+                 //  ControlsMenu.CanShow=false;
+                 ControlsMenu.ControlsOpen=true;
+                    ControlsMenu.OptionsOpen=true;
+                    SaveScript.CanShot=false;
+       }
             }
 
-            else if (InventoryActive == true)
+            else 
+           if (InventoryActive == true)
             {
                 if (ExitInvetory == true)
                 { 
+                      if(ControlsMenu.ControlsOpen==true){ 
                 Time.timeScale = 1f;
                 InventoryMenu.gameObject.SetActive(false);
                 InventoryActive = false;
                 Cursor.visible = false;
-                }
+                   ControlsMenu.ControlsOpen=false;
+                          ControlsMenu.OptionsOpen=false;
+                        SaveScript.CanShot=true;
+                }}
             }
-        }
-    }
+        
+    }}
     public void ChoseKnife()
     {
         SaveScript.weaponID = 1;

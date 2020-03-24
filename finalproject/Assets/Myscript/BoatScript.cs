@@ -27,14 +27,19 @@ public class BoatScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-              
+                if (ControlsMenu.ControlsOpen == false  && ControlsMenu.OptionsOpen == false)
+                {
                     if (MenuReturn == false)
                     {
                         BoatMenu.gameObject.SetActive(true);
                         Time.timeScale = 0;
                         Cursor.visible = true;
                         MenuReturn = true;
-                    BoatMessage.gameObject.SetActive(false);
+                        BoatMessage.gameObject.SetActive(false);
+                        ControlsMenu.ControlsOpen = true;
+                        ControlsMenu.OptionsOpen = true;
+                        SaveScript.CanShot = false;
+                    }
                 }
                   //  BoatMenu.gameObject.SetActive(true);
                    // Time.timeScale = 0;
@@ -69,6 +74,9 @@ public class BoatScript : MonoBehaviour
             Time.timeScale = 1;
             MenuReturn = false;
             BoatMessage.gameObject.SetActive(true);
+            ControlsMenu.ControlsOpen = false;
+            ControlsMenu.OptionsOpen = false;
+            SaveScript.CanShot = true;
         }
     }
     public void LoadMenu()

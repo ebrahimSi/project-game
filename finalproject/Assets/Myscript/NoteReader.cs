@@ -27,7 +27,7 @@ public class NoteReader : MonoBehaviour
             Note.gameObject.SetActive(true);
             Cursor.visible = true;
             noteNumber = 1;
-          
+            SaveScript.CanShot = false;
 
 
         }
@@ -36,7 +36,7 @@ public class NoteReader : MonoBehaviour
             NoteWall.gameObject.SetActive(true);
             Cursor.visible = true;
             noteNumber = 2;
-            
+            SaveScript.CanShot = false;
         }
     }
     public void CloseNote()
@@ -47,6 +47,7 @@ public class NoteReader : MonoBehaviour
         NoteWall.gameObject.SetActive(false);
         Cursor.visible = true;
         StartCoroutine(ScenePlayer(noteNumber));
+        SaveScript.CanShot = true;
     }
 
     IEnumerator ScenePlayer(int noteNumber)

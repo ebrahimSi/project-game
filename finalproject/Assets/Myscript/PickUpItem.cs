@@ -51,11 +51,15 @@ public class PickUpItem : MonoBehaviour
                     Debug.Log("Picked up:" + PickupType);
                     PickupCheck();
                 }else if(Input.GetKeyDown(KeyCode.I)){
+                    if(ControlsMenu.ControlsOpen==false&&ControlsMenu.OptionsOpen==false){ 
                      PickupDiscription.gameObject.SetActive(true);
                 //   MassageText.text=ItemDiscription;
                   Cursor.visible = true;
                     Time.timeScale = 0;
-                  
+                         ControlsMenu.ControlsOpen=true;
+                    ControlsMenu.OptionsOpen=true;
+                       SaveScript.CanShot=false;
+                  }
 }
           }
         }
@@ -263,6 +267,9 @@ if (PickupType == 10)
             Time.timeScale = 1;
           StartCoroutine(ScenePlayer());
         
+        ControlsMenu.ControlsOpen=false;
+                    ControlsMenu.OptionsOpen=false;
+        SaveScript.CanShot=true;
        
     }
 }

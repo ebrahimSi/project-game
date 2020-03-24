@@ -20,7 +20,7 @@ public class MessageDisplay : MonoBehaviour
             MessagePanel.gameObject.SetActive(true);
             Cursor.visible = true;
             Time.timeScale = 0;
-
+              SaveScript.CanShot=false;
         }
     }
 
@@ -31,6 +31,7 @@ public class MessageDisplay : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1;
         Destroy(TriggerBox, 0.0f);
+          SaveScript.CanShot=true;
     }
 
 }

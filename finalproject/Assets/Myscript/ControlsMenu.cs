@@ -6,9 +6,10 @@ public class ControlsMenu : MonoBehaviour
 {
 
     [SerializeField] GameObject Controls;
-    private bool ControlsOpen = false;
+    public static bool ControlsOpen = false;
+    
     [SerializeField] GameObject Options;
-    private bool OptionsOpen = false;
+    public static bool OptionsOpen = false;
     private bool SaveMessageActive = false;
     [SerializeField] GameObject SaveMessage;
     private bool MenuReturn = false;
@@ -29,19 +30,32 @@ public class ControlsMenu : MonoBehaviour
         {
             Application.Quit();
         }
+        //
+          if (OptionsOpen == false)
+            {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (ControlsOpen == false)
+                
+            if ( ControlsOpen == false)
             {
                 Controls.gameObject.SetActive(true);
                 ControlsOpen = true;
+                 Cursor.visible = true;
+                    SaveScript.CanShot=false;
+                    
+            Time.timeScale = 0;
             }
-            else if (ControlsOpen == true)
+            else if ( ControlsOpen == true)
             {
                 Controls.gameObject.SetActive(false);
                 ControlsOpen = false;
-            }
+                 Cursor.visible = false;  
+            Time.timeScale = 1;
+                    SaveScript.CanShot=true;
+            }}
         }
+        //
+        if(ControlsOpen==false){
         if (Input.GetKeyDown(KeyCode.O))
         {
             if (OptionsOpen == false)
@@ -49,16 +63,23 @@ public class ControlsMenu : MonoBehaviour
                 Options.gameObject.SetActive(true);
                 Cursor.visible = true;
                 Time.timeScale = 0;
+                    
                 OptionsOpen = true;
+                    SaveScript.CanShot=false;
             }
             else if (OptionsOpen == true)
             {
                 Options.gameObject.SetActive(false);
                 Cursor.visible = false;
                 Time.timeScale = 1;
+                    SaveScript.CanShow = false;
                 OptionsOpen = false;
+                    SaveScript.CanShot=true;
             }
+            //
+           
         }
+         if(OptionsOpen==false){
         if (SaveScript.SaveZone == true)
         {
             if (SaveMessageActive == false)
@@ -83,9 +104,14 @@ public class ControlsMenu : MonoBehaviour
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 MenuReturn = true;
+                         OptionsOpen = true;
+                         ControlsOpen = true;
+                        SaveScript.CanShow = true;
+                        SaveScript.CanShot=false;
             }
         }
     }
+}}
     public void ReturnToGame()
     {
         if (MenuReturn == true)
@@ -94,6 +120,11 @@ public class ControlsMenu : MonoBehaviour
             Cursor.visible = false;
             Time.timeScale = 1;
             MenuReturn = false;
+             OptionsOpen =false;
+                         ControlsOpen = false;
+            SaveScript.CanShow = false;
+            SaveScript.CanShot=true;
+
         }
     }
     public void LoadMenu()
