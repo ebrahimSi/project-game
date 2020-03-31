@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class CharController_Motor : MonoBehaviour
 {
 
@@ -18,7 +18,7 @@ public class CharController_Motor : MonoBehaviour
     private GameObject cam;
 
     public GameObject cam1;
-    // public GameObject camNight;
+     public GameObject camNight;
     private NavMeshAgent nav;
     private bool AIActive = true;
 
@@ -41,7 +41,9 @@ public class CharController_Motor : MonoBehaviour
     public GameObject LowHealthSound;
 
     public GameObject PlayerDeath;
-
+    public  GameObject TextBox;
+     public  GameObject Chapter;
+     public AudioSource CallJohnathan;
 
 
 
@@ -56,7 +58,9 @@ public class CharController_Motor : MonoBehaviour
             Cursor.visible = false;
             speed = WalkSpeed;
             cam = cam1;
-            //    camNight.gameObject.SetActive(false);
+               camNight.gameObject.SetActive(true);
+            cam.gameObject.SetActive(false);
+            StartCoroutine(WaitForcinma());
             LightBreathing.gameObject.SetActive(false);
             HeavyBreathing.gameObject.SetActive(false);
             nav = GetComponent<NavMeshAgent>();
@@ -292,5 +296,26 @@ public class CharController_Motor : MonoBehaviour
     IEnumerator WaitForMain()
     {
         yield return new WaitForSeconds(15f);
+    }
+      IEnumerator WaitForcinma()
+    {
+        TextBox.GetComponent<Text>().text = "ohhh !!";
+         yield return new WaitForSeconds(1.5f);
+     
+        TextBox.GetComponent<Text>().text = "alii !!";
+         CallJohnathan.Play();
+        yield return new WaitForSeconds(2.25f);
+        TextBox.GetComponent<Text>().text = "ali, where are you ?!!";
+        yield return new WaitForSeconds(2.25f);
+        TextBox.GetComponent<Text>().text = "Answer me !!";
+        yield return new WaitForSeconds(2.25f);
+        TextBox.GetComponent<Text>().text = "Where the hell did he go ?";
+         yield return new WaitForSeconds(2.25f);
+        TextBox.GetComponent<Text>().text = "";
+        Chapter.gameObject.SetActive(true);
+       yield return new WaitForSeconds(2.25f);
+        Chapter.gameObject.SetActive(false);
+        cam.gameObject.SetActive(true);
+        camNight.gameObject.SetActive(false);
     }
 }
