@@ -47,10 +47,13 @@ public class PickUpItem : MonoBehaviour
             {
                 if(Input.GetKeyDown(KeyCode.E))
                     {
+                  
                     PickupMessage.gameObject.SetActive(false);
                     Debug.Log("Picked up:" + PickupType);
                     PickupCheck();
                 }else if(Input.GetKeyDown(KeyCode.I)){
+                    if(PickupType!=7){
+                          SaveScript.CanShow=false;
                     if(ControlsMenu.ControlsOpen==false&&ControlsMenu.OptionsOpen==false){ 
                      PickupDiscription.gameObject.SetActive(true);
                 //   MassageText.text=ItemDiscription;
@@ -59,7 +62,7 @@ public class PickUpItem : MonoBehaviour
                          ControlsMenu.ControlsOpen=true;
                     ControlsMenu.OptionsOpen=true;
                        SaveScript.CanShot=false;
-                  }
+                  }}
 }
           }
         }
@@ -270,6 +273,7 @@ if (PickupType == 10)
         ControlsMenu.ControlsOpen=false;
                     ControlsMenu.OptionsOpen=false;
         SaveScript.CanShot=true;
+        SaveScript.CanShow=true;
        
     }
 }

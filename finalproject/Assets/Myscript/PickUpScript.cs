@@ -9,7 +9,7 @@ public class PickUpScript : MonoBehaviour
     [SerializeField] float Distance = 1.0f;
     [SerializeField] LayerMask ignoreLayers;
     [SerializeField] GameObject PickupMessage;
-  
+   [SerializeField] GameObject PickupMessageChild;
     RaycastHit hit;
 
     private Transform Selected;
@@ -23,6 +23,7 @@ public class PickUpScript : MonoBehaviour
         if(Selection != null)
         {
             PickupMessage.gameObject.SetActive(false);
+            PickupMessageChild.gameObject.SetActive(true);
            // PickupDiscription.gameObject.SetActive(false);
             Selection = null;
         }
@@ -30,6 +31,7 @@ public class PickUpScript : MonoBehaviour
         if (Selected == null)
         {
             PickupMessage.gameObject.SetActive(false);
+            PickupMessageChild.gameObject.SetActive(true);
          //  PickupDiscription.gameObject.SetActive(false);
             SaveScript.CanPickUp = false;
         }
@@ -37,12 +39,19 @@ public class PickUpScript : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.forward, out hit, Distance, ~ignoreLayers))
         {
             Selected = hit.transform;
+            if(SaveScript.CanShow==true){
             if(hit.transform.tag == "PickUp")
             {
                 PickupMessage.gameObject.SetActive(true);
                 
                 SaveScript.CanPickUp = true;
             }
+            if(hit.transform.tag == "NotePicUp")
+            {
+                PickupMessage.gameObject.SetActive(true);
+                PickupMessageChild.gameObject.SetActive(false);
+                SaveScript.CanPickUp = true;
+            }}
 
             Selection = Selected;
         }

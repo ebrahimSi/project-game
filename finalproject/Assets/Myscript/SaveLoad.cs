@@ -24,7 +24,9 @@ public class SaveLoad : MonoBehaviour
             SaveScript.Batteries = PlayerPrefs.GetInt("BatteryNumber");
             SaveScript.BatteryPower = PlayerPrefs.GetFloat("PowerBattery");
             SaveScript.PlayerHealth = PlayerPrefs.GetInt("PlayersHealth");
-        //    SaveScript.Bullets = PlayerPrefs.GetInt("BulletsLeft");
+            PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
+            SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1")==1?true:false;
+            //    SaveScript.Bullets = PlayerPrefs.GetInt("BulletsLeft");
             if (PlayerPrefs.GetInt("Knife") == 1)
             {
                 SaveScript.HaveKnife = true;
@@ -57,6 +59,7 @@ public class SaveLoad : MonoBehaviour
             {
                 SaveScript.HaveGun = false;
             }
+          
             if (PlayerPrefs.GetInt("Enemy1a") == 0)
             {
                 EnemyNumber1.gameObject.SetActive(false);
@@ -83,19 +86,19 @@ public class SaveLoad : MonoBehaviour
             }
             if (PlayerPrefs.GetInt("Location") == 1)
             {
-                PlayerCharacter.transform.position = SaveArea1.transform.position;
+                StartCoroutine(ScenePlayer());
             }
             if (PlayerPrefs.GetInt("Location") == 2)
             {
-                PlayerCharacter.transform.position = SaveArea2.transform.position;
+                StartCoroutine(ScenePlayer());
             }
             if (PlayerPrefs.GetInt("Location") == 3)
             {
-                PlayerCharacter.transform.position = SaveArea3.transform.position;
+                StartCoroutine(ScenePlayer());
             }
             if (PlayerPrefs.GetInt("Location") == 4)
             {
-                PlayerCharacter.transform.position = SaveArea4.transform.position;
+                StartCoroutine(ScenePlayer());
             }
         }
         if (MenuScript.LoadGame == false)
@@ -120,4 +123,18 @@ public class SaveLoad : MonoBehaviour
             SaveScript.SaveLocation = 0;
         }
     }
+    IEnumerator ScenePlayer()
+    {
+
+        yield return new WaitForSeconds(0.00000000000000000000000000000000000000000000000009f);
+        PlayerCharacter.transform.position = new Vector3(650.6f, 22.13f, 370.8f);
+       
+
+
+
+
+    }
+
+
+
 }

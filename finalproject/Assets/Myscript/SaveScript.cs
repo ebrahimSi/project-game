@@ -17,6 +17,7 @@ public class SaveScript : MonoBehaviour
     public static bool NighVision = false;
     public static float BatteryPower = 1f;
     public static int PlayerHealth = 30;
+     public static int SaveNumber = 0;
     public static bool DisplayHealth = true;
     public static bool HaveKnife = true;
     public static bool HaveBat = true;
@@ -40,5 +41,6 @@ public class SaveScript : MonoBehaviour
     public static bool Gass = false;
      public static bool Hostage = false;
     public static bool CanShot =true;
-    public static bool CanShow =false;
+     public static bool Cinma1 =true;
+    public static bool CanShow =true;
 }

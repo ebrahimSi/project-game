@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DoorScript : MonoBehaviour
 {
     [SerializeField] GameObject DoorMessage;
+    public AudioSource DoorSound;
      [SerializeField] bool Locked;
     private Animator Anim;
     private bool CanOpen =false;
@@ -28,9 +29,11 @@ public class DoorScript : MonoBehaviour
     {
                 if(CloOrOP==false){
 Anim.SetBool("Open",true);
-CloOrOP=true;}
+CloOrOP=true;
+ DoorSound.Play();}
                 else{Anim.SetBool("Open",false);
-CloOrOP=false;}
+CloOrOP=false;
+DoorSound.Play();}
     }
 }
 }

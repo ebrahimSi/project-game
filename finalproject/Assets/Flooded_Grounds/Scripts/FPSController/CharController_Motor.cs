@@ -49,6 +49,7 @@ public class CharController_Motor : MonoBehaviour
 
     void Start()
     {
+     
         //LockCursor ();
         character = GetComponent<CharacterController>();
         if (Application.isEditor)
@@ -58,9 +59,13 @@ public class CharController_Motor : MonoBehaviour
             Cursor.visible = false;
             speed = WalkSpeed;
             cam = cam1;
-               camNight.gameObject.SetActive(true);
-            cam.gameObject.SetActive(false);
-            StartCoroutine(WaitForcinma());
+            if(PlayerPrefs.GetInt("Cinma1") == 0){
+           //  camNight.gameObject.SetActive(true);
+         // cam.gameObject.SetActive(false);
+          //  StartCoroutine(WaitForcinma());
+        //  cam.gameObject.SetActive(true);
+SaveScript.Cinma1=false;}
+else{cam.gameObject.SetActive(true);}
             LightBreathing.gameObject.SetActive(false);
             HeavyBreathing.gameObject.SetActive(false);
             nav = GetComponent<NavMeshAgent>();

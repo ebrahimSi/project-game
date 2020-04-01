@@ -15,6 +15,7 @@ TagManager:
   - HostageTrigger
   - BallTrigger
   - PGun
+  - NotePicUp
   layers:
   - Default
   - TransparentFX

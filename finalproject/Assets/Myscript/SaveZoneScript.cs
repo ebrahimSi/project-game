@@ -19,7 +19,7 @@ public class SaveZoneScript : MonoBehaviour
     private int Enemy4a;
     private int Enemy5a;
     private int Enemy6a;
-    [SerializeField] int SaveNumber = 0;
+    [SerializeField] int SaveNumber ;
     private int Location;
     // Start is called before the first frame update
     void Start()
@@ -69,7 +69,10 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("BatteryNumber", SaveScript.Batteries);
                 PlayerPrefs.SetFloat("PowerBattery", SaveScript.BatteryPower);
                 PlayerPrefs.SetInt("PlayersHealth", SaveScript.PlayerHealth);
-             //   PlayerPrefs.SetInt("BulletsLeft", SaveScript.Bullets);
+                SaveScript.SaveNumber++;
+                PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
+                PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?1:0);
+                //   PlayerPrefs.SetInt("BulletsLeft", SaveScript.Bullets);
                 PlayerPrefs.SetInt("Knife", Knife);
                 PlayerPrefs.SetInt("Axe", Axe);
                 PlayerPrefs.SetInt("Bat", Bat);
@@ -101,9 +104,10 @@ public class SaveZoneScript : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("Enemy6a", SaveScript.Enemy6);
                 }
-                SaveScript.SaveLocation = SaveNumber;
+                SaveScript.SaveLocation = 3;
                 PlayerPrefs.SetInt("Location", SaveScript.SaveLocation);
                 PlayerPrefs.Save();
+               
             }
         }
     }
@@ -121,4 +125,5 @@ public class SaveZoneScript : MonoBehaviour
             SaveScript.SaveZone = false;
         }
     }
+    
 }
