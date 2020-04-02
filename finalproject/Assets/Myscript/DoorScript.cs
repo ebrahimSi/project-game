@@ -11,6 +11,7 @@ public class DoorScript : MonoBehaviour
     private Animator Anim;
     private bool CanOpen =false;
     private bool CloOrOP =false;
+    public int Numberkey=10;
     [SerializeField] Text MassageText;
     // Start is called before the first frame update
     void Start()
@@ -36,12 +37,27 @@ CloOrOP=false;
 DoorSound.Play();}
     }
 }
-}
+}else  MassageText.text="closed";
         if(Locked==true){
+            if(Numberkey==0){
 if(SaveScript.HaveKey==true){
 Locked=false;
                 MassageText.text="Unlocked -press E to Open";
 }
+}
+             if(Numberkey==1){
+if(SaveScript.HaveKey2==true){
+Locked=false;
+                MassageText.text="Unlocked -press E to Open";
+}
+}
+              if(Numberkey==2){
+if(SaveScript.HaveKey3==true){
+Locked=false;
+                MassageText.text="Unlocked -press E to Open";
+}
+}
+             
 }
 
     }

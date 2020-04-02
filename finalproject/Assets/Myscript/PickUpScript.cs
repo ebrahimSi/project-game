@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PickUpScript : MonoBehaviour
 {
 
-    [SerializeField] float Distance = 1.0f;
+    [SerializeField] float Distance = 0f;
     [SerializeField] LayerMask ignoreLayers;
     [SerializeField] GameObject PickupMessage;
    [SerializeField] GameObject PickupMessageChild;
@@ -39,19 +39,21 @@ public class PickUpScript : MonoBehaviour
         if(Physics.Raycast(transform.position, transform.forward, out hit, Distance, ~ignoreLayers))
         {
             Selected = hit.transform;
-            if(SaveScript.CanShow==true){
+            if(SaveScript.CanShow2==true){
             if(hit.transform.tag == "PickUp")
             {
+                    if(SaveScript.CanShow==true){
                 PickupMessage.gameObject.SetActive(true);
                 
-                SaveScript.CanPickUp = true;
+                SaveScript.CanPickUp = true;}
             }
             if(hit.transform.tag == "NotePicUp")
             {
+                      if(SaveScript.CanShow2==true){
                 PickupMessage.gameObject.SetActive(true);
                 PickupMessageChild.gameObject.SetActive(false);
                 SaveScript.CanPickUp = true;
-            }}
+            }}}
 
             Selection = Selected;
         }

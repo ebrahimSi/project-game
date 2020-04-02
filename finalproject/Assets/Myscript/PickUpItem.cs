@@ -24,6 +24,7 @@ public class PickUpItem : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PickupActive = true;
+            SaveScript.CanShow2=true;
         }
     }
 
@@ -35,6 +36,7 @@ public class PickUpItem : MonoBehaviour
             PickupDiscription.gameObject.SetActive(false);
             MassageText.text="";
             PickupActive = false;
+            SaveScript.CanShow2=false;
         }
     }
 
@@ -139,8 +141,18 @@ public class PickUpItem : MonoBehaviour
         }
 if (PickupType == 8)
         {
+            if(NoteNumber==0){
             SaveScript.HaveKey = true;
             Destroy(Pickup, 0.2f);
+                }
+              if(NoteNumber==1){
+            SaveScript.HaveKey2 = true;
+            Destroy(Pickup, 0.2f);
+                }
+                if(NoteNumber==2){
+            SaveScript.HaveKey3 = true;
+            Destroy(Pickup, 0.2f);
+                }
 
         }
 if (PickupType == 9)

@@ -42,7 +42,12 @@ public class JohnTrig : MonoBehaviour
 
         TextBox.GetComponent<Text>().text = "";
         ThePlayer.gameObject.SetActive(true);
+        ThePlayer.gameObject.transform.position = camera2.gameObject.transform.position;
+
+        yield return new WaitForSeconds(3f);
         camera.gameObject.SetActive(true);
+      //  camera.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
+        ThePlayer.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         camera2.gameObject.SetActive(false);
         Destroy(this);
 

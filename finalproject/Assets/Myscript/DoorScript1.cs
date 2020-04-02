@@ -10,6 +10,8 @@ public class DoorScript1 : MonoBehaviour
     [SerializeField] GameObject camera2;
     [SerializeField] GameObject cube;
     [SerializeField] GameObject Fps;
+    public GameObject TextBox;
+    public AudioSource CallJohnathan;
 
 
     public AudioSource DoorSound;
@@ -72,9 +74,24 @@ public class DoorScript1 : MonoBehaviour
     }
     IEnumerator WaitForMain()
     {
-        yield return new WaitForSeconds(17.5f);
+
+        yield return new WaitForSeconds(4.3f);
+
+        TextBox.GetComponent<Text>().text = "johnathan !!";
+        CallJohnathan.Play();
+        yield return new WaitForSeconds(4.3f);
+        TextBox.GetComponent<Text>().text = "johnathan, where are you ?!!";
+        yield return new WaitForSeconds(4.3f);
+        TextBox.GetComponent<Text>().text = "Answer me !!";
+        yield return new WaitForSeconds(4.3f);
+        TextBox.GetComponent<Text>().text = "Where the hell did he go ?";
+
+        TextBox.GetComponent<Text>().text = "";
+        //
+      //  yield return new WaitForSeconds(17.5f);
         Fps.gameObject.SetActive(true);
        Fps.transform.position = new Vector3(648.574f, 18.77f, 478.6344f);
+
         yield return new WaitForSeconds(0f);
         camera2.gameObject.SetActive(true);
         camera.gameObject.SetActive(false);

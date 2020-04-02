@@ -38,9 +38,12 @@ public class SaveScript : MonoBehaviour
     
     public static int Bullets=0;
     public static bool HaveKey=false;
+      public static bool HaveKey2=false;
+      public static bool HaveKey3=false;
     public static bool Gass = false;
      public static bool Hostage = false;
     public static bool CanShot =true;
      public static bool Cinma1 =true;
     public static bool CanShow =true;
+    public static bool CanShow2 =false;
 }
