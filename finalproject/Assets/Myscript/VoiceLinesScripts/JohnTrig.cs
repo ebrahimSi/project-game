@@ -5,8 +5,10 @@ using UnityEngine.UI;
 public class JohnTrig : MonoBehaviour
 {
    public GameObject ThePlayer;
-    
-  public  GameObject TextBox;
+
+    public GameObject camera;
+    public GameObject camera2;
+    public  GameObject TextBox;
     public AudioSource CallJohnathan;
 
 
@@ -23,6 +25,9 @@ public class JohnTrig : MonoBehaviour
 
     IEnumerator ScenePlayer()
     {
+        ThePlayer.gameObject.SetActive(false);
+        camera.gameObject.SetActive(false);
+        camera2.gameObject.SetActive(true);
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(1.5f);
       
@@ -36,6 +41,9 @@ public class JohnTrig : MonoBehaviour
         TextBox.GetComponent<Text>().text = "Where the hell did he go ?";
 
         TextBox.GetComponent<Text>().text = "";
+        ThePlayer.gameObject.SetActive(true);
+        camera.gameObject.SetActive(true);
+        camera2.gameObject.SetActive(false);
         Destroy(this);
 
 

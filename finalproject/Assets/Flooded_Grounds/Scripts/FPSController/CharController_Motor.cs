@@ -63,7 +63,7 @@ public class CharController_Motor : MonoBehaviour
            //  camNight.gameObject.SetActive(true);
          // cam.gameObject.SetActive(false);
           //  StartCoroutine(WaitForcinma());
-        //  cam.gameObject.SetActive(true);
+        cam.gameObject.SetActive(true);
 SaveScript.Cinma1=false;}
 else{cam.gameObject.SetActive(true);}
             LightBreathing.gameObject.SetActive(false);
