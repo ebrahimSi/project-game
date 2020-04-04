@@ -82,6 +82,19 @@ public class PickUpItem : MonoBehaviour
                 SaveScript.PlayerHealth = 100;
             }
             SaveScript.DisplayHealth = true;
+            if(NoteNumber==1){
+SaveScript.Apple1=false;
+}
+            if(NoteNumber==2){
+SaveScript.Apple2=false;
+}
+            if(NoteNumber==3){
+SaveScript.Apple3=false;
+}
+            if(NoteNumber==4){
+SaveScript.Apple4=false;
+}
+
             Destroy(Pickup, 0.2f);
 
         }
@@ -95,6 +108,21 @@ public class PickUpItem : MonoBehaviour
 
             
             SaveScript.Batteries += 1 ;
+                  if(NoteNumber==1){
+SaveScript.Baterry1=false;
+}
+                    if(NoteNumber==2){
+SaveScript.Baterry2=false;
+}
+                      if(NoteNumber==3){
+SaveScript.Baterry3=false;
+}
+                        if(NoteNumber==4){
+SaveScript.Baterry4=false;
+}
+                          if(NoteNumber==5){
+SaveScript.Baterry5=false;
+}
             Destroy(Pickup, 0.2f);
             }
         }
@@ -122,6 +150,7 @@ public class PickUpItem : MonoBehaviour
 
         if (PickupType == 6)
         {
+            SaveScript.Bullets+=3;
             SaveScript.HaveGun = true;
             Destroy(Pickup, 0.2f);
 
@@ -163,8 +192,17 @@ if (PickupType == 9)
         }
 if (PickupType == 10)
         {
-          
-            Pleyer.GetComponent<Inventar>()._lpCount += 10;
+         
+              if(NoteNumber==1){
+SaveScript.LockPick1=false;
+}
+               if(NoteNumber==2){
+SaveScript.LockPick2=false;
+}
+                if(NoteNumber==3){
+SaveScript.LockPick3=false;
+}
+            Pleyer.GetComponent<Inventar>()._lpCount += 2;
            Destroy(Pickup, 0.2f);
 
         }
@@ -177,7 +215,7 @@ if (PickupType == 10)
         }
  if (PickupType == 12)
         {
-          
+          SaveScript.Ammo=false;
            SaveScript.Bullets+=12;
            Destroy(Pickup, 0.2f);
 

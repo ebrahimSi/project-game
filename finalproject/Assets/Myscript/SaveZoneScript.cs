@@ -69,6 +69,8 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("BatteryNumber", SaveScript.Batteries);
                 PlayerPrefs.SetFloat("PowerBattery", SaveScript.BatteryPower);
                 PlayerPrefs.SetInt("PlayersHealth", SaveScript.PlayerHealth);
+                PlayerPrefs.SetInt("Bullets", SaveScript.Bullets);
+                
                 SaveScript.SaveNumber++;
                 PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
                 PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?0:1);
@@ -78,6 +80,23 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("Message1", SaveScript.MassgeTrigg1 ? 1 : 0);
                 PlayerPrefs.SetInt("Message2", SaveScript.MassgeTrigg2 ? 1 : 0);
                 PlayerPrefs.SetInt("Message3", SaveScript.MassgeTrigg3 ? 1 : 0);
+                PlayerPrefs.SetInt("FlashLight", SaveScript.HaveFlashlightOn ? 1 : 0);
+                PlayerPrefs.SetInt("Apple1", SaveScript.Apple1 ? 1 : 0);
+                PlayerPrefs.SetInt("Apple2", SaveScript.Apple2 ? 1 : 0);
+                PlayerPrefs.SetInt("Apple3", SaveScript.Apple3 ? 1 : 0);
+                PlayerPrefs.SetInt("Baterry1", SaveScript.Baterry1 ? 1 : 0);
+                PlayerPrefs.SetInt("Baterry2", SaveScript.Baterry2 ? 1 : 0);
+                PlayerPrefs.SetInt("Baterry3", SaveScript.Baterry3 ? 1 : 0);
+                PlayerPrefs.SetInt("Baterry4", SaveScript.Baterry4 ? 1 : 0);
+                PlayerPrefs.SetInt("Baterry5", SaveScript.Baterry5 ? 1 : 0);
+                PlayerPrefs.SetInt("LockPick1", SaveScript.LockPick1 ? 1 : 0);
+                PlayerPrefs.SetInt("LockPick2", SaveScript.LockPick2 ? 1 : 0);
+                PlayerPrefs.SetInt("LockPick3", SaveScript.LockPick3 ? 1 : 0);
+                PlayerPrefs.SetInt("Gass", SaveScript.Gass ? 1 : 0);
+                PlayerPrefs.SetInt("Ammo", SaveScript.Ammo ? 1 : 0);
+                PlayerPrefs.SetInt("Key1", SaveScript.HaveKey ? 1 : 0);
+                PlayerPrefs.SetInt("Key2", SaveScript.HaveKey2 ? 1 : 0);
+                PlayerPrefs.SetInt("Key3", SaveScript.HaveKey3 ? 1 : 0);
                 //   PlayerPrefs.SetInt("BulletsLeft", SaveScript.Bullets);
                 PlayerPrefs.SetInt("Knife", Knife);
                 PlayerPrefs.SetInt("Axe", Axe);

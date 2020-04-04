@@ -12,8 +12,8 @@ public class LoadLevel : MonoBehaviour {
 	
 
 	public void ContinueGame() 
-	{	
-		levelName = PlayerPrefs.GetString("lastLevel");
+	{
+        levelName = "NewMenuTest";
         SceneManager.LoadScene("Loading");
 		
 	}

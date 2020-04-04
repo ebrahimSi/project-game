@@ -38,19 +38,19 @@ public class ControlsMenu : MonoBehaviour
                 
             if ( ControlsOpen == false)
             {
-                Controls.gameObject.SetActive(true);
-                ControlsOpen = true;
-                 Cursor.visible = true;
+               // Controls.gameObject.SetActive(true);
+               //ControlsOpen = true;
+             //   Cursor.visible = true;
                     SaveScript.CanShot=false;
                     
-            Time.timeScale = 0;
+          //  Time.timeScale = 0;
             }
             else if ( ControlsOpen == true)
             {
-                Controls.gameObject.SetActive(false);
-                ControlsOpen = false;
-                 Cursor.visible = false;  
-            Time.timeScale = 1;
+              //  Controls.gameObject.SetActive(false);
+               // ControlsOpen = false;
+            //     Cursor.visible = false;  
+           // Time.timeScale = 1;
                     SaveScript.CanShot=true;
             }}
         }
@@ -100,14 +100,14 @@ public class ControlsMenu : MonoBehaviour
         {
             if (MenuReturn == false)
             {
-                BackToMenu.gameObject.SetActive(true);
-                Time.timeScale = 0;
-                Cursor.visible = true;
-                MenuReturn = true;
-                         OptionsOpen = true;
-                         ControlsOpen = true;
-                        SaveScript.CanShow = true;
-                        SaveScript.CanShot=false;
+                //BackToMenu.gameObject.SetActive(true);
+              //  Time.timeScale = 0;
+             //   Cursor.visible = true;
+             //   MenuReturn = true;
+                    //     OptionsOpen = true;
+                  //       ControlsOpen = true;
+                     //   SaveScript.CanShow = true;
+                     //   SaveScript.CanShot=false;
             }
         }
     }

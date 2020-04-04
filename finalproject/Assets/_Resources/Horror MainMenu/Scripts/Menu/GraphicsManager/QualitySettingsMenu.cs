@@ -334,27 +334,27 @@ public class QualitySettingsMenu : MonoBehaviour {
 	{
 		if(value.CompareTo("Fastest") == 0)
 		{
-			return "Fastest";
+			return "Very Low";
 		}
 		else if(value.CompareTo("Fast") == 0)
 		{
-			return "Fast";
+			return "Low";
 		}
 		else if(value.CompareTo("Simple") == 0)
 		{
-			return "Simple";
+			return "Medium";
 		}
 		else if(value.CompareTo("Good") == 0)
 		{
-			return "Good";
+			return "High";
 		}
 		else if(value.CompareTo("Beautiful") == 0)
 		{
-			return "Beautiful";
+			return "Very High";
 		}
 		else if(value.CompareTo("Fantastic") == 0)
 		{
-			return "Fantastic";
+			return "Ultra";
 		}
 
 		return "Error";

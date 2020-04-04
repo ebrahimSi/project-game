@@ -19,17 +19,22 @@ public class GamePauseMenu : MonoBehaviour {
     public void Update()
     {
         if (Input.GetKeyDown (KeyCode.Escape)) 
-        {		
-		  if (IsPaused = !IsPaused)
-		  {
-			Time.timeScale = 0.0f;
-			Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-			IsPaused = false;
-			pauseMenuUi.SetActive(true);
-			
-			
-		  }
+        {
+
+            if (ControlsMenu.OptionsOpen == false)
+            {
+                if (IsPaused = !IsPaused)
+                {
+                    Time.timeScale = 0;
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    ControlsMenu.ControlsOpen = true;
+                    IsPaused = false;
+                    pauseMenuUi.SetActive(true);
+                    SaveScript.CanShot = false;
+
+                }
+            }
 
         }
 	}
@@ -41,12 +46,14 @@ public class GamePauseMenu : MonoBehaviour {
 	// Update is called once per frame
 	public void ResumeGame () 
 	{
-		Time.timeScale = 1.0f;
+
+		Time.timeScale = 1;
 		Cursor.visible = false;
 		IsPaused = false;
 		pauseMenuUi.SetActive(false);
-	
-	}
+        ControlsMenu.ControlsOpen = false;
+        SaveScript.CanShot = true;
+    }
 
   }
 

@@ -24,6 +24,7 @@ public class SaveLoad : MonoBehaviour
             SaveScript.Batteries = PlayerPrefs.GetInt("BatteryNumber");
             SaveScript.BatteryPower = PlayerPrefs.GetFloat("PowerBattery");
             SaveScript.PlayerHealth = PlayerPrefs.GetInt("PlayersHealth");
+            SaveScript.Bullets = PlayerPrefs.GetInt("Bullets");
             PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
             SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1")==1?true:false;
             SaveScript.Cinma2 = PlayerPrefs.GetInt("Cinma2") == 1 ? true : false;
@@ -32,6 +33,23 @@ public class SaveLoad : MonoBehaviour
             SaveScript.MassgeTrigg1 = PlayerPrefs.GetInt("Message1") == 1 ? true : false;
             SaveScript.MassgeTrigg2 = PlayerPrefs.GetInt("Message2") == 1 ? true : false;
             SaveScript.MassgeTrigg3 = PlayerPrefs.GetInt("Message3") == 1 ? true : false;
+            SaveScript.HaveFlashlightOn = PlayerPrefs.GetInt("FlashLight") == 1 ? true : false;
+            SaveScript.Apple1 = PlayerPrefs.GetInt("Apple1") == 1 ? true : false;
+            SaveScript.Apple2 = PlayerPrefs.GetInt("Apple2") == 1 ? true : false;
+            SaveScript.Apple3 = PlayerPrefs.GetInt("Apple3") == 1 ? true : false;
+            SaveScript.Baterry1 = PlayerPrefs.GetInt("Baterry1") == 1 ? true : false;
+            SaveScript.Baterry2 = PlayerPrefs.GetInt("Baterry2") == 1 ? true : false;
+            SaveScript.Baterry3 = PlayerPrefs.GetInt("Baterry3") == 1 ? true : false;
+            SaveScript.Baterry4 = PlayerPrefs.GetInt("Baterry4") == 1 ? true : false;
+            SaveScript.Baterry5 = PlayerPrefs.GetInt("Baterry5") == 1 ? true : false;
+            SaveScript.LockPick1 = PlayerPrefs.GetInt("lockPic1") == 1 ? true : false;
+            SaveScript.LockPick2 = PlayerPrefs.GetInt("lockPic2") == 1 ? true : false;
+            SaveScript.LockPick3 = PlayerPrefs.GetInt("lockPic3") == 1 ? true : false;
+            SaveScript.Gass = PlayerPrefs.GetInt("Gass") == 1 ? true : false;
+            SaveScript.Ammo = PlayerPrefs.GetInt("Ammo") == 1 ? true : false;
+            SaveScript.HaveKey = PlayerPrefs.GetInt("Key1") == 1 ? true : false;
+            SaveScript.HaveKey2 = PlayerPrefs.GetInt("Key2") == 1 ? true : false;
+            SaveScript.HaveKey3 = PlayerPrefs.GetInt("Key3") == 1 ? true : false;
             //    SaveScript.Bullets = PlayerPrefs.GetInt("BulletsLeft");
             if (PlayerPrefs.GetInt("Knife") == 1)
             {

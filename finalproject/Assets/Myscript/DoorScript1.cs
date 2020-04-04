@@ -34,13 +34,7 @@ public class DoorScript1 : MonoBehaviour
 
         if (CanOpen == true)
         {
-            if (SaveScript.Cinma4 == false)
-            {
-                Anim.SetBool("Skip", true);
-                cube.gameObject.SetActive(true);
-
-                this.gameObject.SetActive(false);
-            }
+           
             if (Input.GetKeyDown(KeyCode.E))
             {
 
@@ -62,7 +56,14 @@ public class DoorScript1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.gameObject.CompareTag("Player"))
+        if (SaveScript.Cinma4 == false)
+        {
+            Anim.SetBool("Skip", true);
+            cube.gameObject.SetActive(true);
+
+            this.gameObject.SetActive(false);
+        }else
+        if (other.gameObject.CompareTag("Player"))
 {
               DoorMessage.gameObject.SetActive(true);
             CanOpen = true;
@@ -105,7 +106,7 @@ public class DoorScript1 : MonoBehaviour
         camera2.gameObject.SetActive(true);
         camera.gameObject.SetActive(false);
         cube.gameObject.SetActive(true);
-      
+        SaveScript.Cinma4 = false;
         this.gameObject.SetActive(false);
     }
 }

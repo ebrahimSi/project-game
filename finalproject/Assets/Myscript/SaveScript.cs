@@ -19,10 +19,10 @@ public class SaveScript : MonoBehaviour
     public static int PlayerHealth = 30;
      public static int SaveNumber = 0;
     public static bool DisplayHealth = true;
-    public static bool HaveKnife = true;
-    public static bool HaveBat = true;
-    public static bool HaveAxe = true;
-    public static bool HaveGun = true;
+    public static bool HaveKnife = false;
+    public static bool HaveBat = false;
+    public static bool HaveAxe = false;
+    public static bool HaveGun = false;
 
     public static bool ReadNote = false;
      public static bool ReadNoteWall = false;
@@ -52,4 +52,18 @@ public class SaveScript : MonoBehaviour
      public static bool MassgeTrigg1 =true;
     public static bool MassgeTrigg2 =true;
     public static bool MassgeTrigg3 =true;
+     public static bool Apple1 =true;
+   public static bool Apple2 =true;
+    public static bool Apple3 =true;
+    public static bool Apple4 =true;
+    public static bool Baterry1 =true;
+    public static bool Baterry2 =true;
+    public static bool Baterry3 =true;
+    public static bool Baterry4 =true;
+    public static bool Baterry5 =true;
+    public static bool LockPick1 =true;
+     public static bool LockPick2 =true;
+     public static bool LockPick3 =true;
+     public static bool Ammo =true;
 }
+  

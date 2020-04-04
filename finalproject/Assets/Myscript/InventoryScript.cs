@@ -18,6 +18,15 @@ public class InventoryScript : MonoBehaviour
     [SerializeField] GameObject BatBlank;
     [SerializeField] GameObject AxeBlank;
     [SerializeField] GameObject GunBlank;
+     [SerializeField] GameObject Inv1;
+     [SerializeField] GameObject Inv2;
+     [SerializeField] GameObject key1Blank;
+     [SerializeField] GameObject key2Blank;
+     [SerializeField] GameObject key3Blank;
+     [SerializeField] GameObject Gass;
+     [SerializeField] GameObject FlashLight;
+    [SerializeField] GameObject lockPick;
+     [SerializeField] GameObject Ammo;
 
     // invisible in inspector
     [SerializeField] bool InventoryActive = false;
@@ -26,7 +35,8 @@ public class InventoryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+         Inv1.gameObject.SetActive(true);
+         Inv2.gameObject.SetActive(false);
         InventoryMenu.gameObject.SetActive(false);
          ControlsMenu.ControlsOpen=false;
         ControlsMenu.OptionsOpen=false;
@@ -60,6 +70,8 @@ public class InventoryScript : MonoBehaviour
                       if(ControlsMenu.ControlsOpen==true){ 
                 Time.timeScale = 1f;
                 InventoryMenu.gameObject.SetActive(false);
+                         Inv1.gameObject.SetActive(true);
+         Inv2.gameObject.SetActive(false);
                 InventoryActive = false;
                 Cursor.visible = false;
                    ControlsMenu.ControlsOpen=false;
@@ -211,5 +223,155 @@ public class InventoryScript : MonoBehaviour
 
         }
 
+         if (SaveScript.HaveKey == true)
+
+        {
+
+           key1Blank.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.HaveKey == false)
+
+        {
+
+            key1Blank.gameObject.SetActive(true);
+
+            
+
+        }
+        if (SaveScript.HaveKey2 == true)
+
+        {
+
+           key2Blank.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.HaveKey2 == false)
+
+        {
+
+            key2Blank.gameObject.SetActive(true);
+
+            
+
+        }
+        if (SaveScript.HaveKey3 == true)
+
+        {
+
+           key3Blank.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.HaveKey3 == false)
+
+        {
+
+            key3Blank.gameObject.SetActive(true);
+
+            
+
+        }
+
+
+
+          if (SaveScript.HaveFlashlightOn == true)
+
+        {
+
+           FlashLight.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.FlashlightOn == false)
+
+        {
+
+            FlashLight.gameObject.SetActive(true);
+
+            
+
+        }
+
+          if (SaveScript.Gass == true)
+
+        {
+
+           Gass.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.Gass == false)
+
+        {
+
+            Gass.gameObject.SetActive(true);
+
+            
+
+        }
+
+         if (SaveScript.Ammo == false)
+
+        {
+
+           Ammo.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.Ammo == true)
+
+        {
+
+            Ammo.gameObject.SetActive(true);
+
+            
+
+        }
+
+         if (SaveScript.LockPick1 == false || SaveScript.LockPick2 == false || SaveScript.LockPick3 == false)
+
+        {
+
+           lockPick.gameObject.SetActive(false);
+
+
+        }
+
+        if (SaveScript.LockPick1 == true || SaveScript.LockPick2 == true || SaveScript.LockPick3 == true)
+
+        {
+
+            lockPick.gameObject.SetActive(true);
+
+            
+
+        }
+
+
+
+
+      
+        
     }
+    public void SwichOn(){
+         Inv1.gameObject.SetActive(false);
+         Inv2.gameObject.SetActive(true);
+        
+}
+
+     public void SwitchOff(){
+         Inv1.gameObject.SetActive(true);
+         Inv2.gameObject.SetActive(false);
+        
+}
+
 }
