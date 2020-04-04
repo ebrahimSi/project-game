@@ -24,7 +24,8 @@ public class DoorScript1 : MonoBehaviour
     void Start()
     {
         DoorMessage.gameObject.SetActive(false);
-        Anim=GetComponentInParent<Animator>();
+        Anim=GetComponentInParent<Animator>(); 
+     
     }
 
     // Update is called once per frame
@@ -33,6 +34,13 @@ public class DoorScript1 : MonoBehaviour
 
         if (CanOpen == true)
         {
+            if (SaveScript.Cinma4 == false)
+            {
+                Anim.SetBool("Skip", true);
+                cube.gameObject.SetActive(true);
+
+                this.gameObject.SetActive(false);
+            }
             if (Input.GetKeyDown(KeyCode.E))
             {
 
@@ -70,6 +78,7 @@ public class DoorScript1 : MonoBehaviour
             CanOpen = false;
 
         }
+       
 
     }
     IEnumerator WaitForMain()

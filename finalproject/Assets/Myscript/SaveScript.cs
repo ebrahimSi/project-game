@@ -44,6 +44,12 @@ public class SaveScript : MonoBehaviour
      public static bool Hostage = false;
     public static bool CanShot =true;
      public static bool Cinma1 =true;
+    public static bool Cinma2 =true;
+    public static bool Cinma3 =true;
+    public static bool Cinma4 =true;
     public static bool CanShow =true;
     public static bool CanShow2 =false;
+     public static bool MassgeTrigg1 =true;
+    public static bool MassgeTrigg2 =true;
+    public static bool MassgeTrigg3 =true;
 }

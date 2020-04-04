@@ -71,7 +71,13 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("PlayersHealth", SaveScript.PlayerHealth);
                 SaveScript.SaveNumber++;
                 PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
-                PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?1:0);
+                PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?0:1);
+                PlayerPrefs.SetInt("Cinma2", SaveScript.Cinma2 ? 1 : 0);
+                PlayerPrefs.SetInt("Cinma3", SaveScript.Cinma3 ? 1 : 0);
+                PlayerPrefs.SetInt("Cinma4", SaveScript.Cinma4 ? 1 : 0);
+                PlayerPrefs.SetInt("Message1", SaveScript.MassgeTrigg1 ? 1 : 0);
+                PlayerPrefs.SetInt("Message2", SaveScript.MassgeTrigg2 ? 1 : 0);
+                PlayerPrefs.SetInt("Message3", SaveScript.MassgeTrigg3 ? 1 : 0);
                 //   PlayerPrefs.SetInt("BulletsLeft", SaveScript.Bullets);
                 PlayerPrefs.SetInt("Knife", Knife);
                 PlayerPrefs.SetInt("Axe", Axe);

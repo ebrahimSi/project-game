@@ -7,6 +7,14 @@ public class NoteReader : MonoBehaviour
 {
     [SerializeField] GameObject Note;
     [SerializeField] GameObject NoteWall;
+    [SerializeField] GameObject NoteWallCamera;
+    [SerializeField] GameObject MainCamera;
+    [SerializeField] GameObject Fps;
+    [SerializeField] GameObject Enemy;
+    [SerializeField] GameObject Enemy1;
+    [SerializeField] GameObject Enemy2;
+    [SerializeField] GameObject Enemy3;
+    private bool CameraWallActive=true;
     [SerializeField] GameObject TextBox;
     private int noteNumber;
     public AudioSource JohnNote;
@@ -26,6 +34,7 @@ public class NoteReader : MonoBehaviour
         {
             Note.gameObject.SetActive(true);
             Cursor.visible = true;
+            Time.timeScale = 0;
             noteNumber = 1;
             SaveScript.CanShot = false;
 
@@ -35,6 +44,7 @@ public class NoteReader : MonoBehaviour
         {
             NoteWall.gameObject.SetActive(true);
             Cursor.visible = true;
+            Time.timeScale = 0;
             noteNumber = 2;
             SaveScript.CanShot = false;
         }
@@ -45,7 +55,8 @@ public class NoteReader : MonoBehaviour
         Note.gameObject.SetActive(false);
         SaveScript.ReadNoteWall = false;
         NoteWall.gameObject.SetActive(false);
-        Cursor.visible = true;
+        Cursor.visible = false;
+        Time.timeScale = 1;
         StartCoroutine(ScenePlayer(noteNumber));
         SaveScript.CanShot = true;
     }
@@ -69,13 +80,28 @@ public class NoteReader : MonoBehaviour
         }
         else if (noteNumber == 2)
         {
-            yield return new WaitForSeconds(1.5f);
-            JohnNoteWall.Play();
-            TextBox.GetComponent<Text>().text = "this is noteWall !!";
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "NoteWall !!";
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "";
+            if (SaveScript.Cinma3==true)
+            {
+                Enemy.gameObject.SetActive(true);
+                NoteWallCamera.gameObject.SetActive(true);
+                MainCamera.gameObject.SetActive(false);
+                Fps.gameObject.SetActive(false);
+                yield return new WaitForSeconds(7.5f);
+                TextBox.GetComponent<Text>().text = "hay come";
+                 JohnNoteWall.Play();
+    yield return new WaitForSeconds(1f);
+                NoteWallCamera.gameObject.SetActive(false);
+                MainCamera.gameObject.SetActive(true);
+                Fps.gameObject.SetActive(true);
+                Fps.gameObject.transform.rotation = Quaternion.Euler(-1.5f, -89.1f, 0f);
+                MainCamera.gameObject.transform.rotation = Quaternion.Euler(-1.5f, -89.1f, 0f);
+                SaveScript.Cinma3 = false;
+                Enemy.gameObject.SetActive(false);
+                Enemy1.gameObject.SetActive(true);
+                Enemy2.gameObject.SetActive(true);
+                Enemy3.gameObject.SetActive(true);
+                TextBox.GetComponent<Text>().text = "";
+            }
         }
 
 

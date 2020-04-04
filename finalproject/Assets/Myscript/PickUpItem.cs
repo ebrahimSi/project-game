@@ -164,7 +164,7 @@ if (PickupType == 9)
 if (PickupType == 10)
         {
           
-            Pleyer.GetComponent<Inventar>()._lpCount += 1;
+            Pleyer.GetComponent<Inventar>()._lpCount += 10;
            Destroy(Pickup, 0.2f);
 
         }

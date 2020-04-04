@@ -16,7 +16,12 @@ public class JohnTrig : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(ScenePlayer());
+            if (SaveScript.Cinma2 == true)
+            {
+                StartCoroutine(ScenePlayer());
+               
+            }
+            else { Destroy(this); }
         }
     }
 
@@ -49,6 +54,7 @@ public class JohnTrig : MonoBehaviour
       //  camera.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         ThePlayer.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         camera2.gameObject.SetActive(false);
+        SaveScript.Cinma2 = false;
         Destroy(this);
 
 

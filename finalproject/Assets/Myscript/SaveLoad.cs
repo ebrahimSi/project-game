@@ -26,6 +26,12 @@ public class SaveLoad : MonoBehaviour
             SaveScript.PlayerHealth = PlayerPrefs.GetInt("PlayersHealth");
             PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
             SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1")==1?true:false;
+            SaveScript.Cinma2 = PlayerPrefs.GetInt("Cinma2") == 1 ? true : false;
+            SaveScript.Cinma3 = PlayerPrefs.GetInt("Cinma3") == 1 ? true : false;
+            SaveScript.Cinma4 = PlayerPrefs.GetInt("Cinma4") == 1 ? true : false;
+            SaveScript.MassgeTrigg1 = PlayerPrefs.GetInt("Message1") == 1 ? true : false;
+            SaveScript.MassgeTrigg2 = PlayerPrefs.GetInt("Message2") == 1 ? true : false;
+            SaveScript.MassgeTrigg3 = PlayerPrefs.GetInt("Message3") == 1 ? true : false;
             //    SaveScript.Bullets = PlayerPrefs.GetInt("BulletsLeft");
             if (PlayerPrefs.GetInt("Knife") == 1)
             {
@@ -121,14 +127,15 @@ public class SaveLoad : MonoBehaviour
             SaveScript.Enemy5 = 1;
             SaveScript.Enemy6 = 1;
             SaveScript.SaveLocation = 0;
+            PlayerPrefs.DeleteAll();
         }
     }
     IEnumerator ScenePlayer()
     {
 
-        yield return new WaitForSeconds(0.00000000000000000000000000000000000000000000000009f);
+        yield return new WaitForSeconds(0f);
         PlayerCharacter.transform.position = new Vector3(650.6f, 22.13f, 370.8f);
-       
+      //  SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1") == 1 ? true : false;
 
 
 

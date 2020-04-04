@@ -30,8 +30,8 @@ public class MenuScript : MonoBehaviour
     public void NewGameData()
     {
         LoadGame = false;
-        PlayerPrefs.DeleteAll();
-        SaveScript.Cinma1 = true;
+        //PlayerPrefs.DeleteAll();
+       // SaveScript.Cinma1 = true;
     }
     public void QuitGame()
     {
