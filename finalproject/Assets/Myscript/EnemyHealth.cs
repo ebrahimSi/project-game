@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int GunDamage = 85;
     private Animator anim;
     private bool PlayerHitMe = false;
+    private bool WakeUp = true;
     AudioSource HitEnemy;
      [SerializeField] GameObject ChaseMusic;
     // Start is called before the first frame update
@@ -24,8 +25,15 @@ public class EnemyHealth : MonoBehaviour
     {
         if (EnemysHealth <= 0)
         {
+            
+         
+                 EnemysHealth = 100;
             anim.SetBool("Die", true);
+            anim.SetBool("Wake", false);
              ChaseMusic.gameObject.SetActive(false);
+             
+             StartCoroutine(Wake());
+              
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -101,5 +109,24 @@ public class EnemyHealth : MonoBehaviour
                 PlayerHitMe = false;
            }
         }
+    }
+     IEnumerator Wake()
+    {
+
+        yield return new WaitForSeconds(10f);
+       
+       anim.SetBool("Wake", true);
+       anim.SetInteger("State", 0);
+        anim.SetBool("Alert", false);
+        anim.SetBool("AxeAttacks", false);
+               anim.SetBool("Damaging", false);
+    //    anim.SetBool("React");
+        anim.SetBool("Die", false);
+
+      //  SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1") == 1 ? true : false;
+
+
+
+
     }
 }
