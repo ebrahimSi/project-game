@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
     [SerializeField] GameObject DoorMessage;
     public AudioSource DoorSound;
      [SerializeField] bool Locked;
+      [SerializeField] bool Cinma;
     private Animator Anim;
     private bool CanOpen =false;
     private bool CloOrOP =false;
@@ -18,6 +19,9 @@ public class DoorScript : MonoBehaviour
     {
         DoorMessage.gameObject.SetActive(false);
         Anim=GetComponentInParent<Animator>();
+        if(Cinma==false){
+Anim.SetBool("Skip",true);
+}
     }
 
     // Update is called once per frame

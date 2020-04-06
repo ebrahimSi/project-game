@@ -15,6 +15,7 @@ public class HostageFollow2 : MonoBehaviour
     private bool Stop = false;
     void Start() {
         anim = GetComponent<Animator>();
+        anim.SetBool("DazedOff", true);
     }
     void Update()
     {

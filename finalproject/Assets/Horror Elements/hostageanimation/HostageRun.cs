@@ -11,7 +11,7 @@ public class HostageRun : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             this.gameObject.GetComponentInParent<HostageFollow2>().enabled = true;
-            Destroy(this.gameObject, 0.2f);
+           // Destroy(this.gameObject, 0.2f);
         }
 
     }
