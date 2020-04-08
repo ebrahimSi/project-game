@@ -9,6 +9,8 @@ public class PickUpItem : MonoBehaviour
     [SerializeField] GameObject Pickup;
     [SerializeField] GameObject PickupMessage;
     [SerializeField] GameObject PickupDiscription;
+    [SerializeField] GameObject objectev;
+    [SerializeField] GameObject objectev1;
     [SerializeField] GameObject Pleyer;
     [SerializeField] Text MassageText;
     [SerializeField] public string ItemDiscription;
@@ -17,6 +19,7 @@ public class PickUpItem : MonoBehaviour
      public  GameObject TextBox;
     public AudioSource AppleLines;
     public AudioSource GasLines;
+    public AudioSource AudioPickUp;
     private bool PickupActive = false;
 
     private void OnTriggerEnter(Collider other)
@@ -72,7 +75,7 @@ public class PickUpItem : MonoBehaviour
 
     void PickupCheck()
     {
-
+        AudioPickUp.Play();
         if (PickupType == 1)
         {
             SaveScript.PlayerHealth += 10;
@@ -89,7 +92,9 @@ SaveScript.Apple1=false;
 SaveScript.Apple2=false;
 }
             if(NoteNumber==3){
-SaveScript.Apple3=false;
+                objectev.gameObject.SetActive(true);
+                objectev1.gameObject.SetActive(false);
+                SaveScript.Apple3=false;
 }
             if(NoteNumber==4){
 SaveScript.Apple4=false;
@@ -208,7 +213,7 @@ SaveScript.LockPick3=false;
         }
  if (PickupType == 11)
         {
-          
+            
            SaveScript.HaveFlashlightOn=true;
            Destroy(Pickup, 0.2f);
 
@@ -224,6 +229,7 @@ SaveScript.LockPick3=false;
 
  PickupDiscription.gameObject.SetActive(false);
             MassageText.text="";
+
     }
        IEnumerator ScenePlayer()
     {

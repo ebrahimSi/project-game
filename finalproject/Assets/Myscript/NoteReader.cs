@@ -19,6 +19,8 @@ public class NoteReader : MonoBehaviour
     private int noteNumber;
     public AudioSource JohnNote;
     public AudioSource JohnNoteWall;
+    [SerializeField] GameObject Objectev;
+    [SerializeField] GameObject Objectev1;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +79,8 @@ public class NoteReader : MonoBehaviour
             TextBox.GetComponent<Text>().text = "what the hell is going on here!? ";
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "";
+            Objectev.gameObject.SetActive(true);
+            Objectev1.gameObject.SetActive(false);
         }
         else if (noteNumber == 2)
         {
@@ -86,7 +90,7 @@ public class NoteReader : MonoBehaviour
                 NoteWallCamera.gameObject.SetActive(true);
                 MainCamera.gameObject.SetActive(false);
                 Fps.gameObject.SetActive(false);
-                yield return new WaitForSeconds(7.5f);
+                yield return new WaitForSeconds(14f);
                 TextBox.GetComponent<Text>().text = "hay come";
                  JohnNoteWall.Play();
     yield return new WaitForSeconds(1f);

@@ -18,28 +18,39 @@ public class MessageDisplay : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if(Number==1){
-            if(SaveScript.MassgeTrigg1==true){
-            MessagePanel.gameObject.SetActive(true);
-            Cursor.visible = true;
-            Time.timeScale = 0;
-              SaveScript.CanShot=false;
-        }}} 
-        if(Number==2){
-            if(SaveScript.MassgeTrigg2==true){
-            MessagePanel.gameObject.SetActive(true);
-            Cursor.visible = true;
-            Time.timeScale = 0;
-              SaveScript.CanShot=false;
-        }} 
+            if (Number == 1)
+            {
+                if (SaveScript.MassgeTrigg1 == true)
+                {
+                    MessagePanel.gameObject.SetActive(true);
+                    Cursor.visible = true;
+                    Time.timeScale = 0;
+                    SaveScript.CanShot = false;
+                }
+            }
+            if (Number == 2)
+            {
+                if (SaveScript.MassgeTrigg2 == true)
+                {
+                    MessagePanel.gameObject.SetActive(true);
+                    Cursor.visible = true;
+                    Time.timeScale = 0;
+                    SaveScript.CanShot = false;
+                }
+            }
 
-    if(Number==3){
-            if(SaveScript.MassgeTrigg3==true){
-            MessagePanel.gameObject.SetActive(true);
-            Cursor.visible = true;
-            Time.timeScale = 0;
-              SaveScript.CanShot=false;
-        }}} 
+            if (Number == 3)
+            {
+                if (SaveScript.MassgeTrigg3 == true)
+                {
+                    MessagePanel.gameObject.SetActive(true);
+                    Cursor.visible = true;
+                    Time.timeScale = 0;
+                    SaveScript.CanShot = false;
+                }
+            }
+        }
+    } 
 
 
     

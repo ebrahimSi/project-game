@@ -10,9 +10,10 @@ public class JohnTrig : MonoBehaviour
     public GameObject camera2;
     public  GameObject TextBox;
     public AudioSource CallJohnathan;
+    public GameObject Objectev;
+    public GameObject Objectec1;
 
-
-   void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -54,6 +55,8 @@ public class JohnTrig : MonoBehaviour
       //  camera.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         ThePlayer.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         camera2.gameObject.SetActive(false);
+        Objectec1.gameObject.SetActive(false);
+        Objectev.gameObject.SetActive(true);
         SaveScript.Cinma2 = false;
         Destroy(this);
 

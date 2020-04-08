@@ -7,7 +7,8 @@ public class DoorScript : MonoBehaviour
 {
     [SerializeField] GameObject DoorMessage;
     public AudioSource DoorSound;
-     [SerializeField] bool Locked;
+    public AudioSource ClosedSound;
+    [SerializeField] bool Locked;
       [SerializeField] bool Cinma;
     private Animator Anim;
     private bool CanOpen =false;
@@ -27,21 +28,38 @@ Anim.SetBool("Skip",true);
     // Update is called once per frame
     void Update()
     {
-        if(Locked==false){
-        if(CanOpen==true)
-{
-            if(Input.GetKeyDown(KeyCode.E))
-    {
-                if(CloOrOP==false){
-Anim.SetBool("Open",true);
-CloOrOP=true;
- DoorSound.Play();}
-                else{Anim.SetBool("Open",false);
-CloOrOP=false;
-DoorSound.Play();}
-    }
-}
-}else  MassageText.text="closed";
+        if (Locked == false)
+        {
+            if (CanOpen == true)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    if (CloOrOP == false)
+                    {
+                        Anim.SetBool("Open", true);
+                        CloOrOP = true;
+                        DoorSound.Play();
+                    }
+                    else
+                    {
+                        Anim.SetBool("Open", false);
+                        CloOrOP = false;
+                        DoorSound.Play();
+                    }
+                }
+            }
+        }
+        else {
+            MassageText.text = "closed";
+            if (CloOrOP == false)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    
+                    ClosedSound.Play();
+                }
+            }
+        }
         if(Locked==true){
             if(Numberkey==0){
 if(SaveScript.HaveKey==true){

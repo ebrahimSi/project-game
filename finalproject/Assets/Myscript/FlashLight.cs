@@ -6,8 +6,12 @@ public class FlashLight : MonoBehaviour
 {
 
     [SerializeField] GameObject flashLight;
-   // private bool lightOn = false;
-   
+    [SerializeField] AudioSource AudioflashOn;
+    [SerializeField] AudioSource AudioflashOff;
+    private bool audiof = false; 
+
+    // private bool lightOn = false;
+
 
     // Update is called once per frame
     void Update()
@@ -15,7 +19,9 @@ public class FlashLight : MonoBehaviour
         if(SaveScript.HaveFlashlightOn==true){
          if (SaveScript.FlashlightOn == false)
         {
-            flashLight.gameObject.SetActive(false);
+               // AudioflashOff.Play();
+
+                flashLight.gameObject.SetActive(false);
             SaveScript.FlashlightOn = false;
         }
 
@@ -23,14 +29,22 @@ public class FlashLight : MonoBehaviour
             { 
         if(SaveScript.FlashlightOn == false)
         {
-            flashLight.gameObject.SetActive(true);
+                    AudioflashOn.Play();
+
+                    flashLight.gameObject.SetActive(true);
             SaveScript.FlashlightOn = true;
+                   
         }
 
        else if (SaveScript.FlashlightOn == true)
         {
-            flashLight.gameObject.SetActive(false);
+                   
+                        AudioflashOff.Play();
+                 
+                    flashLight.gameObject.SetActive(false);
             SaveScript.FlashlightOn = false;
+                    
+                 
         }
 
     }

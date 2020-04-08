@@ -16,6 +16,8 @@ TagManager:
   - BallTrigger
   - PGun
   - NotePicUp
+  - Menu
+  - Butcher
   layers:
   - Default
   - TransparentFX

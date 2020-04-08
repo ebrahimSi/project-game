@@ -39,7 +39,7 @@ public class CharController_Motor : MonoBehaviour
     private bool LightBreath = false;
     private bool HeavyBreath = false;
     public GameObject LowHealthSound;
-
+    public GameObject LowHealthPanel;
     public GameObject PlayerDeath;
     public  GameObject TextBox;
      public  GameObject Chapter;
@@ -175,15 +175,17 @@ else{cam.gameObject.SetActive(true);}
 
 
 
-        if (SaveScript.PlayerHealth < 5)
+        if (SaveScript.PlayerHealth < 50)
         {
             LowHealthSound.gameObject.SetActive(true);
+            LowHealthPanel.gameObject.SetActive(true);
 
         }
 
-        if (SaveScript.PlayerHealth > 4)
+        if (SaveScript.PlayerHealth > 40)
         {
             LowHealthSound.gameObject.SetActive(false);
+            LowHealthPanel.gameObject.SetActive(false);
 
         }
 
