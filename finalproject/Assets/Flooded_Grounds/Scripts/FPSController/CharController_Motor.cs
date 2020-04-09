@@ -175,14 +175,14 @@ else{cam.gameObject.SetActive(true);}
 
 
 
-        if (SaveScript.PlayerHealth < 50)
+        if (SaveScript.PlayerHealth < 5)
         {
             LowHealthSound.gameObject.SetActive(true);
             LowHealthPanel.gameObject.SetActive(true);
 
         }
 
-        if (SaveScript.PlayerHealth > 40)
+        if (SaveScript.PlayerHealth > 4)
         {
             LowHealthSound.gameObject.SetActive(false);
             LowHealthPanel.gameObject.SetActive(false);

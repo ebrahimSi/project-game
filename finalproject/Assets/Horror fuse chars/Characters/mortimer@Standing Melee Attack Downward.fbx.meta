@@ -8,6 +8,26 @@ ModelImporter:
     second: mixamo.com
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mort_Body_MAT
+    second: {fileID: 2100000, guid: c2b7e039db6f7254f92f2862bcb4f96a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mort_EyeSpec_MAT
+    second: {fileID: 2100000, guid: 991d22f5ea5c8c24b8469d1c231f27f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mort_Eyes_MAT
+    second: {fileID: 2100000, guid: 88287cc87a58b3344b55165919ef0737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mort_Guard_MAT
+    second: {fileID: 2100000, guid: 254b1f2b83bd4094695939411ee6c5d1, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Mortimer_diffuse

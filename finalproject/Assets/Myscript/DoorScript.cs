@@ -49,14 +49,18 @@ Anim.SetBool("Skip",true);
                 }
             }
         }
-        else {
+        else
+        {
             MassageText.text = "closed";
-            if (CloOrOP == false)
+            if (CanOpen == true)
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Locked == true)
                 {
-                    
-                    ClosedSound.Play();
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+
+                        ClosedSound.Play();
+                    }
                 }
             }
         }

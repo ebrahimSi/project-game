@@ -59,7 +59,7 @@ public class WeaponScript : MonoBehaviour
                     anim.SetBool("Ready", false);
                 }
             }
-
+            
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 if (Attack == true)

@@ -56,7 +56,7 @@ public class EnemyAttack : MonoBehaviour
                 }
             }
           
-            if(RunToPlayer=false){
+          if(RunToPlayer=true){
             Patrol.gameObject.SetActive(false);
 }
 
@@ -81,7 +81,7 @@ public class EnemyAttack : MonoBehaviour
                     move=false;
                     anim.SetBool("AxeAttacks", true);
                     anim.SetBool("Damaging", true);
-                    NewChaseSpeed = 6.5f;
+                    NewChaseSpeed = 1f;
                     nav.angularSpeed = 650000000;
                 }
                 if (IHaveKnife == true)
@@ -171,6 +171,7 @@ public class EnemyAttack : MonoBehaviour
                     anim.SetBool("Damaging", false);
                     anim.SetBool("Alert", false);
                    nav.speed =1.5f;
+                
                    
                 }}
              
