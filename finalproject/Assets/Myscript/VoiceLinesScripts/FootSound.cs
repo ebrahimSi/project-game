@@ -26,13 +26,13 @@ public class FootSound : MonoBehaviour
     {
         if (ccm.speed == ccm.RunSpeed)
         {
-            sound1.pitch = 2.5f;
-            sound2.pitch = 2.5f;
-            sound3.pitch = 2.5f;
+            sound1.pitch = 1.2f;
+            sound2.pitch = 1.2f;
+            sound3.pitch = 1.2f;
         }
-        else { sound1.pitch = 1.5f;
-            sound2.pitch = 1.5f;
-            sound3.pitch = 1.5f;
+        else { sound1.pitch = 0.7f;
+            sound2.pitch = 0.7f;
+            sound3.pitch = 0.7f;
         }
         if (cc.isGrounded == true && cc.velocity.magnitude > 3f && sound1.isPlaying == false && Type == 1 && (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D))) {
             sound1.Play();
