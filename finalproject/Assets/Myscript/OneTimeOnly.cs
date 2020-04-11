@@ -26,6 +26,9 @@ public class OneTimeOnly : MonoBehaviour
     [SerializeField] GameObject Key1;
     [SerializeField] GameObject Key2;
     [SerializeField] GameObject Key3;
+    [SerializeField] GameObject butcher;
+    [SerializeField] GameObject killScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +122,15 @@ public class OneTimeOnly : MonoBehaviour
         if (SaveScript.Ammo == false)
         {
             Destroy(Ammo, 0.2f);
+        }
+        if (SaveScript.Cinma3 == false)
+        {
+            killScene.gameObject.SetActive(true);
+        }
+        if (SaveScript.CinmaKillScene == false)
+        {
+            killScene.gameObject.SetActive(false);
+            butcher.gameObject.SetActive(true);
         }
     }
 

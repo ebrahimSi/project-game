@@ -48,6 +48,8 @@ public class SaveScript : MonoBehaviour
     public static bool Cinma3 =true;
     public static bool Cinma4 =true;
     public static bool Cinma5 = true;
+  public static bool Cinmajohn = true;
+      public static bool CinmaKillScene = true;
     public static bool CanShow =true;
     public static bool CanShow2 =false;
      public static bool MassgeTrigg1 =true;
@@ -66,5 +68,8 @@ public class SaveScript : MonoBehaviour
      public static bool LockPick2 =true;
      public static bool LockPick3 =true;
      public static bool Ammo =true;
+     public static int Objectev =0;
+     public static bool Objectev1 =true;
+     public static bool NoteObjectev2 =true;
 }
   

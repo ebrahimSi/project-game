@@ -20,6 +20,7 @@ public class SaveZoneScript : MonoBehaviour
     private int Enemy5a;
     private int Enemy6a;
     [SerializeField] int SaveNumber ;
+    [SerializeField] GameObject FPS;
     private int Location;
     // Start is called before the first frame update
     void Start()
@@ -70,13 +71,16 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetFloat("PowerBattery", SaveScript.BatteryPower);
                 PlayerPrefs.SetInt("PlayersHealth", SaveScript.PlayerHealth);
                 PlayerPrefs.SetInt("Bullets", SaveScript.Bullets);
-                
+                PlayerPrefs.SetInt("LockPick", FPS.GetComponent<Inventar>()._lpCount);
+                PlayerPrefs.SetInt("Objectev", SaveScript.Objectev);
                 SaveScript.SaveNumber++;
                 PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
                 PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?0:1);
                 PlayerPrefs.SetInt("Cinma2", SaveScript.Cinma2 ? 1 : 0);
                 PlayerPrefs.SetInt("Cinma3", SaveScript.Cinma3 ? 1 : 0);
                 PlayerPrefs.SetInt("Cinma4", SaveScript.Cinma4 ? 1 : 0);
+                PlayerPrefs.SetInt("Cinma5", SaveScript.Cinma5 ? 1 : 0);
+                PlayerPrefs.SetInt("Cinmajohn", SaveScript.Cinmajohn ? 1 : 0);
                 PlayerPrefs.SetInt("Message1", SaveScript.MassgeTrigg1 ? 1 : 0);
                 PlayerPrefs.SetInt("Message2", SaveScript.MassgeTrigg2 ? 1 : 0);
                 PlayerPrefs.SetInt("Message3", SaveScript.MassgeTrigg3 ? 1 : 0);
@@ -97,6 +101,9 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("Key1", SaveScript.HaveKey ? 1 : 0);
                 PlayerPrefs.SetInt("Key2", SaveScript.HaveKey2 ? 1 : 0);
                 PlayerPrefs.SetInt("Key3", SaveScript.HaveKey3 ? 1 : 0);
+                PlayerPrefs.SetInt("Objectev1", SaveScript.Objectev1 ? 1 : 0);
+                PlayerPrefs.SetInt("NoteObjectev2", SaveScript.NoteObjectev2 ? 1 : 0);
+                PlayerPrefs.SetInt("CinmakillScene", SaveScript.CinmaKillScene ? 1 : 0);
                 //   PlayerPrefs.SetInt("BulletsLeft", SaveScript.Bullets);
                 PlayerPrefs.SetInt("Knife", Knife);
                 PlayerPrefs.SetInt("Axe", Axe);

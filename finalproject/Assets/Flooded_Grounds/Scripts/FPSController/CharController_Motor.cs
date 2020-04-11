@@ -245,8 +245,11 @@ else{cam.gameObject.SetActive(true);}
         CheckForWaterHeight();
 
 
-        Vector3 movement = new Vector3(moveFB, gravity, moveLR);
-
+      Vector3 movement = new Vector3(moveFB, gravity, moveLR);
+       //character.velocity = Vector3.zero;
+        if (WalkSpeed==0&&RunSpeed==0) {
+            nav.enabled = false;
+        }
 
 
         if (webGLRightClickRotation)

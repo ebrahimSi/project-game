@@ -58,6 +58,7 @@ public class JohnTrig : MonoBehaviour
         Objectec1.gameObject.SetActive(false);
         Objectev.gameObject.SetActive(true);
         SaveScript.Cinma2 = false;
+        SaveScript.Objectev = 3;
         Destroy(this);
 
 

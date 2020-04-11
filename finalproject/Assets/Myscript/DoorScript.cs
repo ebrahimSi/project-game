@@ -77,6 +77,7 @@ Locked=false;
                 MassageText.text="Unlocked -press E to Open";
 }
 }
+         
               if(Numberkey==2){
 if(SaveScript.HaveKey3==true){
 Locked=false;

@@ -126,6 +126,7 @@ public class InventoryScript : MonoBehaviour
     void InventoryCheck()
 
     {
+       // SaveScript.HaveAxe = true;
 
         if (SaveScript.HaveKnife == true)
 

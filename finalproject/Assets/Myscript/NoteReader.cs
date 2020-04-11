@@ -11,9 +11,7 @@ public class NoteReader : MonoBehaviour
     [SerializeField] GameObject MainCamera;
     [SerializeField] GameObject Fps;
     [SerializeField] GameObject Enemy;
-    [SerializeField] GameObject Enemy1;
-    [SerializeField] GameObject Enemy2;
-    [SerializeField] GameObject Enemy3;
+    [SerializeField] GameObject KillScene;
     private bool CameraWallActive=true;
     [SerializeField] GameObject TextBox;
     private int noteNumber;
@@ -67,20 +65,25 @@ public class NoteReader : MonoBehaviour
     {
         if (noteNumber == 1)
         {
-            yield return new WaitForSeconds(1.5f);
+            if (SaveScript.NoteObjectev2 == true)
+            {
+                yield return new WaitForSeconds(1.5f);
 
-            TextBox.GetComponent<Text>().text = "is this note left by johnathan!?";
-            JohnNote.Play();
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "and..who the hell has the key ? ";
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "who locked him up ? ";
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "what the hell is going on here!? ";
-            yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "";
-            Objectev.gameObject.SetActive(true);
-            Objectev1.gameObject.SetActive(false);
+                TextBox.GetComponent<Text>().text = "is this note left by johnathan!?";
+                JohnNote.Play();
+                yield return new WaitForSeconds(1.5f);
+                TextBox.GetComponent<Text>().text = "and..who the hell has the key ? ";
+                yield return new WaitForSeconds(1.5f);
+                TextBox.GetComponent<Text>().text = "who locked him up ? ";
+                yield return new WaitForSeconds(1.5f);
+                TextBox.GetComponent<Text>().text = "what the hell is going on here!? ";
+                yield return new WaitForSeconds(1.5f);
+                TextBox.GetComponent<Text>().text = "";
+                Objectev.gameObject.SetActive(true);
+                Objectev1.gameObject.SetActive(false);
+                SaveScript.Objectev = 4;
+                SaveScript.NoteObjectev2 = false;
+            }
         }
         else if (noteNumber == 2)
         {
@@ -101,9 +104,7 @@ public class NoteReader : MonoBehaviour
                 MainCamera.gameObject.transform.rotation = Quaternion.Euler(-1.5f, -89.1f, 0f);
                 SaveScript.Cinma3 = false;
                 Enemy.gameObject.SetActive(false);
-                Enemy1.gameObject.SetActive(true);
-                Enemy2.gameObject.SetActive(true);
-                Enemy3.gameObject.SetActive(true);
+                KillScene.gameObject.SetActive(true);
                 TextBox.GetComponent<Text>().text = "";
             }
         }

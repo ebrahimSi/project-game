@@ -13,11 +13,14 @@ public class JohnTrig1 : MonoBehaviour
     public AudioSource CallJohnathan;
 
 
+    void Start() {
+        
+        }
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (SaveScript.Cinma2 == true)
+            if (SaveScript.Cinmajohn == true)
             {
                 StartCoroutine(ScenePlayer());
 
@@ -60,7 +63,7 @@ public class JohnTrig1 : MonoBehaviour
         camera3.gameObject.SetActive(false);
         ThePlayer.gameObject.SetActive(true);
         camera.gameObject.SetActive(true);
-        SaveScript.Cinma2 = false;
+        SaveScript.Cinmajohn = false;
         Destroy(this);
 
 

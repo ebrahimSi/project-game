@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SaveLoad : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class SaveLoad : MonoBehaviour
     [SerializeField] Transform SaveArea3;
     [SerializeField] Transform SaveArea4;
     [SerializeField] Transform PlayerCharacter;
+    [SerializeField] Transform john;
+    [SerializeField] Transform Objectev1;
+    [SerializeField] Transform Objectev2;
+    [SerializeField] Transform Objectev3;
+    [SerializeField] Transform Objectev4;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +31,14 @@ public class SaveLoad : MonoBehaviour
             SaveScript.BatteryPower = PlayerPrefs.GetFloat("PowerBattery");
             SaveScript.PlayerHealth = PlayerPrefs.GetInt("PlayersHealth");
             SaveScript.Bullets = PlayerPrefs.GetInt("Bullets");
+            SaveScript.Objectev = PlayerPrefs.GetInt("Objectev");
             PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
             SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1")==1?true:false;
             SaveScript.Cinma2 = PlayerPrefs.GetInt("Cinma2") == 1 ? true : false;
             SaveScript.Cinma3 = PlayerPrefs.GetInt("Cinma3") == 1 ? true : false;
             SaveScript.Cinma4 = PlayerPrefs.GetInt("Cinma4") == 1 ? true : false;
+            SaveScript.Cinma4 = PlayerPrefs.GetInt("Cinma5") == 1 ? true : false;
+            SaveScript.Cinmajohn = PlayerPrefs.GetInt("Cinmajohn") == 1 ? true : false;
             SaveScript.MassgeTrigg1 = PlayerPrefs.GetInt("Message1") == 1 ? true : false;
             SaveScript.MassgeTrigg2 = PlayerPrefs.GetInt("Message2") == 1 ? true : false;
             SaveScript.MassgeTrigg3 = PlayerPrefs.GetInt("Message3") == 1 ? true : false;
@@ -50,6 +59,10 @@ public class SaveLoad : MonoBehaviour
             SaveScript.HaveKey = PlayerPrefs.GetInt("Key1") == 1 ? true : false;
             SaveScript.HaveKey2 = PlayerPrefs.GetInt("Key2") == 1 ? true : false;
             SaveScript.HaveKey3 = PlayerPrefs.GetInt("Key3") == 1 ? true : false;
+            SaveScript.Objectev1 = PlayerPrefs.GetInt("Objectev1") == 1 ? true : false;
+            SaveScript.NoteObjectev2 = PlayerPrefs.GetInt("NoteObjectev2") == 1 ? true : false;
+            SaveScript.CinmaKillScene = PlayerPrefs.GetInt("CinmakillScene") == 1 ? true : false;
+            PlayerCharacter.GetComponent<Inventar>()._lpCount= PlayerPrefs.GetInt("LockPick");
             //    SaveScript.Bullets = PlayerPrefs.GetInt("BulletsLeft");
             if (PlayerPrefs.GetInt("Knife") == 1)
             {
@@ -124,6 +137,22 @@ public class SaveLoad : MonoBehaviour
             {
                 StartCoroutine(ScenePlayer());
             }
+            if (PlayerPrefs.GetInt("Objectev") == 1)
+            {
+                Objectev1.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 2)
+            {
+                Objectev2.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 3)
+            {
+                Objectev3.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 4)
+            {
+                Objectev4.gameObject.SetActive(true);
+            }
         }
         if (MenuScript.LoadGame == false)
         {
@@ -153,7 +182,11 @@ public class SaveLoad : MonoBehaviour
 
         yield return new WaitForSeconds(0f);
         PlayerCharacter.transform.position = new Vector3(650.6f, 22.13f, 370.8f);
-      //  SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1") == 1 ? true : false;
+        if (SaveScript.Cinmajohn==false) {
+            john.GetComponent<NavMeshAgent>().enabled = false;
+            john.transform.position = new Vector3(655.51f, 16.66f, 404.4f);
+            john.GetComponent<NavMeshAgent>().enabled = true; }
+        //  SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1") == 1 ? true : false;
 
 
 

@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class HostageRun : MonoBehaviour
 {
-  
-   void OnTriggerEnter(Collider other)
+    void Start()
+    {
+        if (SaveScript.Cinmajohn == false)
+        {
+            this.gameObject.GetComponentInParent<HostageFollow2>().enabled = true;
+        }
+    }
+    void OnTriggerEnter(Collider other)
     {
 
+      
         if (other.gameObject.CompareTag("Player"))
         {
             this.gameObject.GetComponentInParent<HostageFollow2>().enabled = true;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ButcherKill : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class ButcherKill : MonoBehaviour
     private NavMeshAgent nav;
     [SerializeField] GameObject Butcher;
     [SerializeField] GameObject Player;
-    
+    public GameObject PlayerDeath;
     [SerializeField] GameObject CameraButcher;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,16 @@ public class ButcherKill : MonoBehaviour
             CameraButcher.gameObject.SetActive(true);
             SaveScript.PlayerHealth = 1;
             SaveScript.DisplayHealth = true;
+           
+            StartCoroutine(WaitForMain());
+            
         }
+    }
+    IEnumerator WaitForMain()
+    {
+        yield return new WaitForSeconds(5f);
+        PlayerDeath.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(0);
     }
 }

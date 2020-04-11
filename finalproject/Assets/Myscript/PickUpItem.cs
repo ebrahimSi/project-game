@@ -95,6 +95,7 @@ SaveScript.Apple2=false;
                 objectev.gameObject.SetActive(true);
                 objectev1.gameObject.SetActive(false);
                 SaveScript.Apple3=false;
+                SaveScript.Objectev = 2;
 }
             if(NoteNumber==4){
 SaveScript.Apple4=false;

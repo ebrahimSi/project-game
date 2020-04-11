@@ -15,7 +15,10 @@ public class HostageFollow2 : MonoBehaviour
     private bool Stop = false;
     void Start() {
         anim = GetComponent<Animator>();
-        anim.SetBool("DazedOff", true);
+        if (SaveScript.Cinmajohn == true){
+            anim.SetBool("DazedOff", true);
+        }
+        else { anim.SetBool("Skip", true); }
     }
     void Update()
     {

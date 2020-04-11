@@ -23,43 +23,43 @@ public class HostageFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (RunToPlayer == true) {
-            DistanceToPlayer = Vector3.Distance(Player.position, transform.position);
-            if (move == true)
-            {
-                nav.SetDestination(Player.position);
-            }
-            if (DistanceToPlayer < FollowDistance)
-            {
-                move = false;
-                nav.speed = 0f;
-                anim.SetBool("IsWallking", false);
-            }
-            if (DistanceToPlayer > FollowDistance)
-            {
-                move = true;
-                nav.speed = 3.5f;
-                anim.SetBool("IsWallking", true);
-                nav.SetDestination(Player.position);
-            }
-        }
+      //  if (RunToPlayer == true) {
+         //   DistanceToPlayer = Vector3.Distance(Player.position, transform.position);
+          //  if (move == true)
+          //  {
+            //    nav.SetDestination(Player.position);
+            //}
+          //  if (DistanceToPlayer < FollowDistance)
+          //  {
+            //    move = false;
+              //  nav.speed = 0f;
+             //   anim.SetBool("IsWallking", false);
+          //  }
+           // if (DistanceToPlayer > FollowDistance)
+           // {
+//move = true;
+             //   nav.speed = 3.5f;
+              //  anim.SetBool("IsWallking", true);
+              //  nav.SetDestination(Player.position);
+           // }
+       // }
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (HostageTrig == false)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                RunToPlayer = true;
-                anim.SetBool("IsWallking", true);
-            }
+       // if (HostageTrig == false)
+       // {
+          //  if (other.gameObject.CompareTag("Player"))
+          //  {
+           //     RunToPlayer = true;
+              //  anim.SetBool("IsWallking", true);
+          //  }
 
-        }
+      //  }
         if (other.gameObject.CompareTag("HostageTrigger"))
         {
-            RunToPlayer = false;
+           // RunToPlayer = false;
             HostageTrig = true;
             anim.SetBool("Stop", true);
             nav.speed = 0f;
@@ -69,11 +69,10 @@ public class HostageFollow : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
        
-            if (other.gameObject.CompareTag("Player"))
-            {
-                RunToPlayer = false;
-                anim.SetBool("IsWallking", false);
-            } 
-       
-    }
+           // if (other.gameObject.CompareTag("Player"))
+          //  {
+              //  RunToPlayer = false;
+           //     anim.SetBool("IsWallking", false);
+         //  } 
+          }
 }

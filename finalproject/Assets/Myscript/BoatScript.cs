@@ -11,13 +11,14 @@ public class BoatScript : MonoBehaviour
     [SerializeField] Text MassageText;
     private bool MenuReturn = false;
     [SerializeField] GameObject MainMenuLoad;
+    [SerializeField] GameObject panelend;
     public GameObject TextBox;
     public AudioSource JhonFindSound;
     public AudioSource gassolineSound;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -84,9 +85,10 @@ public class BoatScript : MonoBehaviour
 
         if (SaveScript.Gass == true && SaveScript.Hostage == true)
         {
-          
-                MainMenuLoad.gameObject.SetActive(true);
-          
+
+            //  MainMenuLoad.gameObject.SetActive(true);
+            StartCoroutine(WaitForMain());
+
             //  BoatMenu.gameObject.SetActive(true);
             // Time.timeScale = 0;
             //Cursor.visible = true;
@@ -138,5 +140,22 @@ public class BoatScript : MonoBehaviour
         }
 
 
+    }
+    IEnumerator WaitForMain()
+    {
+        
+        BoatMenu.gameObject.SetActive(false);
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        MenuReturn = false;
+        BoatMessage.gameObject.SetActive(false);
+        ControlsMenu.ControlsOpen = false;
+        ControlsMenu.OptionsOpen = false;
+        SaveScript.CanShot = true;
+      
+        panelend.gameObject.SetActive(true);
+        yield return new WaitForSeconds(6f);
+        // SceneManager.LoadScene(0);
+        MainMenuLoad.gameObject.SetActive(true);
     }
 }

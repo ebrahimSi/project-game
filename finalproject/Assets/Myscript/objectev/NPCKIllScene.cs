@@ -59,5 +59,6 @@ public class NPCKIllScene : MonoBehaviour
         CameraMain.gameObject.SetActive(true);
         truekiller.gameObject.SetActive(true);
         Killer.gameObject.SetActive(false);
+        SaveScript.CinmaKillScene = false;
     }
     }
