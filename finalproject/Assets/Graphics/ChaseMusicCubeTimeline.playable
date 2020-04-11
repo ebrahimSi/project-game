@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
   m_Name: AudioPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: 10546d9649879d14e8277d84c34d122e, type: 3}
-  m_Loop: 0
+  m_Clip: {fileID: 8300000, guid: 7e960a7487062604695030c10a908987, type: 3}
+  m_Loop: 1
   m_bufferingTime: 0.1
   m_ClipProperties:
     volume: 0.49
