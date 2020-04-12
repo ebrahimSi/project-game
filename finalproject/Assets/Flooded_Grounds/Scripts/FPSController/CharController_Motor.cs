@@ -310,17 +310,17 @@ else{cam.gameObject.SetActive(true);}
       IEnumerator WaitForcinma()
     {
         yield return new WaitForSeconds(1.9f);
-        TextBox.GetComponent<Text>().text = "hello !!";
+        TextBox.GetComponent<Text>().text = "";
          yield return new WaitForSeconds(1.9f);
      
-        TextBox.GetComponent<Text>().text = "Where Am i ?!";
+        TextBox.GetComponent<Text>().text = "";
          CallJohnathan.Play();
+        yield return new WaitForSeconds(2f);
+        TextBox.GetComponent<Text>().text = "My Head !";
         yield return new WaitForSeconds(2.25f);
-        TextBox.GetComponent<Text>().text = "ali, where are you ?!!";
-        yield return new WaitForSeconds(2.25f);
-        TextBox.GetComponent<Text>().text = "Answer me !!";
-        yield return new WaitForSeconds(2.25f);
-        TextBox.GetComponent<Text>().text = "Where the hell did he go ?";
+        TextBox.GetComponent<Text>().text = "";
+        yield return new WaitForSeconds(2.2f);
+        TextBox.GetComponent<Text>().text = "Where Am I ?!?";
          yield return new WaitForSeconds(2.25f);
         TextBox.GetComponent<Text>().text = "";
         Chapter.gameObject.SetActive(true);

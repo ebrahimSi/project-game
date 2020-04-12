@@ -25,7 +25,7 @@ public class DoorScript2 : MonoBehaviour
     {
         DoorMessage.gameObject.SetActive(false);
         Anim=GetComponentInParent<Animator>();
-        SaveScript.HaveKey = true;
+     
 
 
     }
@@ -120,16 +120,16 @@ public class DoorScript2 : MonoBehaviour
     IEnumerator WaitForMain()
     {
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
 
-        TextBox.GetComponent<Text>().text = "johnathan !!";
+        TextBox.GetComponent<Text>().text = "What is that !?";
         CallJohnathan.Play();
+        yield return new WaitForSeconds(2f);
+        TextBox.GetComponent<Text>().text = "What happened to them ?!";
         yield return new WaitForSeconds(3f);
-        TextBox.GetComponent<Text>().text = "johnathan, where are you ?!!";
-        yield return new WaitForSeconds(3f);
-        TextBox.GetComponent<Text>().text = "oh here you are ?";
+        TextBox.GetComponent<Text>().text = "Johnathan ?!!!";
         yield return new WaitForSeconds(3.14f);
-        TextBox.GetComponent<Text>().text = "i found you";
+        TextBox.GetComponent<Text>().text = "";
 
         TextBox.GetComponent<Text>().text = "";
         //

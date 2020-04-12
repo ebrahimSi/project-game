@@ -107,15 +107,20 @@ public class NoteReader : MonoBehaviour
                 NoteWallCamera.gameObject.SetActive(true);
                 MainCamera.gameObject.SetActive(false);
                 Fps.gameObject.SetActive(false);
-                TextBox.GetComponent<Text>().text = "note from john?";
+                JohnNoteWall.Play();
+                TextBox.GetComponent<Text>().text = "What's this stain of blood ?";
+                yield return new WaitForSeconds(2f);
+                TextBox.GetComponent<Text>().text = "And again who are they ?!";
+                yield return new WaitForSeconds(3.5f);
+                TextBox.GetComponent<Text>().text = "What does he mean by everywhere ?";
+                yield return new WaitForSeconds(1.5f);
+                TextBox.GetComponent<Text>().text = "There is nobody in this town !";
+                yield return new WaitForSeconds(2f);
+                TextBox.GetComponent<Text>().text = "";
                 yield return new WaitForSeconds(3f);
-                TextBox.GetComponent<Text>().text = "why the blood";
-                yield return new WaitForSeconds(3f);
-                TextBox.GetComponent<Text>().text = "I hear someBody walk";
-                yield return new WaitForSeconds(9f);
-                TextBox.GetComponent<Text>().text = "hay Wait";
-                 JohnNoteWall.Play();
-    yield return new WaitForSeconds(1f);
+                TextBox.GetComponent<Text>().text = "Hey Wait !!";
+                
+    yield return new WaitForSeconds(4f);
                 NoteWallCamera.gameObject.SetActive(false);
                 MainCamera.gameObject.SetActive(true);
                 Fps.gameObject.SetActive(true);

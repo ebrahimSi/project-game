@@ -87,15 +87,15 @@ public class DoorScript1 : MonoBehaviour
 
         yield return new WaitForSeconds(4.3f);
 
-        TextBox.GetComponent<Text>().text = "johnathan !!";
+        TextBox.GetComponent<Text>().text = "What is this place ?";
         CallJohnathan.Play();
-        yield return new WaitForSeconds(4.3f);
-        TextBox.GetComponent<Text>().text = "johnathan, where are you ?!!";
-        yield return new WaitForSeconds(4.3f);
-        TextBox.GetComponent<Text>().text = "Answer me !!";
-        yield return new WaitForSeconds(4.3f);
-        TextBox.GetComponent<Text>().text = "Where the hell did he go ?";
-
+        yield return new WaitForSeconds(3.3f);
+        TextBox.GetComponent<Text>().text = "Hello!!";
+        yield return new WaitForSeconds(1.3f);
+        TextBox.GetComponent<Text>().text = "Anybody Home ? !!";
+        yield return new WaitForSeconds(3f);
+        TextBox.GetComponent<Text>().text = "Well ... Guess not?";
+        yield return new WaitForSeconds(5.3f);
         TextBox.GetComponent<Text>().text = "";
         //
       //  yield return new WaitForSeconds(17.5f);

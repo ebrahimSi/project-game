@@ -8,6 +8,8 @@ public class BatteryPower : MonoBehaviour
 
     [SerializeField] Image BatteryUI;
     [SerializeField] float DrainTime = 240.0f;
+    [SerializeField] AudioSource BatterySound;
+     [SerializeField] GameObject TextBox;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,8 @@ public class BatteryPower : MonoBehaviour
             if(SaveScript.BatteryPower == 0)
             {
                 SaveScript.FlashlightOn = false;
+               BatterySound.Play();
+                 StartCoroutine(WaitForMain());
             }
         }
 
@@ -44,5 +48,13 @@ public class BatteryPower : MonoBehaviour
                 SaveScript.NighVision = false;
             }
         }
+    }
+      IEnumerator WaitForMain()
+    {
+        TextBox.GetComponent<Text>().text = "I need Some Battery !";
+        yield return new WaitForSeconds(2f);
+        TextBox.GetComponent<Text>().text = "";
+        
+        
     }
 }

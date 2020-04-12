@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCKIllScene : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class NPCKIllScene : MonoBehaviour
     [SerializeField] GameObject Camera2;
     [SerializeField] GameObject Camera3;
     [SerializeField] GameObject NaveCube;
+    [SerializeField] GameObject TextBox;
+    [SerializeField] AudioSource sound;
     private Animator animKiller;
     private Animator animNPC;
     private bool  Scene=true;
@@ -60,5 +63,11 @@ public class NPCKIllScene : MonoBehaviour
         truekiller.gameObject.SetActive(true);
         Killer.gameObject.SetActive(false);
         SaveScript.CinmaKillScene = false;
+        sound.Play();
+       
+        TextBox.GetComponent<Text>().text = "What is going on here ?!";
+        yield return new WaitForSeconds(2.5f);
+        TextBox.GetComponent<Text>().text = "";
+
     }
     }

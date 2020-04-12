@@ -215,7 +215,7 @@ public class TrigGreen : MonoBehaviour
         if (number == 5)
         {
             yield return new WaitForSeconds(1.5f);
-            TextBox.GetComponent<Text>().text = "Damn! ";
+            TextBox.GetComponent<Text>().text = "No Time To Waste Here ";
             PuzzleMistake.Play();
            
             yield return new WaitForSeconds(1.5f);

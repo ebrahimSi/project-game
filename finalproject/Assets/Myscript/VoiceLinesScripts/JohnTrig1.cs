@@ -40,34 +40,34 @@ public class JohnTrig1 : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(1.5f);
 
-        TextBox.GetComponent<Text>().text = " Ali!!";
-        CallJohnathan.Play();
+        TextBox.GetComponent<Text>().text = " ";
+      
         yield return new WaitForSeconds(1.5f);
-        TextBox.GetComponent<Text>().text = "ali, Wake Up ?!!";
+        TextBox.GetComponent<Text>().text = "Johnathan are you okay !?";
         yield return new WaitForSeconds(2.5f);
-        TextBox.GetComponent<Text>().text = "Answer me !!";
+        TextBox.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(3.5f);
-        TextBox.GetComponent<Text>().text = " oh oh who are you ?";
+        TextBox.GetComponent<Text>().text = "Yeah i'm okay";
         yield return new WaitForSeconds(3.5f);
-        TextBox.GetComponent<Text>().text = " ebrahim?";
+        TextBox.GetComponent<Text>().text = "  ";
         yield return new WaitForSeconds(3.5f);
-        TextBox.GetComponent<Text>().text = " thanks i am safe";
+        TextBox.GetComponent<Text>().text = " Thank god !";
         yield return new WaitForSeconds(3.5f);
-        TextBox.GetComponent<Text>().text = " we must go out of here";
+        TextBox.GetComponent<Text>().text = " Okay we need to get out of here";
         yield return new WaitForSeconds(3.5f);
-        TextBox.GetComponent<Text>().text = " i see Boat east the church";
+        TextBox.GetComponent<Text>().text = " i think i saw a bout near the church";
         yield return new WaitForSeconds(3.5f);
         TextBox.GetComponent<Text>().text = "";
         // ThePlayer.gameObject.SetActive(true);
         //  ThePlayer.gameObject.transform.position = camera2.gameObject.transform.position;
 
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(0f);
         // camera.gameObject.SetActive(true);
         //  camera.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         //ThePlayer.gameObject.transform.rotation = Quaternion.Euler(0f, -49.1f, 0f);
         camera2.gameObject.SetActive(false);
         camera3.gameObject.SetActive(true);
-        yield return new WaitForSeconds(34f);
+        yield return new WaitForSeconds(27f);
         camera3.gameObject.SetActive(false);
         ThePlayer.gameObject.SetActive(true);
         camera.gameObject.SetActive(true);

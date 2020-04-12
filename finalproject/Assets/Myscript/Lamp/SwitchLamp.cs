@@ -6,6 +6,8 @@ public class SwitchLamp : MonoBehaviour
 {
     [SerializeField] GameObject LightOnOf;
     [SerializeField] AudioSource LightOnOfSound;
+    [SerializeField] GameObject SwitchOn;
+    [SerializeField] GameObject SwitchOff;
     private bool isTrigger = false;
 
     // Start is called before the first frame update
@@ -25,11 +27,16 @@ public class SwitchLamp : MonoBehaviour
                 {
                     LightOnOf.gameObject.SetActive(false);
                     LightOnOfSound.Play();
+                    SwitchOn.gameObject.SetActive(true);
+                    SwitchOff.gameObject.SetActive(false);
+
                 }
                 else { LightOnOf.gameObject.SetActive(true);
                     Material mymat = GetComponent<Renderer>().material;
                     mymat.EnableKeyword("_Emission");
                     LightOnOfSound.Play();
+                    SwitchOff.gameObject.SetActive(true);
+                    SwitchOn.gameObject.SetActive(false);
                 }
 
             }
@@ -40,7 +47,17 @@ public class SwitchLamp : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isTrigger = true;
-           
+            if (LightOnOf.gameObject.activeSelf)
+            {
+                SwitchOff.gameObject.SetActive(true);
+                SwitchOn.gameObject.SetActive(false);
+            }
+            else
+            {
+                SwitchOn.gameObject.SetActive(true);
+                SwitchOff.gameObject.SetActive(false);
+            }
+
         }
     }
 
@@ -49,8 +66,10 @@ public class SwitchLamp : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 isTrigger = false;
-         
-            }
+          
+            SwitchOn.gameObject.SetActive(false); 
+            SwitchOff.gameObject.SetActive(false);
+        }
 
 
         }
