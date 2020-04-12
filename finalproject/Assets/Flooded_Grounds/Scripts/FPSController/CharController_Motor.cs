@@ -26,7 +26,7 @@ public class CharController_Motor : MonoBehaviour
 
     float moveFB, moveLR;
     float rotX, rotY;
-    public bool webGLRightClickRotation = true;
+   
     float gravity = -9.8f;
     public float Stamina = 10f;
     public float MaxStamina = 10f;
@@ -52,9 +52,7 @@ public class CharController_Motor : MonoBehaviour
      
         //LockCursor ();
         character = GetComponent<CharacterController>();
-        if (Application.isEditor)
-        {
-            webGLRightClickRotation = false;
+      
             sensitivity = sensitivity * 1.5f;
             Cursor.visible = false;
             speed = WalkSpeed;
@@ -73,7 +71,7 @@ else{cam.gameObject.SetActive(true);}
             LowHealthSound.gameObject.SetActive(false);
             PlayerDeath.gameObject.SetActive(false);
 
-        }
+       
     }
 
 
@@ -251,19 +249,8 @@ else{cam.gameObject.SetActive(true);}
             nav.enabled = false;
         }
 
-
-        if (webGLRightClickRotation)
-        {
-            if (Input.GetKey(KeyCode.Mouse0))
-            {
-                CameraRotation(cam, rotX, rotY);
-            }
-        }
-        else if (!webGLRightClickRotation)
-        {
-            CameraRotation(cam, rotX, rotY);
-        }
-
+        
+          CameraRotation(cam, rotX, rotY);
         movement = transform.rotation * movement;
         character.Move(movement * Time.deltaTime);
     }
