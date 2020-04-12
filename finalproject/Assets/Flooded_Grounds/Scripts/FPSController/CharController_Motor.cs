@@ -309,10 +309,11 @@ else{cam.gameObject.SetActive(true);}
     }
       IEnumerator WaitForcinma()
     {
-        TextBox.GetComponent<Text>().text = "ohhh !!";
-         yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.9f);
+        TextBox.GetComponent<Text>().text = "hello !!";
+         yield return new WaitForSeconds(1.9f);
      
-        TextBox.GetComponent<Text>().text = "alii !!";
+        TextBox.GetComponent<Text>().text = "Where Am i ?!";
          CallJohnathan.Play();
         yield return new WaitForSeconds(2.25f);
         TextBox.GetComponent<Text>().text = "ali, where are you ?!!";

@@ -27,6 +27,8 @@ public class SwitchLamp : MonoBehaviour
                     LightOnOfSound.Play();
                 }
                 else { LightOnOf.gameObject.SetActive(true);
+                    Material mymat = GetComponent<Renderer>().material;
+                    mymat.EnableKeyword("_Emission");
                     LightOnOfSound.Play();
                 }
 
