@@ -156,7 +156,7 @@ public class SaveLoad : MonoBehaviour
         }
         if (MenuScript.LoadGame == false)
         {
-            SaveScript.Difficulty = 1f;
+            SaveScript.Difficulty = 0.5f;
             SaveScript.weaponID = 0;
             SaveScript.Batteries = 0;
             SaveScript.BatteryPower = 1f;

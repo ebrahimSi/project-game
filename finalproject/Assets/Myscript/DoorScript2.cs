@@ -24,8 +24,10 @@ public class DoorScript2 : MonoBehaviour
     void Start()
     {
         DoorMessage.gameObject.SetActive(false);
-        Anim=GetComponentInParent<Animator>(); 
-     
+        Anim=GetComponentInParent<Animator>();
+        SaveScript.HaveKey = true;
+
+
     }
 
     // Update is called once per frame
@@ -42,8 +44,9 @@ public class DoorScript2 : MonoBehaviour
                     Anim.SetBool("Open2", true);
                     DoorSound.Play();
                     Fps.gameObject.SetActive(false);
-                    camera2.gameObject.SetActive(false);
                     camera.gameObject.SetActive(true);
+                    camera2.gameObject.SetActive(false);
+                  
                     StartCoroutine(WaitForMain());
 
 
@@ -136,7 +139,7 @@ public class DoorScript2 : MonoBehaviour
 
         yield return new WaitForSeconds(0f);
         camera2.gameObject.SetActive(true);
-        //camera.gameObject.SetActive(false);
+        camera.gameObject.SetActive(false);
         cube.gameObject.SetActive(true);
         SaveScript.Cinma5 = false;
         this.gameObject.SetActive(false);

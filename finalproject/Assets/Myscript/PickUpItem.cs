@@ -169,6 +169,9 @@ SaveScript.Baterry5=false;
 }else if(NoteNumber==2)
 {
  SaveScript.ReadNoteWall = true;
+}else if(NoteNumber==3)
+{
+ SaveScript.ReadNoteKey = true;
 }
          
            

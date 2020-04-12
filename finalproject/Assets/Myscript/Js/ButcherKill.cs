@@ -39,9 +39,9 @@ public class ButcherKill : MonoBehaviour
     }
     IEnumerator WaitForMain()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
         PlayerDeath.gameObject.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(6f);
         SceneManager.LoadScene(0);
     }
 }

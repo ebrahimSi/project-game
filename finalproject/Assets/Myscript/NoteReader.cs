@@ -7,6 +7,7 @@ public class NoteReader : MonoBehaviour
 {
     [SerializeField] GameObject Note;
     [SerializeField] GameObject NoteWall;
+    [SerializeField] GameObject NoteKey;
     [SerializeField] GameObject NoteWallCamera;
     [SerializeField] GameObject MainCamera;
     [SerializeField] GameObject Fps;
@@ -17,6 +18,7 @@ public class NoteReader : MonoBehaviour
     private int noteNumber;
     public AudioSource JohnNote;
     public AudioSource JohnNoteWall;
+    [SerializeField] GameObject PickUpPanel;
     [SerializeField] GameObject Objectev;
     [SerializeField] GameObject Objectev1;
 
@@ -48,6 +50,14 @@ public class NoteReader : MonoBehaviour
             noteNumber = 2;
             SaveScript.CanShot = false;
         }
+        if (SaveScript.ReadNoteKey == true)
+        {
+            NoteKey.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Time.timeScale = 0;
+            noteNumber = 3;
+            SaveScript.CanShot = false;
+        }
     }
     public void CloseNote()
     {
@@ -55,6 +65,8 @@ public class NoteReader : MonoBehaviour
         Note.gameObject.SetActive(false);
         SaveScript.ReadNoteWall = false;
         NoteWall.gameObject.SetActive(false);
+        SaveScript.ReadNoteKey = false;
+        NoteKey.gameObject.SetActive(false);
         Cursor.visible = false;
         Time.timeScale = 1;
         StartCoroutine(ScenePlayer(noteNumber));
@@ -89,12 +101,19 @@ public class NoteReader : MonoBehaviour
         {
             if (SaveScript.Cinma3==true)
             {
+
+                PickUpPanel.gameObject.SetActive(false);
                 Enemy.gameObject.SetActive(true);
                 NoteWallCamera.gameObject.SetActive(true);
                 MainCamera.gameObject.SetActive(false);
                 Fps.gameObject.SetActive(false);
-                yield return new WaitForSeconds(14f);
-                TextBox.GetComponent<Text>().text = "hay come";
+                TextBox.GetComponent<Text>().text = "note from john?";
+                yield return new WaitForSeconds(3f);
+                TextBox.GetComponent<Text>().text = "why the blood";
+                yield return new WaitForSeconds(3f);
+                TextBox.GetComponent<Text>().text = "I hear someBody walk";
+                yield return new WaitForSeconds(9f);
+                TextBox.GetComponent<Text>().text = "hay Wait";
                  JohnNoteWall.Play();
     yield return new WaitForSeconds(1f);
                 NoteWallCamera.gameObject.SetActive(false);

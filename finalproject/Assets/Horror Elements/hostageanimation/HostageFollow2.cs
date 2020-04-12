@@ -6,6 +6,7 @@ public class HostageFollow2 : MonoBehaviour
 {
     public Transform ThePlayer;
     static Animator anim;
+    private NavMeshAgent nav;
     //  public GameObject ThePlayer;
     //  public float TargetDistance;
     // public float AlloweDistance = 5;
@@ -14,6 +15,7 @@ public class HostageFollow2 : MonoBehaviour
     // public RaycastHit Shot;
     private bool Stop = false;
     void Start() {
+        nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         if (SaveScript.Cinmajohn == true){
             anim.SetBool("DazedOff", true);
@@ -24,7 +26,7 @@ public class HostageFollow2 : MonoBehaviour
     {
         if (Stop == false)
         {
-            if (Vector3.Distance(ThePlayer.position, this.transform.position) < 20)
+            if (Vector3.Distance(ThePlayer.position, this.transform.position) < 70)
             {
                 Vector3 direction = ThePlayer.position - this.transform.position;
                 direction.y = 0;
@@ -32,7 +34,8 @@ public class HostageFollow2 : MonoBehaviour
                 //   anim.SetBool(IsWallking, true);
                 if (direction.magnitude > 5)
                 {
-                    this.transform.Translate(0, 0, 0.05f);
+                    //this.transform.Translate(0, 0, 0.05f);
+                    nav.SetDestination(ThePlayer.position);
                     anim.SetBool("IsWallking", true);
                     SaveScript.Hostage = true;
                 }

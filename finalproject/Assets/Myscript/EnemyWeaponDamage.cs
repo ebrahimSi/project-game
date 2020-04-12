@@ -27,6 +27,7 @@ public class EnemyWeaponDamage : MonoBehaviour
                     HitActive = true;
                     HurtUI.gameObject.SetActive(true);
                     HitSound.Play(0);
+                  
                     SaveScript.PlayerHealth -= WeaponDamage;
                     SaveScript.DisplayHealth = true;
                 }

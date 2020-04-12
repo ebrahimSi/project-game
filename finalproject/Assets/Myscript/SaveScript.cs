@@ -5,7 +5,7 @@ using UnityEngine;
 public class SaveScript : MonoBehaviour
 {
 
-    public static float Difficulty = 1f;
+    public static float Difficulty = 0.5f;
     public static int weaponID = 0;
     public static bool weaponChange = false;
 
@@ -25,6 +25,7 @@ public class SaveScript : MonoBehaviour
     public static bool HaveGun = false;
 
     public static bool ReadNote = false;
+    public static bool ReadNoteKey = false;
      public static bool ReadNoteWall = false;
     public static bool SaveZone = false;
 
