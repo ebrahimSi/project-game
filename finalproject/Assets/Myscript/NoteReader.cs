@@ -131,6 +131,7 @@ public class NoteReader : MonoBehaviour
                 SaveScript.Cinma3 = false;
                 Objectev6.gameObject.SetActive(true);
                 Objectev5.gameObject.SetActive(false);
+                SaveScript.Objectev = 6;
                 Enemy.gameObject.SetActive(false);
                 KillScene.gameObject.SetActive(true);
                 TextBox.GetComponent<Text>().text = "";

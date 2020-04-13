@@ -110,6 +110,7 @@ public class DoorScript1 : MonoBehaviour
         cube.gameObject.SetActive(true);
         Objectev4.gameObject.SetActive(false);
         Objectev5.gameObject.SetActive(true);
+        SaveScript.Objectev = 5;
         SaveScript.Cinma4 = false;
         this.gameObject.SetActive(false);
     }

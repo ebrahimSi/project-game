@@ -141,6 +141,7 @@ public class BoatScript : MonoBehaviour
             TextBox.GetComponent<Text>().text = "";
             Objectev8.gameObject.SetActive(false);
             Objectev9.gameObject.SetActive(true);
+            SaveScript.Objectev = 9;
 
         }
 

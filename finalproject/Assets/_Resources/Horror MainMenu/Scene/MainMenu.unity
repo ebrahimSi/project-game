@@ -11510,7 +11510,7 @@ PrefabInstance:
     - target: {fileID: 224001342930578828, guid: d7df848c3f6883c4383a51a4f18860af,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -44
+      value: 22.5
       objectReference: {fileID: 0}
     - target: {fileID: 114198926460269444, guid: d7df848c3f6883c4383a51a4f18860af,
         type: 3}
@@ -11518,6 +11518,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: dcdca1d7319d06340ba6f2dd52cfb53d,
         type: 3}
+    - target: {fileID: 1109205621241420, guid: d7df848c3f6883c4383a51a4f18860af, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114758685909442902, guid: d7df848c3f6883c4383a51a4f18860af,
+        type: 3}
+      propertyPath: m_Text
+      value: This game was made by Ali Mahjari and Ibrahim Shbi as a graduation project
+        for UQU
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7df848c3f6883c4383a51a4f18860af, type: 3}
 --- !u!1 &1832651150

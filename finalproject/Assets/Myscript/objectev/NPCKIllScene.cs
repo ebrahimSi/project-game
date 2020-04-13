@@ -72,6 +72,7 @@ public class NPCKIllScene : MonoBehaviour
         TextBox.GetComponent<Text>().text = "";
         Objectev6.gameObject.SetActive(false);
         Objectev7.gameObject.SetActive(true);
+        SaveScript.Objectev = 7;
 
     }
     }

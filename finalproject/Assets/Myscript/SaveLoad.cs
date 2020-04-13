@@ -21,11 +21,19 @@ public class SaveLoad : MonoBehaviour
     [SerializeField] Transform Objectev2;
     [SerializeField] Transform Objectev3;
     [SerializeField] Transform Objectev4;
+    [SerializeField] Transform Objectev5;
+    [SerializeField] Transform Objectev6;
+    [SerializeField] Transform Objectev7;
+    [SerializeField] Transform Objectev8;
+    [SerializeField] Transform Objectev9;
+    [SerializeField] Transform Objectev10;
+    //[SerializeField] Transform ObjectevLockPick;
     // Start is called before the first frame update
     void Start()
     {
         if (MenuScript.LoadGame == true)
         {
+            SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1") == 1 ? true : false;
             SaveScript.Difficulty = PlayerPrefs.GetFloat("DifficultyLevel");
             SaveScript.Batteries = PlayerPrefs.GetInt("BatteryNumber");
             SaveScript.BatteryPower = PlayerPrefs.GetFloat("PowerBattery");
@@ -33,7 +41,7 @@ public class SaveLoad : MonoBehaviour
             SaveScript.Bullets = PlayerPrefs.GetInt("Bullets");
             SaveScript.Objectev = PlayerPrefs.GetInt("Objectev");
             PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
-            SaveScript.Cinma1 = PlayerPrefs.GetInt("Cinma1")==1?true:false;
+           
             SaveScript.Cinma2 = PlayerPrefs.GetInt("Cinma2") == 1 ? true : false;
             SaveScript.Cinma3 = PlayerPrefs.GetInt("Cinma3") == 1 ? true : false;
             SaveScript.Cinma4 = PlayerPrefs.GetInt("Cinma4") == 1 ? true : false;
@@ -62,6 +70,7 @@ public class SaveLoad : MonoBehaviour
             SaveScript.Objectev1 = PlayerPrefs.GetInt("Objectev1") == 1 ? true : false;
             SaveScript.NoteObjectev2 = PlayerPrefs.GetInt("NoteObjectev2") == 1 ? true : false;
             SaveScript.CinmaKillScene = PlayerPrefs.GetInt("CinmakillScene") == 1 ? true : false;
+          
             PlayerCharacter.GetComponent<Inventar>()._lpCount= PlayerPrefs.GetInt("LockPick");
             //    SaveScript.Bullets = PlayerPrefs.GetInt("BulletsLeft");
             if (PlayerPrefs.GetInt("Knife") == 1)
@@ -153,6 +162,30 @@ public class SaveLoad : MonoBehaviour
             {
                 Objectev4.gameObject.SetActive(true);
             }
+            if (PlayerPrefs.GetInt("Objectev") == 5)
+            {
+                Objectev5.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 6)
+            {
+                Objectev6.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 7)
+            {
+                Objectev7.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 8)
+            {
+                Objectev8.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 9)
+            {
+                Objectev9.gameObject.SetActive(true);
+            }
+            if (PlayerPrefs.GetInt("Objectev") == 10)
+            {
+                Objectev10.gameObject.SetActive(true);
+            }
         }
         if (MenuScript.LoadGame == false)
         {
@@ -174,8 +207,76 @@ public class SaveLoad : MonoBehaviour
             SaveScript.Enemy5 = 1;
             SaveScript.Enemy6 = 1;
             SaveScript.SaveLocation = 0;
-            PlayerPrefs.DeleteAll();
-        }
+            //PlayerPrefs.DeleteAll();
+            /////
+            SaveScript.Difficulty = 0.5f;
+            SaveScript.weaponID = 0;
+            SaveScript.weaponChange = false;
+
+            SaveScript.CanPickUp = false;
+            SaveScript.Batteries = 0;
+            SaveScript.BatteryClick = false;
+            SaveScript.FlashlightOn = false;
+            SaveScript.HaveFlashlightOn = false;
+            SaveScript.NighVision = false;
+            SaveScript.BatteryPower = 1f;
+            SaveScript.PlayerHealth = 30;
+
+            SaveScript.DisplayHealth = true;
+            SaveScript.HaveKnife = false;
+            SaveScript.HaveBat = false;
+            SaveScript.HaveAxe = false;
+            SaveScript.HaveGun = false;
+
+            SaveScript.ReadNote = false;
+            SaveScript.ReadNoteKey = false;
+            SaveScript.ReadNoteWall = false;
+            SaveScript.SaveZone = false;
+
+            SaveScript.Enemy1 = 1;
+            SaveScript.Enemy2 = 1;
+            SaveScript.Enemy3 = 1;
+            SaveScript.Enemy4 = 1;
+            SaveScript.Enemy5 = 1;
+            SaveScript.Enemy6 = 1;
+            SaveScript.SaveLocation = 0;
+
+            SaveScript.Bullets = 0;
+            SaveScript.HaveKey = false;
+            SaveScript.HaveKey2 = false;
+            SaveScript.HaveKey3 = false;
+            SaveScript.Gass = false;
+            SaveScript.Hostage = false;
+            SaveScript.CanShot = true;
+            SaveScript.Cinma1 = true;
+            SaveScript.Cinma2 = true;
+            SaveScript.Cinma3 = true;
+            SaveScript.Cinma4 = true;
+            SaveScript.Cinma5 = true;
+            SaveScript.Cinmajohn = true;
+            SaveScript.CinmaKillScene = true;
+            SaveScript.CanShow = true;
+            SaveScript.CanShow2 = false;
+            SaveScript.MassgeTrigg1 = true;
+            SaveScript.MassgeTrigg2 = true;
+            SaveScript.MassgeTrigg3 = true;
+            SaveScript.Apple1 = true;
+            SaveScript.Apple2 = true;
+            SaveScript.Apple3 = true;
+            SaveScript.Apple4 = true;
+            SaveScript.Baterry1 = true;
+            SaveScript.Baterry2 = true;
+            SaveScript.Baterry3 = true;
+            SaveScript.Baterry4 = true;
+            SaveScript.Baterry5 = true;
+            SaveScript.LockPick1 = true;
+            SaveScript.LockPick2 = true;
+            SaveScript.LockPick3 = true;
+            SaveScript.Ammo = true;
+            SaveScript.Objectev = 0;
+            SaveScript.Objectev1 = true;
+            SaveScript.NoteObjectev2 = true;
+}
     }
     IEnumerator ScenePlayer()
     {

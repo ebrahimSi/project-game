@@ -75,7 +75,7 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("Objectev", SaveScript.Objectev);
                 SaveScript.SaveNumber++;
                 PlayerPrefs.SetInt("Save", SaveScript.SaveNumber);
-                PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?0:1);
+                PlayerPrefs.SetInt("Cinma1", SaveScript.Cinma1?1:0);
                 PlayerPrefs.SetInt("Cinma2", SaveScript.Cinma2 ? 1 : 0);
                 PlayerPrefs.SetInt("Cinma3", SaveScript.Cinma3 ? 1 : 0);
                 PlayerPrefs.SetInt("Cinma4", SaveScript.Cinma4 ? 1 : 0);
@@ -104,6 +104,7 @@ public class SaveZoneScript : MonoBehaviour
                 PlayerPrefs.SetInt("Objectev1", SaveScript.Objectev1 ? 1 : 0);
                 PlayerPrefs.SetInt("NoteObjectev2", SaveScript.NoteObjectev2 ? 1 : 0);
                 PlayerPrefs.SetInt("CinmakillScene", SaveScript.CinmaKillScene ? 1 : 0);
+               // PlayerPrefs.SetInt("lockPick", SaveScript.ObjectevLockPick ? 1 : 0);
                 //   PlayerPrefs.SetInt("BulletsLeft", SaveScript.Bullets);
                 PlayerPrefs.SetInt("Knife", Knife);
                 PlayerPrefs.SetInt("Axe", Axe);

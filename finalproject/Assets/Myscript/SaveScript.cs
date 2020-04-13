@@ -72,5 +72,6 @@ public class SaveScript : MonoBehaviour
      public static int Objectev =0;
      public static bool Objectev1 =true;
      public static bool NoteObjectev2 =true;
+    //public static bool ObjectevLockPick = true;
 }
   

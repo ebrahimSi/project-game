@@ -51,13 +51,16 @@ public class CharController_Motor : MonoBehaviour
     {
      
         //LockCursor ();
+         if (MenuScript.LoadGame == true)
+        { SaveScript.Cinma1 = false;}
         character = GetComponent<CharacterController>();
       
             sensitivity = sensitivity * 1.5f;
             Cursor.visible = false;
             speed = WalkSpeed;
             cam = cam1;
-            if(PlayerPrefs.GetInt("Cinma1") == 0){
+       
+            if(SaveScript.Cinma1==true){
              camNight.gameObject.SetActive(true);
           cam.gameObject.SetActive(false);
             StartCoroutine(WaitForcinma());

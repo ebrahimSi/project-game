@@ -75,6 +75,7 @@ public class JohnTrig1 : MonoBehaviour
         camera.gameObject.SetActive(true);
         Objectev7.gameObject.SetActive(false);
         Objectev8.gameObject.SetActive(true);
+        SaveScript.Objectev = 8;
         SaveScript.Cinmajohn = false;
         Destroy(this);
 

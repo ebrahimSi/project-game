@@ -201,6 +201,7 @@ if (PickupType == 9)
             SaveScript.Gass = true;
              Objectev9.gameObject.SetActive(false);
             Objectev10.gameObject.SetActive(true);
+             SaveScript.Objectev = 10;
             Destroy(Pickup, 0.2f);
 
         }
