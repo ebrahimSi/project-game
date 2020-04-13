@@ -10,6 +10,8 @@ public class DoorScript1 : MonoBehaviour
     [SerializeField] GameObject camera2;
     [SerializeField] GameObject cube;
     [SerializeField] GameObject Fps;
+    [SerializeField] GameObject Objectev4;
+    [SerializeField] GameObject Objectev5;
     public GameObject TextBox;
     public AudioSource CallJohnathan;
 
@@ -106,6 +108,8 @@ public class DoorScript1 : MonoBehaviour
         camera2.gameObject.SetActive(true);
         camera.gameObject.SetActive(false);
         cube.gameObject.SetActive(true);
+        Objectev4.gameObject.SetActive(false);
+        Objectev5.gameObject.SetActive(true);
         SaveScript.Cinma4 = false;
         this.gameObject.SetActive(false);
     }

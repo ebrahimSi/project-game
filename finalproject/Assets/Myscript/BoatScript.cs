@@ -15,6 +15,8 @@ public class BoatScript : MonoBehaviour
     public GameObject TextBox;
     public AudioSource JhonFindSound;
     public AudioSource gassolineSound;
+    [SerializeField] GameObject Objectev8;
+    [SerializeField] GameObject Objectev9;
     // Start is called before the first frame update
     void Start()
     {
@@ -137,6 +139,9 @@ public class BoatScript : MonoBehaviour
             TextBox.GetComponent<Text>().text = "where the gasoline? !!";
             yield return new WaitForSeconds(1.5f);
             TextBox.GetComponent<Text>().text = "";
+            Objectev8.gameObject.SetActive(false);
+            Objectev9.gameObject.SetActive(true);
+
         }
 
 

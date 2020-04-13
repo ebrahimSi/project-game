@@ -11,6 +11,8 @@ public class JohnTrig1 : MonoBehaviour
     public GameObject camera3;
     public GameObject TextBox;
     public AudioSource CallJohnathan;
+    [SerializeField] GameObject Objectev7;
+    [SerializeField] GameObject Objectev8;
 
 
     void Start() {
@@ -71,6 +73,8 @@ public class JohnTrig1 : MonoBehaviour
         camera3.gameObject.SetActive(false);
         ThePlayer.gameObject.SetActive(true);
         camera.gameObject.SetActive(true);
+        Objectev7.gameObject.SetActive(false);
+        Objectev8.gameObject.SetActive(true);
         SaveScript.Cinmajohn = false;
         Destroy(this);
 

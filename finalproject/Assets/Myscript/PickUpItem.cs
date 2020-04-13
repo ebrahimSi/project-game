@@ -20,6 +20,8 @@ public class PickUpItem : MonoBehaviour
     public AudioSource AppleLines;
     public AudioSource GasLines;
     public AudioSource AudioPickUp;
+    [SerializeField] GameObject Objectev9;
+    [SerializeField] GameObject Objectev10;
     private bool PickupActive = false;
 
     private void OnTriggerEnter(Collider other)
@@ -196,6 +198,8 @@ if (PickupType == 8)
 if (PickupType == 9)
         {
             SaveScript.Gass = true;
+             Objectev9.gameObject.SetActive(false);
+            Objectev10.gameObject.SetActive(true);
             Destroy(Pickup, 0.2f);
 
         }

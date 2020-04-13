@@ -21,6 +21,8 @@ public class NoteReader : MonoBehaviour
     [SerializeField] GameObject PickUpPanel;
     [SerializeField] GameObject Objectev;
     [SerializeField] GameObject Objectev1;
+    [SerializeField] GameObject Objectev5;
+    [SerializeField] GameObject Objectev6;
 
     // Start is called before the first frame update
     void Start()
@@ -83,11 +85,11 @@ public class NoteReader : MonoBehaviour
 
                 TextBox.GetComponent<Text>().text = "is this note left by johnathan!?";
                 JohnNote.Play();
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(4.5f);
                 TextBox.GetComponent<Text>().text = "and..who the hell has the key ? ";
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(2f);
                 TextBox.GetComponent<Text>().text = "who locked him up ? ";
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(1.7f);
                 TextBox.GetComponent<Text>().text = "what the hell is going on here!? ";
                 yield return new WaitForSeconds(1.5f);
                 TextBox.GetComponent<Text>().text = "";
@@ -127,6 +129,8 @@ public class NoteReader : MonoBehaviour
                 Fps.gameObject.transform.rotation = Quaternion.Euler(-1.5f, -89.1f, 0f);
                 MainCamera.gameObject.transform.rotation = Quaternion.Euler(-1.5f, -89.1f, 0f);
                 SaveScript.Cinma3 = false;
+                Objectev6.gameObject.SetActive(true);
+                Objectev5.gameObject.SetActive(false);
                 Enemy.gameObject.SetActive(false);
                 KillScene.gameObject.SetActive(true);
                 TextBox.GetComponent<Text>().text = "";

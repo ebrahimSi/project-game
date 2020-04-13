@@ -10,6 +10,7 @@ public class DoorScript2 : MonoBehaviour
     [SerializeField] GameObject camera2;
     [SerializeField] GameObject cube;
     [SerializeField] GameObject Fps;
+   
     public GameObject TextBox;
     public AudioSource CallJohnathan;
 

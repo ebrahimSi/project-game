@@ -15,6 +15,8 @@ public class NPCKIllScene : MonoBehaviour
     [SerializeField] GameObject NaveCube;
     [SerializeField] GameObject TextBox;
     [SerializeField] AudioSource sound;
+    [SerializeField] GameObject Objectev6;
+    [SerializeField] GameObject Objectev7;
     private Animator animKiller;
     private Animator animNPC;
     private bool  Scene=true;
@@ -68,6 +70,8 @@ public class NPCKIllScene : MonoBehaviour
         TextBox.GetComponent<Text>().text = "What is going on here ?!";
         yield return new WaitForSeconds(2.5f);
         TextBox.GetComponent<Text>().text = "";
+        Objectev6.gameObject.SetActive(false);
+        Objectev7.gameObject.SetActive(true);
 
     }
     }
