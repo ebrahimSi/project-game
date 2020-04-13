@@ -214,15 +214,15 @@ public class SaveLoad : MonoBehaviour
             SaveScript.weaponChange = false;
 
             SaveScript.CanPickUp = false;
-            SaveScript.Batteries = 0;
-            SaveScript.BatteryClick = false;
+           SaveScript.Batteries = 0;
+           
             SaveScript.FlashlightOn = false;
             SaveScript.HaveFlashlightOn = false;
             SaveScript.NighVision = false;
             SaveScript.BatteryPower = 1f;
             SaveScript.PlayerHealth = 30;
 
-            SaveScript.DisplayHealth = true;
+          
             SaveScript.HaveKnife = false;
             SaveScript.HaveBat = false;
             SaveScript.HaveAxe = false;
