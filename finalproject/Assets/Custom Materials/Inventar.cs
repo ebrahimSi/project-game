@@ -7,6 +7,7 @@ public class Inventar : MonoBehaviour
 {
      public Image uiTexture;
     public Text lpCountText;
+   
     int lpCount = 0;
 
     void Start()

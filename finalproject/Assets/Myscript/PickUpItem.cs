@@ -22,6 +22,7 @@ public class PickUpItem : MonoBehaviour
     public AudioSource AudioPickUp;
     [SerializeField] GameObject Objectev9;
     [SerializeField] GameObject Objectev10;
+     [SerializeField] GameObject Objectevlockpic;
     private bool PickupActive = false;
 
     private void OnTriggerEnter(Collider other)
@@ -216,6 +217,7 @@ SaveScript.LockPick2=false;
 SaveScript.LockPick3=false;
 }
             Pleyer.GetComponent<Inventar>()._lpCount += 2;
+            Objectevlockpic.gameObject.SetActive(false);
            Destroy(Pickup, 0.2f);
 
         }

@@ -23,6 +23,7 @@ public class DoorTrigger : MonoBehaviour
     public bool isCracked;
     bool hasEntered;
     bool dStatus;
+    public GameObject Objectev;
 
     void Start()
     {
@@ -102,6 +103,10 @@ public class DoorTrigger : MonoBehaviour
                         uiTextureLockPin.gameObject.SetActive(true);
 
                     }
+                    else
+                    {
+                        Objectev.gameObject.SetActive(true);
+                    }
                 }
                 else
                 {
@@ -109,6 +114,7 @@ public class DoorTrigger : MonoBehaviour
                     dStatus = !dStatus;
                     dAnim.SetBool("Status", dStatus);
                     uiTextureUnlocked.gameObject.SetActive(true);
+                    
                 }
             }
         }
